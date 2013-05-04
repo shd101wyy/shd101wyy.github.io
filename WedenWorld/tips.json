@@ -1,0 +1,48 @@
+{
+    "error_tips_table": [{
+        "cond": {
+            "title": "enchant.js が読み込まれていないようです。",
+            "content": "enchant.js を読み込むには、index.htmlの head タグの中に以下のタグを貼り付けましょう。[code]<script src='http://coderun.9leap.net/static/enchant.js-latest/enchant.js'></script>[/code] ダッシュボードに戻って「はじめてのenchant.js」から好きなプロジェクトを Fork してもOKです。"
+        },
+        "title": "enchant.js が読み込まれていないようです。"
+    }, {
+        "cond": {
+            "title": "構文エラーが起きているようです。",
+            "content": "enchant.js は読み込まれていますが、main.js の中で構文エラーが起きているか、enchant(); が実行されていないようです。"
+        },
+        "title": "構文エラーが起きているようです。"
+    }, {
+        "cond": {
+            "title": "new Game(); に失敗しているようです。",
+            "content": "enchant.js を読み込むには、index.htmlの head タグの中に以下のタグを貼り付けましょう。[code]<script src='http://coderun.9leap.net/static/enchant.js-latest/enchant.js'></script>[/code] ダッシュボードに戻って「はじめてのenchant.js」から好きなプロジェクトを Fork してもOKです。"
+        },
+        "title": "new Game(); に失敗しているようです。"
+    }, {
+        "cond": {
+            "title": "addChild を忘れていませんか?",
+            "content": "new Sprite() や new Label() などで生成したオブジェクトを表示するには、以下のように ゲームオブジェクトのルートシーンに[code]game.rootScene.addChild(sprite);[/code]"
+        },
+        "title": "addChild を忘れていませんか?"
+    }],
+    "progress_tips_table": [{
+        "cond": "bear.x!=150",
+        "title": "課題1",
+        "content": "bear.xを変化させてみよう[code]bear.x=50;[/code]xを変化させると横方向にクマが動くぞ!"
+    }, {
+        "cond": "bear.y!=150",
+        "title": "課題2",
+        "content": "オッケー!<BR>じゃあ今度はbear.yを変化させてみよう[code]bear.y=50;[/code]yを変化させると縦方向にクマが動くぞ!"
+    }, {
+        "cond": "bear.scaleX!=1",
+        "title": "課題3",
+        "content": "絶好調だね!<BR>次はbear.scaleXを変化させてみよう[code]bear.scaleX=3[/code]scaleXを変化させるとクマが横方向に伸びてくぞ!"
+    }, {
+        "cond": "bear.scaleY!=1",
+        "title": "課題4",
+        "content": "最後はbear.scaleYを変化させてみよう[code]bear.scaleY=3[/code]scaleYを変化させるとクマが縦方向に伸びてくぞ!"
+    }],
+    "default_tips_table": [{
+        "title": "おめでとうございます",
+        "content": "<img width=160px src=http://junk.wise9.jp/code9/clear.gif><BR>enchant.jsのスプライトの基本をマスターしました!<BR>他のチュートリアルにも挑戦してみよう!"
+    }]
+}

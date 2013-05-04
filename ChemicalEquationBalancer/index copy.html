@@ -1,0 +1,327 @@
+<html><head>
+    <meta charset="utf-8">
+    <title>ChemicalBalancerJS</title>
+    <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+
+    <!-- WinJS references -->
+    <!--
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+    -->
+
+    <!-- ChemicalBalancerJS references -->
+    
+    <link href="./css/default.css" rel="stylesheet">
+    <script src="./js/default.js"></script>
+    <script src="./js/ChemicalEquationBalancer.js"></script>
+    <!--<link href="/css/Microsoft.VisualStudio.Blend.Html.Intrinsic.Grid3x3.css" rel="stylesheet" type="text/css">
+    -->
+   
+    
+    
+    <!-- Metro UI CSS -->
+    <link href="./Metro/css/modern.css" rel="stylesheet" type="text/css">
+    <link href="./Metro/css/modern-responsive.css" rel="stylesheet" type="text/css">
+    <link href="./Metro/css/theme-dark.css" rel="stylesheet" type="text/css">
+        
+        
+    <script type="text/javascript" src="./Metro/javascript/accordion.js"></script>
+    <script type="text/javascript" src="./Metro/javascript/buttonset.js"></script>
+    <script type="text/javascript" src="./Metro/javascript/carousel.js"></script>
+    <script type="text/javascript" src="./Metro/javascript/dropdown.js"></script>
+    <script type="text/javascript" src="./Metro/javascript/input-control.js"></script>
+    <script type="text/javascript" src="./Metro/javascript/pagecontrol.js"></script>
+    <script type="text/javascript" src="./Metro/javascript/rating.js"></script>
+    <script type="text/javascript" src="./Metro/javascript/slider.js"></script>
+    <script type="text/javascript" src="./Metro/javascript/tile-drag.js"></script>
+    <script type="text/javascript" src="./Metro/javascript/tile-slider.js"></script>
+    <script type="text/javascript">
+    function clickButton(){
+	    alert("You clicked"+document.getElementById("inputFormula").value);
+    }
+    </script>
+</head>
+<body id="body1" style="background-color:white;width:1360px;height:780px">
+
+
+    <p></p>
+	<div style="height:100%;width:100%">
+		<div style="height: 100%; left: 8%; top: 6%;">
+			<h1 id="table_label" style="color:black;">
+				Periodic Table
+			</h1>
+			
+			
+
+			
+			<div id="table-div" style="background-color:#EEEEEE;">
+			<table summary="This periodic table is used to navigate to the elements" style="border:0px;background-color:#EEEEEE;" id="pertable">
+
+<tbody><tr style="border:0px;">
+<th class="w8" style="border:0px">Group</th>
+<th class="w5" style="border:0px">1</th>
+<th class="w5" style="border:0px">2</th>
+<th class="w2" style="border:0px">&nbsp;</th>
+<th class="w5" style="border:0px">3</th>
+<th class="w5" style="border:0px">4</th>
+<th class="w5" style="border:0px">5</th>
+<th class="w5" style="border:0px">6</th>
+<th class="w5" style="border:0px">7</th>
+<th class="w5" style="border:0px">8</th>
+<th class="w5" style="border:0px">9</th>
+<th class="w5" style="border:0px">10</th>
+<th class="w5" style="border:0px">11</th>
+<th class="w5" style="border:0px">12</th>
+<th class="w5" style="border:0px">13</th>
+<th class="w5" style="border:0px">14</th>
+<th class="w5" style="border:0px">15</th>
+<th class="w5" style="border:0px">16</th>
+<th class="w5" style="border:0px">17</th>
+<th class="w5" style="border:0px">18</th>
+</tr>
+<tr style="border:0px">
+<th class="lbl" style="border:0px">Period</th>
+<td style="border:0px" colspan="19"></td>
+</tr>
+<tr style="border:0px">
+<th class="lbl" style="border:0px">1</th>
+<td class="xs" style="border:0px;"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">1</div><div class="symbol"><a class="symb" href="hydrogen/"><abbr class="sym" title="hydrogen: essential data and description">H</abbr></a></div><div class="at_wt">1.008</div></div></div></td>
+<td style="border:0px" colspan="17"></td>
+<td class="xp" onmousedown="clickButton()" id="He"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">2</div><div class="symbol"><a class="symb" href="helium/"><abbr class="sym" title="helium: essential data and description">He</abbr></a></div><div class="at_wt">4.0026</div></div></td>
+</tr>
+<tr>
+<th class="lbl" style="border:0px">2</th>
+<td class="xs" style="border:0px;" onmousedown="TypeOnElement(this.id)" id="Li"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">3</div><div class="symbol"><a class="symb" href="lithium/"><abbr class="sym" title="lithium: essential data and description">Li</abbr></a></div><div class="at_wt">6.94</div></div></td>
+<td class="xs" style="border:0px;" onmousedown="TypeOnElement(this.id)" id="Be"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">4</div><div class="symbol"><a class="symb" href="beryllium/"><abbr class="sym" title="beryllium: essential data and description">Be</abbr></a></div><div class="at_wt">9.0122</div></div></td>
+<td style="border:0px" colspan="11"></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="B"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">5</div><div class="symbol"><a class="symb" href="boron/"><abbr class="sym" title="boron: essential data and description">B</abbr></a></div><div class="at_wt">10.81</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="C"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">6</div><div class="symbol"><a class="symb" href="carbon/"><abbr class="sym" title="carbon: essential data and description">C</abbr></a></div><div class="at_wt">12.011</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="N"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">7</div><div class="symbol"><a class="symb" href="nitrogen/"><abbr class="sym" title="nitrogen: essential data and description">N</abbr></a></div><div class="at_wt">14.007</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="O"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">8</div><div class="symbol"><a class="symb" href="oxygen/"><abbr class="sym" title="oxygen: essential data and description">O</abbr></a></div><div class="at_wt">15.999</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="F"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">9</div><div class="symbol"><a class="symb" href="fluorine/"><abbr class="sym" title="fluorine: essential data and description">F</abbr></a></div><div class="at_wt">18.998</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Ne"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">10</div><div class="symbol"><a class="symb" href="neon/"><abbr class="sym" title="neon: essential data and description">Ne</abbr></a></div><div class="at_wt">20.180</div></div></td>
+</tr>
+<tr>
+<th class="lbl" style="border:0px">3</th>
+<td class="xs" style="border:0px;" onmousedown="TypeOnElement(this.id)" id="Na"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">11</div><div class="symbol"><a class="symb" href="sodium/"><abbr class="sym" title="sodium: essential data and description">Na</abbr></a></div><div class="at_wt">22.990</div></div></td>
+<td class="xs" style="border:0px;" onmousedown="TypeOnElement(this.id)" id="Mg"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">12</div><div class="symbol"><a class="symb" href="magnesium/"><abbr class="sym" title="magnesium: essential data and description">Mg</abbr></a></div><div class="at_wt">24.305</div></div></td>
+<td style="border:0px" colspan="11"></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Al"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">13</div><div class="symbol"><a class="symb" href="aluminium/"><abbr class="sym" title="aluminium (aluminum in US): essential data and description">Al</abbr></a></div><div class="at_wt">26.982</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Si"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">14</div><div class="symbol"><a class="symb" href="silicon/"><abbr class="sym" title="silicon: essential data and description">Si</abbr></a></div><div class="at_wt">28.085</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="P"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">15</div><div class="symbol"><a class="symb" href="phosphorus/"><abbr class="sym" title="phosphorus: essential data and description">P</abbr></a></div><div class="at_wt">30.974</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="S"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">16</div><div class="symbol"><a class="symb" href="sulfur/"><abbr class="sym" title="sulfur (sulphur in UK and elsewhere): essential data and description">S</abbr></a></div><div class="at_wt">32.06</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Cl"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">17</div><div class="symbol"><a class="symb" href="chlorine/"><abbr class="sym" title="chlorine: essential data and description">Cl</abbr></a></div><div class="at_wt">35.45</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Ar"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">18</div><div class="symbol"><a class="symb" href="argon/"><abbr class="sym" title="argon: essential data and description">Ar</abbr></a></div><div class="at_wt">39.948</div></div></td>
+</tr>
+<tr>
+<th class="lbl" style="border:0px">4</th>
+<td class="xs" style="border:0px;" onmousedown="TypeOnElement(this.id)" id="K"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">19</div><div class="symbol"><a class="symb" href="potassium/"><abbr class="sym" title="potassium: essential data and description">K</abbr></a></div><div class="at_wt">39.098</div></div></td>
+<td class="xs" style="border:0px;" onmousedown="TypeOnElement(this.id)" id="Ca"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">20</div><div class="symbol"><a class="symb" href="calcium/"><abbr class="sym" title="calcium: essential data and description">Ca</abbr></a></div><div class="at_wt">40.078</div></div></td>
+<td style="width: 30.96px; height: 85px; border:0px"></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Sc"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">21</div><div class="symbol"><a class="symb" href="scandium/"><abbr class="sym" title="scandium: essential data and description">Sc</abbr></a></div><div class="at_wt">44.956</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Ti"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">22</div><div class="symbol"><a class="symb" href="titanium/"><abbr class="sym" title="titanium: essential data and description">Ti</abbr></a></div><div class="at_wt">47.867</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="V"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">23</div><div class="symbol"><a class="symb" href="vanadium/"><abbr class="sym" title="vanadium: essential data and description">V</abbr></a></div><div class="at_wt">50.942</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Cr"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">24</div><div class="symbol"><a class="symb" href="chromium/"><abbr class="sym" title="chromium: essential data and description">Cr</abbr></a></div><div class="at_wt">51.996</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Mn"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">25</div><div class="symbol"><a class="symb" href="manganese/"><abbr class="sym" title="manganese: essential data and description">Mn</abbr></a></div><div class="at_wt">54.938</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Fe"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">26</div><div class="symbol"><a class="symb" href="iron/"><abbr class="sym" title="iron: essential data and description">Fe</abbr></a></div><div class="at_wt">55.845</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Co"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">27</div><div class="symbol"><a class="symb" href="cobalt/"><abbr class="sym" title="cobalt: essential data and description">Co</abbr></a></div><div class="at_wt">58.933</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Ni"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">28</div><div class="symbol"><a class="symb" href="nickel/"><abbr class="sym" title="nickel: essential data and description">Ni</abbr></a></div><div class="at_wt">58.693</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Cu"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">29</div><div class="symbol"><a class="symb" href="copper/"><abbr class="sym" title="copper: essential data and description">Cu</abbr></a></div><div class="at_wt">63.546</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Zn"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">30</div><div class="symbol"><a class="symb" href="zinc/"><abbr class="sym" title="zinc: essential data and description">Zn</abbr></a></div><div class="at_wt">65.38</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Ga"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">31</div><div class="symbol"><a class="symb" href="gallium/"><abbr class="sym" title="gallium: essential data and description">Ga</abbr></a></div><div class="at_wt">69.723</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Ge"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">32</div><div class="symbol"><a class="symb" href="germanium/"><abbr class="sym" title="germanium: essential data and description">Ge</abbr></a></div><div class="at_wt">72.63</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="As"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">33</div><div class="symbol"><a class="symb" href="arsenic/"><abbr class="sym" title="arsenic: essential data and description">As</abbr></a></div><div class="at_wt">74.922</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Se"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">34</div><div class="symbol"><a class="symb" href="selenium/"><abbr class="sym" title="selenium: essential data and description">Se</abbr></a></div><div class="at_wt">78.96</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Br"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">35</div><div class="symbol"><a class="symb" href="bromine/"><abbr class="sym" title="bromine: essential data and description">Br</abbr></a></div><div class="at_wt">79.904</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Kr"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">36</div><div class="symbol"><a class="symb" href="krypton/"><abbr class="sym" title="krypton: essential data and description">Kr</abbr></a></div><div class="at_wt">83.798</div></div></td>
+</tr>
+<tr>
+<th class="lbl" style="border:0px">5</th>
+<td class="xs" style="border:0px;" onmousedown="TypeOnElement(this.id)" id="Rb"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">37</div><div class="symbol"><a class="symb" href="rubidium/"><abbr class="sym" title="rubidium: essential data and description">Rb</abbr></a></div><div class="at_wt">85.468</div></div></td>
+<td class="xs" style="border:0px;" onmousedown="TypeOnElement(this.id)" id="Sr"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">38</div><div class="symbol"><a class="symb" href="strontium/"><abbr class="sym" title="strontium: essential data and description">Sr</abbr></a></div><div class="at_wt">87.62</div></div></td>
+<td style="border:0px"></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Y"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">39</div><div class="symbol"><a class="symb" href="yttrium/"><abbr class="sym" title="yttrium: essential data and description">Y</abbr></a></div><div class="at_wt">88.906</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Zr"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">40</div><div class="symbol"><a class="symb" href="zirconium/"><abbr class="sym" title="zirconium: essential data and description">Zr</abbr></a></div><div class="at_wt">91.224</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Nb"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">41</div><div class="symbol"><a class="symb" href="niobium/"><abbr class="sym" title="niobium: essential data and description">Nb</abbr></a></div><div class="at_wt">92.906</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Mo"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">42</div><div class="symbol"><a class="symb" href="molybdenum/"><abbr class="sym" title="molybdenum: essential data and description">Mo</abbr></a></div><div class="at_wt">95.96</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Tc"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">43</div><div class="symbol"><a class="symb" href="technetium/"><abbr class="sym" title="technetium: essential data and description">Tc</abbr></a></div><div class="at_wt">[97.91]</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Ru"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">44</div><div class="symbol"><a class="symb" href="ruthenium/"><abbr class="sym" title="ruthenium: essential data and description">Ru</abbr></a></div><div class="at_wt">101.07</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Rh"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">45</div><div class="symbol"><a class="symb" href="rhodium/"><abbr class="sym" title="rhodium: essential data and description">Rh</abbr></a></div><div class="at_wt">102.91</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Pd"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">46</div><div class="symbol"><a class="symb" href="palladium/"><abbr class="sym" title="palladium: essential data and description">Pd</abbr></a></div><div class="at_wt">106.42</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Ag"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">47</div><div class="symbol"><a class="symb" href="silver/"><abbr class="sym" title="silver: essential data and description">Ag</abbr></a></div><div class="at_wt">107.87</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Cd"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">48</div><div class="symbol"><a class="symb" href="cadmium/"><abbr class="sym" title="cadmium: essential data and description">Cd</abbr></a></div><div class="at_wt">112.41</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="In"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">49</div><div class="symbol"><a class="symb" href="indium/"><abbr class="sym" title="indium: essential data and description">In</abbr></a></div><div class="at_wt">114.82</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Sn"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">50</div><div class="symbol"><a class="symb" href="tin/"><abbr class="sym" title="tin: essential data and description">Sn</abbr></a></div><div class="at_wt">118.71</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Sb"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">51</div><div class="symbol"><a class="symb" href="antimony/"><abbr class="sym" title="antimony: essential data and description">Sb</abbr></a></div><div class="at_wt">121.76</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Te"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">52</div><div class="symbol"><a class="symb" href="tellurium/"><abbr class="sym" title="tellurium: essential data and description">Te</abbr></a></div><div class="at_wt">127.60</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="I"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">53</div><div class="symbol"><a class="symb" href="iodine/"><abbr class="sym" title="iodine: essential data and description">I</abbr></a></div><div class="at_wt">126.90</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Xe"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">54</div><div class="symbol"><a class="symb" href="xenon/"><abbr class="sym" title="xenon: essential data and description">Xe</abbr></a></div><div class="at_wt">131.29</div></div></td>
+</tr>
+<tr>
+<th class="lbl" style="border:0px">6 </th>
+<td class="xs" style="border:0px;" onmousedown="TypeOnElement(this.id)" id="Cs"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">55</div><div class="symbol"><a class="symb" href="caesium/"><abbr class="sym" title="caesium (cesium in US): essential data and description">Cs</abbr></a></div><div class="at_wt">132.91</div></div></td>
+<td class="xs" style="border:0px;" onmousedown="TypeOnElement(this.id)" id="Ba"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">56</div><div class="symbol"><a class="symb" href="barium/"><abbr class="sym" title="barium: essential data and description">Ba</abbr></a></div><div class="at_wt">137.33</div></div></td>
+<th class="asterisk" style="border:0px;">*</th>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Lu"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">71</div><div class="symbol"><a class="symb" href="lutetium/"><abbr class="sym" title="lutetium: essential data and description">Lu</abbr></a></div><div class="at_wt">174.97</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Hf"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">72</div><div class="symbol"><a class="symb" href="hafnium/"><abbr class="sym" title="hafnium: essential data and description">Hf</abbr></a></div><div class="at_wt">178.49</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Ta"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">73</div><div class="symbol"><a class="symb" href="tantalum/"><abbr class="sym" title="tantalum: essential data and description">Ta</abbr></a></div><div class="at_wt">180.95</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="W"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">74</div><div class="symbol"><a class="symb" href="tungsten/"><abbr class="sym" title="tungsten: essential data and description">W</abbr></a></div><div class="at_wt">183.84</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Re"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">75</div><div class="symbol"><a class="symb" href="rhenium/"><abbr class="sym" title="rhenium: essential data and description">Re</abbr></a></div><div class="at_wt">186.21</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Os"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">76</div><div class="symbol"><a class="symb" href="osmium/"><abbr class="sym" title="osmium: essential data and description">Os</abbr></a></div><div class="at_wt">190.23</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Ir"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">77</div><div class="symbol"><a class="symb" href="iridium/"><abbr class="sym" title="iridium: essential data and description">Ir</abbr></a></div><div class="at_wt">192.22</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Pt"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">78</div><div class="symbol"><a class="symb" href="platinum/"><abbr class="sym" title="platinum: essential data and description">Pt</abbr></a></div><div class="at_wt">195.08</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Au"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">79</div><div class="symbol"><a class="symb" href="gold/"><abbr class="sym" title="gold: essential data and description">Au</abbr></a></div><div class="at_wt">196.97</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Hg"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">80</div><div class="symbol"><a class="symb" href="mercury/"><abbr class="sym" title="mercury: essential data and description">Hg</abbr></a></div><div class="at_wt">200.59</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Tl"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">81</div><div class="symbol"><a class="symb" href="thallium/"><abbr class="sym" title="thallium: essential data and description">Tl</abbr></a></div><div class="at_wt">204.38</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Pb"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">82</div><div class="symbol"><a class="symb" href="lead/"><abbr class="sym" title="lead: essential data and description">Pb</abbr></a></div><div class="at_wt">207.2</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Bi"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">83</div><div class="symbol"><a class="symb" href="bismuth/"><abbr class="sym" title="bismuth: essential data and description">Bi</abbr></a></div><div class="at_wt">208.98</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Po"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">84</div><div class="symbol"><a class="symb" href="polonium/"><abbr class="sym" title="polonium: essential data and description">Po</abbr></a></div><div class="at_wt">[208.98]</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="At"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">85</div><div class="symbol"><a class="symb" href="astatine/"><abbr class="sym" title="astatine: essential data and description">At</abbr></a></div><div class="at_wt">[209.99]</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Rn"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">86</div><div class="symbol"><a class="symb" href="radon/"><abbr class="sym" title="radon: essential data and description">Rn</abbr></a></div><div class="at_wt">[222.02]</div></div></td>
+</tr>
+<tr>
+<th class="lbl" style="border:0px">7 </th>
+<td class="xs" style="border:0px;" onmousedown="TypeOnElement(this.id)" id="Fr"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">87</div><div class="symbol"><a class="symb" href="francium/"><abbr class="sym" title="francium: essential data and description">Fr</abbr></a></div><div class="at_wt">[223.02]</div></div></td>
+<td class="xs" style="border:0px;" onmousedown="TypeOnElement(this.id)" id="Ra"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">88</div><div class="symbol"><a class="symb" href="radium/"><abbr class="sym" title="radium: essential data and description">Ra</abbr></a></div><div class="at_wt">[226.03]</div></div></td>
+<th class="asterisk" style="border:0px;">**</th>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Lr"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">103</div><div class="symbol"><a class="symb" href="lawrencium/"><abbr class="sym" title="lawrencium: essential data and description">Lr</abbr></a></div><div class="at_wt">[262.11]</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Rf"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">104</div><div class="symbol"><a class="symb" href="rutherfordium/"><abbr class="sym" title="rutherfordium: essential data and description">Rf</abbr></a></div><div class="at_wt">[265.12]</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Db"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">105</div><div class="symbol"><a class="symb" href="dubnium/"><abbr class="sym" title="dubnium: essential data and description">Db</abbr></a></div><div class="at_wt">[268.13]</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Sg"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">106</div><div class="symbol"><a class="symb" href="seaborgium/"><abbr class="sym" title="seaborgium: essential data and description">Sg</abbr></a></div><div class="at_wt">[271.13]</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Bh"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">107</div><div class="symbol"><a class="symb" href="bohrium/"><abbr class="sym" title="bohrium: essential data and description">Bh</abbr></a></div><div class="at_wt">[270]</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Hs"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">108</div><div class="symbol"><a class="symb" href="hassium/"><abbr class="sym" title="hassium: essential data and description">Hs</abbr></a></div><div class="at_wt">[277.15]</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Mt"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">109</div><div class="symbol"><a class="symb" href="meitnerium/"><abbr class="sym" title="meitnerium: essential data and description">Mt</abbr></a></div><div class="at_wt">[276.15]</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Ds"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">110</div><div class="symbol"><a class="symb" href="darmstadtium/"><abbr class="sym" title="darmstadtium: essential data and description">Ds</abbr></a></div><div class="at_wt">[281.16]</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Rg"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">111</div><div class="symbol"><a class="symb" href="roentgenium/"><abbr class="sym" title="roentgenium: essential data and description">Rg</abbr></a></div><div class="at_wt">[280.16]</div></div></td>
+<td class="xd" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Cn"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">112</div><div class="symbol"><a class="symb" href="copernicium/"><abbr class="sym" title="copernicium: essential data and description">Cn</abbr></a></div><div class="at_wt">[285.17]</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Uut"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">113</div><div class="symbol"><a class="symb" href="ununtrium/"><abbr class="sym" title="ununtrium: essential data and description">Uut</abbr></a></div><div class="at_wt">[284.18]</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Fl"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">114</div><div class="symbol"><a class="symb" href="flerovium/"><abbr class="sym" title="flerovium: essential data and description">Fl</abbr></a></div><div class="at_wt">[289.19]</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Uup"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">115</div><div class="symbol"><a class="symb" href="ununpentium/"><abbr class="sym" title="ununpentium: essential data and description">Uup</abbr></a></div><div class="at_wt">[288.19]</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Lv"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">116</div><div class="symbol"><a class="symb" href="livermorium/"><abbr class="sym" title="livermorium: essential data and description">Lv</abbr></a></div><div class="at_wt">[293]</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Uus"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">117</div><div class="symbol"><a class="symb" href="ununseptium/"><abbr class="sym" title="ununseptium: essential data and description">Uus</abbr></a></div><div class="at_wt">[294]</div></div></td>
+<td class="xp" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Uuo"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">118</div><div class="symbol"><a class="symb" href="ununoctium/"><abbr class="sym" title="ununoctium: essential data and description">Uuo</abbr></a></div><div class="at_wt">[294]</div></div></td>
+</tr>
+<tr>
+<td style="border:0px">&nbsp;</td>
+<td style="border:0px" colspan="19"></td>
+</tr>
+<tr>
+<th class="lbl" style="border:0px" colspan="3">*Lanthanoids</th>
+<th class="asterisk" style="border:0px;">*</th>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="La"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">57</div><div class="symbol"><a class="symb" href="lanthanum/"><abbr class="sym" title="lanthanum: essential data and description">La</abbr></a></div><div class="at_wt">138.91</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Ce"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">58</div><div class="symbol"><a class="symb" href="cerium/"><abbr class="sym" title="cerium: essential data and description">Ce</abbr></a></div><div class="at_wt">140.12</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Pr"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">59</div><div class="symbol"><a class="symb" href="praseodymium/"><abbr class="sym" title="praseodymium: essential data and description">Pr</abbr></a></div><div class="at_wt">140.91</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Nd"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">60</div><div class="symbol"><a class="symb" href="neodymium/"><abbr class="sym" title="neodymium: essential data and description">Nd</abbr></a></div><div class="at_wt">144.24</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Pm"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">61</div><div class="symbol"><a class="symb" href="promethium/"><abbr class="sym" title="promethium: essential data and description">Pm</abbr></a></div><div class="at_wt">[144.91]</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Sm"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">62</div><div class="symbol"><a class="symb" href="samarium/"><abbr class="sym" title="samarium: essential data and description">Sm</abbr></a></div><div class="at_wt">150.36</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Eu"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">63</div><div class="symbol"><a class="symb" href="europium/"><abbr class="sym" title="europium: essential data and description">Eu</abbr></a></div><div class="at_wt">151.96</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Gd"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">64</div><div class="symbol"><a class="symb" href="gadolinium/"><abbr class="sym" title="gadolinium: essential data and description">Gd</abbr></a></div><div class="at_wt">157.25</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Tb"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">65</div><div class="symbol"><a class="symb" href="terbium/"><abbr class="sym" title="terbium: essential data and description">Tb</abbr></a></div><div class="at_wt">158.93</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Dy"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">66</div><div class="symbol"><a class="symb" href="dysprosium/"><abbr class="sym" title="dysprosium: essential data and description">Dy</abbr></a></div><div class="at_wt">162.50</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Ho"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">67</div><div class="symbol"><a class="symb" href="holmium/"><abbr class="sym" title="holmium: essential data and description">Ho</abbr></a></div><div class="at_wt">164.93</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Er"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">68</div><div class="symbol"><a class="symb" href="erbium/"><abbr class="sym" title="erbium: essential data and description">Er</abbr></a></div><div class="at_wt">167.26</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Tm"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">69</div><div class="symbol"><a class="symb" href="thulium/"><abbr class="sym" title="thulium: essential data and description">Tm</abbr></a></div><div class="at_wt">168.93</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Yb"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">70</div><div class="symbol"><a class="symb" href="ytterbium/"><abbr class="sym" title="ytterbium: essential data and description">Yb</abbr></a></div><div class="at_wt">173.05</div></div></td>
+<td style="border:0px" colspan="2"></td>
+</tr>
+<tr>
+<th class="lbl" style="border:0px" colspan="3">**Actinoids</th>
+<th class="asterisk" style="border:0px;">**</th>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Ac"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">89</div><div class="symbol"><a class="symb" href="actinium/"><abbr class="sym" title="actinium: essential data and description">Ac</abbr></a></div><div class="at_wt">[227.03]</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Th"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">90</div><div class="symbol"><a class="symb" href="thorium/"><abbr class="sym" title="thorium: essential data and description">Th</abbr></a></div><div class="at_wt">232.04</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Pa"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">91</div><div class="symbol"><a class="symb" href="protactinium/"><abbr class="sym" title="protactinium: essential data and description">Pa</abbr></a></div><div class="at_wt">231.04</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="U"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">92</div><div class="symbol"><a class="symb" href="uranium/"><abbr class="sym" title="uranium: essential data and description">U</abbr></a></div><div class="at_wt">238.03</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Np"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">93</div><div class="symbol"><a class="symb" href="neptunium/"><abbr class="sym" title="neptunium: essential data and description">Np</abbr></a></div><div class="at_wt">[237.05]</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Pu"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">94</div><div class="symbol"><a class="symb" href="plutonium/"><abbr class="sym" title="plutonium: essential data and description">Pu</abbr></a></div><div class="at_wt">[244.06]</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Am"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">95</div><div class="symbol"><a class="symb" href="americium/"><abbr class="sym" title="americium: essential data and description">Am</abbr></a></div><div class="at_wt">[243.06]</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Cm"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">96</div><div class="symbol"><a class="symb" href="curium/"><abbr class="sym" title="curium: essential data and description">Cm</abbr></a></div><div class="at_wt">[247.07]</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Bk"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">97</div><div class="symbol"><a class="symb" href="berkelium/"><abbr class="sym" title="berkelium: essential data and description">Bk</abbr></a></div><div class="at_wt">[247.07]</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Cf"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">98</div><div class="symbol"><a class="symb" href="californium/"><abbr class="sym" title="californium: essential data and description">Cf</abbr></a></div><div class="at_wt">[251.08]</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Es"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">99</div><div class="symbol"><a class="symb" href="einsteinium/"><abbr class="sym" title="einsteinium: essential data and description">Es</abbr></a></div><div class="at_wt">[252.08]</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Fm"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">100</div><div class="symbol"><a class="symb" href="fermium/"><abbr class="sym" title="fermium: essential data and description">Fm</abbr></a></div><div class="at_wt">[257.10]</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="Md"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">101</div><div class="symbol"><a class="symb" href="mendelevium/"><abbr class="sym" title="mendelevium: essential data and description">Md</abbr></a></div><div class="at_wt">[258.10]</div></div></td>
+<td class="xf" onmousedown="TypeOnElement(this.id)" style="border:0px" id="No"><div class="tile" style="background-color:#E3A21A;width:75px;height:75px"><div class="at_num">102</div><div class="symbol"><a class="symb" href="nobelium/"><abbr class="sym" title="nobelium: essential data and description">No</abbr></a></div><div class="at_wt">[259.10]</div></div></td>
+<td style="border:0px" colspan="2"></td>
+</tr>
+</tbody></table>
+</div>
+		</div>
+	</div>
+	
+	<div class="tile" style="margin-top:-45%;margin-left:25%;height:25%;width:25%;background-color:#2D89EF">
+		<div class="tile-content" id:"element-tile"="">
+			<h2>Element:</h2>
+			<h1 style="margin-top:60px;margin-left:20px;font-size:90pt"> C </h1>
+        
+            <div class="tile-content" style="margin-left:150px;margin-top:-50px">
+            	<h2 id="atomic-number">1</h2>
+            	<h2 id="weight" style="margin-top:20px;">12</h2>
+            </div>               
+		</div>
+	</div>
+	
+	<div class="tile" id="chemical-equation-balancer" style="margin-top:-45%;margin-left:55%;width:40%;height:25%;background-color:#1570A6">
+		<div class="tile-content">
+		<form action="#" style="" method="get" onsubmit="balance(document.getElementById('inputFormula').value)">
+		<table class="noborder">
+			<tbody><tr>
+				<td style="width: 499.66px; height: 71.39px; left: 0px; top: 0px;">
+					<input style="width:280px;margin-top:20px;font-size:20pt;color:black;font-size:20pt;" id="inputFormula" value="H2+O2=H2O">
+					<input type="submit" id="balance_button" style="margin-left:10px;margin-top:10px;background-color:#E44A16;" value="Balance">
+				</td>
+			</tr>
+			
+			<tr>
+				<td style="width: 501.66px; height: 46px; left: 230px; top: -200px;">
+				<h2 id="balanced" style="position:relative;font-family:serif; font-size:200%;"></h2>
+				<h2 id="message" style="height: 46px; width: 317.16px;"></h2>
+				</td>
+			</tr>
+			<tr>
+				<td><h2 id="codeOutput" style="border:0px;">&nbsp;</h2></td>
+			</tr>
+	</tbody></table>
+</form>
+		
+		</div>
+	
+	</div>
+	
+	<!--
+	<div id="ChemiConsole">
+		<h1 id="ElementName" style="height: 115px;">C </h1>
+		
+		<form action="#" method="get" onsubmit="balance(document.getElementById('inputFormula').innerHTML); return false">
+		<table class="noborder">
+			<tr>
+				<td style="width: 62.63px; height: 194.46px; left: 2px; top: -4px;"><label for="inputFormula"></label></td>
+				<td style="width: 499.66px; height: 71.39px; left: 0px; top: 0px;">
+					<textarea contenteditable="true" id="inputFormula"></textarea>
+					<input id="balance_button" type="submit" value="Balance"/>
+				</td>
+			</tr>
+			<tr style="height:3em">
+				<td style="vertical-align:middle; width: 62.63px; height: 46px; left: 121px; top: -177px;"></td>
+				<td style="width: 501.66px; height: 46px; left: 230px; top: -136px;"><span id="balanced" style="font-family:serif; font-size:150%; line-height:160%;"></span><h2 id="message" style="height: 46px; width: 317.16px;"></h2></td>
+			</tr>
+			<tr>
+				<td style="width: 62.63px; height: 44.9px; left: 136px; top: -148px;"></td>
+				<td ><h2 id="codeOutput" style="border:0px">&nbsp;</h2></td>
+			</tr>
+	</table>
+</form>
+	</div>
+	-->
+	
+	
+	
+	
+	
+	<!--
+	<iframe id="tryIFrame" src="./element/H.htm">Here</iframe>
+	-->
+ 
+
+
+</body></html>

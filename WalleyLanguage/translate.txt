@@ -1,0 +1,13 @@
+1 (int)strlen(a) ---> a.length
+2 strcat(a,b)----> a=a+b;
+3 toupper(a)---->a.toUpperCase()
+4 tolower(a)->
+5 strcmp
+6 pow---> math.pow
+7 getStringFromFile()
+8 strcpy
+9 walley_system
+10 var_input
+11 file_readlines
+12 can not use "import" and "from import"
+13 printf

@@ -1,0 +1,449 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About Walley</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <div>
+	  <h1> About Walley </h1>
+	  <br>
+	  <h2>   Walley Language is developed by "shd101wyy".<br>
+	         It is a simple script language that is the<br>
+	         basis of the future, real, AI language..<br>
+	         For sourcecode, go to sourceforge.<br>
+	         Walley Language now have two versions.<br>
+	         One C language Version and One JavaScript version.<br>
+	  </h2>
+	  <h3>   Walley Language Simple Introduction <br></h3>
+	  <p> 
+	      Variable Type:<br>
+	      <ol>
+	          <li>int        4</li>
+	          <li>double     1.2</li>
+                  <li>fraction   4/3</li>
+                  <li>list       []<li>
+	          <li>string     "Hello" or 'Hello'</li>
+                  <li>dictionary {}</li>
+                  <li>class        </li>
+              </ol>
+              Support:<br>
+	      <ol>
+                  <li>class      class a: or class a extends b:</li>
+                  <li>function   def Hi(param1,param2):</li>
+	      </ol>
+              Basic:<br>
+	      <ol>
+                <li><br>
+                  if:<br>
+                      code here<br>
+                  elif:<br>
+                      code here<br>
+                  else:<br>
+                      code here<br>
+		</li>
+                <li><br>
+                  while i<10:<br>
+                      code here<br>
+		</li>
+                <li></br>
+                  for i in range(0,6):<br>
+                      code here<br>
+		</li>
+	      </ol>
+	      Attention:<br>
+	      <ol>
+                  <li>file io is not included in JavaScript Version.</li>
+                  <li>system operation is not included in JavaScript version.</li>
+	      </ol>
+	  
+        </p>
+	</div>
+        
+        <div>
+            <textarea rows="40" cols="60">
+ Walley Language
+
+#################
+main.c
+walley.h
+walley_core.h
+walley_language.h
+walley_class.h
+walley_slice.h
+walley_embed_function_library.h
+walley_dictionary.h
+walley_list.h
+walley_file_operation.h
+walley_function.h
+walley_math_print.h
+walley_operator_fraction.h
+walley_operator.h
+walley_settings.h
+walley_data.h
+walley_string.h
+
+
+###############
+Primitive Type
+
+int        	   a=10.             
+double        a=10.0
+fraction       a=3/4
+string          a="Hello" or a='Hi'
+list              a=[]
+dictionary   a={}
+class          b=a()
+expression ..............
+
+Variable Name
+a=
+a[0]=.          List[ index ]=
+a{ "Hello" }.     Dictionary{ object }=
+
+Init List
+a=[]
+a=[1,2]
+
+Init Dictionary
+a={}
+a={"a":hi,"b":45}
+
+Init String
+a="Hello"
+a='Hello'
+
+--------------------------------------------------------------------------------------------------
+Control && Special Speaking
+
+
+If what:
+    // code here  4 spaces ahead
+elif what:
+    // code here 
+else what:
+    // code here
+
+while i>10:
+    print("Hello")
+    i++
+
+for i in range(0,6):   // range(0,6)=[0,1,2,3,4,5]
+    // code here 4 spaces ahead
+
+////// range() in a math way
+range() return a list for temp
+
+
+for x in range(0,2):     x=[0,1]
+for x in range(2):        x=[0,1]
+
+for element in a:
+    print(element).
+
+// I stopped using set mark and goto
+//set mark mark_name here
+//goto mark_name
+
+
+switch x:
+    case "Hello":
+        print "Hi"
+    case [1,2,3]:
+        print "Hello"
+    case default:
+        print "do nothing"
+
+
+--------------------------------------------------------------------------------------------------
+Calculation:
++-/*\^
+sin() cos() tan() cot() sec() csc() ln() log(x,y)
+
+--------------------------------------------------------------------------------------------------
+Class 
+class class_name:
+    def self.init():
+
+class class_name extends super:
+    def self.init():
+
+--------------------------------------------------------------------------------------------------
+List
+
+Init
+a=[]
+a=[1,2,3,4]
+ Save in __walley__.wy, now in struct_var
+
+format:    
+a:[1,[1,2] ]:list:
+#~Begin:a:
+a[0]:1:list:
+a[1]:[1,2]:list:
+#~Begin:a[1]:
+a[1][0]:1:int:
+a[1][1]:2:int:
+#~End:a[1]:
+#~End:a:
+
+a=[1,2,1]
+a[0]=10
+a becomes [10,2,1]
+
+
+functions of list.
+
+a=[1,2,3]  // all a are [1,2,3] at first
+a.append(4)----> a=[1,2,3,4]
+a.length()    ----> 3
+a.remove_at_index(0)----> [2,3]
+a.remove_element(1)----> 1    
+if a=[1,1,2,3]  a.remove_element(1)----< [1,2,3]        // remove only once
+a.count(1)    -----> 1                                                      // has some problem now
+
+eg:
+x=[2,1,[1,2],1,1,1,1,2,3,4]
+x.remove_at_index(2)
+println "x is " 
+print x
+@@ output is   
+x is 
+[2,1,1,1,1,1,2,3,4]
+
+
+eg:
+x=[2,1,[1,2],1,1,1,1,2,3,4]
+x[2].remove_at_index(1)
+println "x is " 
+print x
+@@ output is 
+x is 
+[2,1,[1],1,1,1,1,2,3,4]
+
+
+--------------------------------------------------------------------------------------------------
+String
+a="Hello"
+
+slice:
+a[0:1]---> 'H'
+a[0]   ---> 'H'
+a[3:]  --->'lo'
+a[:3]  ---> 'Hel'
+
+functions:
+find
+replace
+count
+split
+length
+trim
+isdigit
+isalpha
+toupper
+tolower
+isupper
+islower
+reverse
+
+a="Hello"
+
+x=a.reverse() ----> x="olleH"
+a.find("H")--->0
+a.find("b")---> -1   -1 means that 'b' can not be found
+a.find("l",4) --> 4 ,   4 is from_index
+a.find("l",[3,4])--> 3    [3,4] 3 is from_index, 4 is to_index
+a=a.replace("l","a")----> "Heaao"
+a=a.replace("l","a",3)--> "Helao"  3 is from_index
+a=a.replace("l","a",[1,3])--> "Healo"  [1,3] 1 is from_index, 3-1 is to _index
+a=a.count("l")---------> a=2
+a.length()------> 5    return length of "Hello"
+
+
+a="1.5"
+a.isdigit()---> TRUE
+a="1"
+a.isdigit()---> TRUE
+
+a="Hello"
+a.isalpha---> TRUE
+
+a.toupper---> HELLO
+a.tolower ---> hello
+
+a="HHH"
+a.isupper----> TRUE
+a.islower----> FALSE
+
+a=" Hello   "
+a=a.trim()---> a="Hello" now, remove ahead and behind spaces
+a="He,l,lo"
+a.split(",")--->["He","l","lo"] return list
+
+
+----------------------------------------------------------------------------------------------
+
+Dictionary
+
+Init 
+a={}
+a{"hello"}=1
+a{"hi"}=2
+a{"hi"}{"inside"}
+a={"hello":1,"hi":2}
+a={"hi":{"inside":12}}
+
+Format
+a:{"hello":1,"hi":2}:dictionary
+#~Begin:a:
+a{"hello"}=1
+a{"hi"}=2
+#~End:a:
+
+
+Declare
+a{"hi"}=2
+// do not forget a{'hi'} is the same
+
+Change Value
+the same as above
+
+a.keys()=["hello","hi"];
+
+--------------------------------------------------------------------------------------------------
+Type Change 
+a="1234.123"
+b=int(a)---->1234
+
+a=123
+b=str(a)----> "123"
+
+a="[1,2,3,4]"
+b=nstr(a) ---> return list [1,2,3,4]
+
+a="1.23"
+b=nstr(a) ---> return double 1.23
+
+
+
+------------------------------------------------------------------------------------------
+
+================================================================
+class a:
+    def self.init(age=13):
+        self.age=age
+        println "Init a"
+    def self.show():
+        println self.age
+
+class b extends a:
+    def self.init(age=14):
+        super.init(age)
+        println "Init b"
+    def self.show():
+        super.show()
+
+
+
+class o:
+    def self.showO():
+        println "Successfully show O"
+class a extends o:
+    def self.init():
+        self.age=12
+    def self.show():
+        println "age +"+self.age
+class b extends a:
+    def self.init():
+        super.init()
+        super.show()
+    def self.show():
+        println "B show"
+x=b()
+x.show()
+x.showO()
+
+-----------------------> Output <-------------------------
+age +12.0
+B show
+Successfully show O
+
+
+=============================================================
+// This function is used for importing modules like python
+// eg getModulePathFromDirectory("test.test2.ex2")
+/*
+ |-- test2.wyp--ex2.wy
+ test.wyp-
+ |__
+ */
+		Folder        Folder         File
+So load ./ test.wyp / test2.wyp / ex2.wy
+
+==============================================================
+x=input("--->") only return string……
+
+
+==============================================================
+have not come true yet...
+
+def py_interpreter(input_str):
+    exp:
+        <@python code:
+  $input_str$
+          :python code
+     	 >
+##############
+<@python code:
+int i=12
+:python code>
+##############
+if no <@ ahead, then make the whole sentence as expression as default
+if <@, then try to find >
+
+$input_str$    $ is the boundary, that means all the things between $ is input_str
+
+######################
+
+====================================================================
+ table:
+ 
+ x=[1,2,3]
+ print x[0] --->1
+ 
+ if the content in [] has = in string. then it is a table
+ 
+ x=[1,2,3] translate to x=[[0]=1,[1]=2,[2]=3]
+ 
+ x=[1,2,3,apple=12] translate to x=[[0]=1,[1]=2,[2]=3,["apple"]=12]
+ 
+ print x["apple"] -----> 12
+ 
+  eg
+constant_x=[
+        pi=3.1415926,
+        g=9.8,
+        physics=[
+            moon="MOON"
+        ]
+        ]
+println constant_x
+println constant_x["pi"]
+println constant_x["physics"]["moon"]
+
+output---->
+[["pi"]=3.1415926,["g"]=9.8,["physics"]=[["moon"]="MOON"]]
+3.1415926
+MOON
+
+ ====================================================================
+
+            </textarea>
+        </div>
+    </body>
+</html>

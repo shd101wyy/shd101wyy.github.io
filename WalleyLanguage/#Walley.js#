@@ -1,0 +1,14 @@
+/* 
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+// Walley_Console is the console to put output string
+
+function click_button(){
+    var string_in_textarea1=document.getElementById("textarea1").value;
+    document.getElementById("Walley_Console").value=string_in_textarea1;
+
+    //document.write("Document Write");
+}
+

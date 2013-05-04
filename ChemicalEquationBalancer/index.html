@@ -1,0 +1,626 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ChemicalBalancerJS</title>
+    <meta content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- WinJS references -->
+    <!--
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+    -->
+
+    <!-- ChemicalBalancerJS references -->
+    
+    <link rel="stylesheet" href="./css/default.css">
+    <script src="./js/default.js"></script>
+    <script src="./js/ChemicalEquationBalancer.js"></script>
+    <!--<link href="/css/Microsoft.VisualStudio.Blend.Html.Intrinsic.Grid3x3.css" rel="stylesheet" type="text/css">
+    -->
+   
+    
+    <!-- JQuery -->
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+    
+      <!-- Metro UI CSS -->
+        <link href="../metro_ui_css/css/modern.css" rel="stylesheet" type="text/css">
+        <link href="../metro_ui_css/css/modern-responsive.css" rel="stylesheet" type="text/css">
+        <link href="../metro_ui_css/css/theme-dark.css" rel="stylesheet" type="text/css">
+     
+        <script type="text/javascript" src="../metro_ui_css/javascript/accordion.js"></script>
+        <script type="text/javascript" src="../metro_ui_css/javascript/buttonset.js"></script>
+        <script type="text/javascript" src="../metro_ui_css/javascript/carousel.js"></script>
+        <script type="text/javascript" src="../metro_ui_css/javascript/dropdown.js"></script>
+        <script type="text/javascript" src="../metro_ui_css/javascript/input-control.js"></script>
+        <script type="text/javascript" src="../metro_ui_css/javascript/pagecontrol.js"></script>
+        <script type="text/javascript" src="../metro_ui_css/javascript/rating.js"></script>
+        <script type="text/javascript" src="../metro_ui_css/javascript/slider.js"></script>
+        <script type="text/javascript" src="../metro_ui_css/javascript/tile-drag.js"></script>
+        <script type="text/javascript" src="../metro_ui_css/javascript/tile-slider.js"></script>
+        
+    <script type="text/javascript">
+    
+   /*
+    $("document").ready(function(){
+	     $("#H").click(function(){
+	    alert("You touched me");
+    });
+    });
+    $(function(){
+	    $("#dialog").dialog({
+		    //resizable:false;
+		    title: "Element Information ";
+	    });
+	        });
+    */
+    
+    
+    // Manganese: transition metals; primordial; solid 
+    function touchElementTile(information1,information2){
+    //24<br>
+    //<a href="http://www.wikipedia.org/wiki/Chromium" title="Chromium">Cr</a>  information1
+    //<!-- Carbon: other nonmetals; primordial; solid;12.011; -->  information2
+
+    //    alert(information2);
+    
+    
+    var index=information2.indexOf(":")
+    var element_full_name=information2.substr(0, index);
+	information2=information2.substr(index+1, information2.length);
+	
+	
+	index=information2.indexOf(";");
+	var element_type=information2.substr(0,index);
+	information2=information2.substr(index+1, information2.length);
+
+	
+	index=information2.indexOf(";");
+	var element_found=information2.substr(0,index);
+	information2=information2.substr(index+1, information2.length);
+    
+    
+	index=information2.indexOf(";");
+	var element_state=information2.substr(0,index);
+	information2=information2.substr(index+1, information2.length);
+
+    
+	index=information2.indexOf(";");
+	if(index==-1)
+		index=information2.length;
+	var element_weight=information2.substr(0,index);
+
+	
+    var atom_number=information1.substr(0, information1.indexOf("<br>"));
+    //alert(information1);
+	    document.getElementById("atomic-number").innerHTML=atom_number;
+	var atom_abbreviation=information1.substr(information1.indexOf("\">")+2,information1.indexOf("</a>"));
+		document.getElementById("element-name-abbreviation").innerHTML=atom_abbreviation;
+		
+	/*
+		            <h3 id="element-full-name">Carbon</h3>
+	            <h5 id="element-type">Other Nonmetals</h5>
+	            <h5 id="element-found">primordial</h5>
+	            <h5 id="element-state">solid</h5>	
+	*/
+	
+	document.getElementById("element-full-name").innerHTML=element_full_name;
+	document.getElementById("element-type").innerHTML=element_type;
+	document.getElementById("element-found").innerHTML=element_found;
+	document.getElementById("element-state").innerHTML=element_state;
+	document.getElementById("atomic-weight").innerHTML=element_weight;
+		
+    }
+    
+    
+    function clickButton(){
+	    alert("You clicked"+document.getElementById("inputFormula").value);
+    }
+    
+    function touchWikiButton(){
+	    var current_element=document.getElementById("element-name-abbreviation").innerHTML;
+	    $("#element_wiki").css("visibility","visible");
+	    $("#element_wiki").css("z-index","1000");
+	    
+	    var element_full_name=document.getElementById("element-full-name").innerHTML;
+	    var url="http://www.wikipedia.org/wiki/"+element_full_name;
+	    $("#wiki_frame").attr("src",url);
+    }
+    
+    function hideWiki(){
+	    $("#element_wiki").css("visibility","hidden");
+    }
+    
+    </script>
+</head>
+
+<body style="background-color:white;" id="body1">
+<div style="width:1024px;height:960px;margin 0 auto;">
+
+    <p></p>
+	<div style="height:100%;width:100%">
+		<div style="height: 100%; left: 10%; top: 6%;position:relative;">
+			<h1 style="color:black;margin-left:10%;" id="table_label">
+				Periodic Table
+			</h1>
+			
+			<div style="background-color:#EEEEEE;" id="table-div">
+				
+				
+				<table cellspacing="1" cellpadding="0" border="0" id="collapsibleTable0" class="collapsible uncollapsed" style="background:#f8f8f8; border:1px solid #a9a9a9; width:100%; max-width:1300px; margin:0 auto;;&nbsp;;position:relative;">
+<tbody><tr>
+</tr>
+<tr>
+<th style="width: 2.8%;"><a href="http://www.wikipedia.org/wiki/Group_(periodic_table)" title="Group (periodic table)">Group</a>&nbsp;→</th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Alkali_metal" title="Alkali metal">1</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Alkaline_earth_metal" title="Alkaline earth metal">2</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Group_3_element" title="Group 3 element">3</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Group_4_element" title="Group 4 element">4</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Group_5_element" title="Group 5 element">5</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Group_6_element" title="Group 6 element">6</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Group_7_element" title="Group 7 element">7</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Group_8_element" title="Group 8 element">8</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Group_9_element" title="Group 9 element">9</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Group_10_element" title="Group 10 element">10</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Group_11_element" title="Group 11 element">11</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Group_12_element" title="Group 12 element">12</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Boron_group" title="Boron group">13</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Carbon_group" title="Carbon group">14</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Pnictogen" title="Pnictogen">15</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Chalcogen" title="Chalcogen">16</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Halogen" title="Halogen">17</a></th>
+<th style="width: 5.4%;"><a href="http://www.wikipedia.org/wiki/Noble_gas" title="Noble gas">18</a></th>
+</tr>
+<tr>
+<th>&nbsp;<a href="http://www.wikipedia.org/wiki/Period_(periodic_table)" title="Period (periodic table)">Period</a></th>
+<td colspan="18" style="border:0px;"></td>
+</tr>
+<tr>
+<th><a href="http://www.wikipedia.org/wiki/Period_1_element" title="Period 1 element">1</a></th>
+
+<td id="H" title="Hydrogen: other nonmetals; primordial; gas;1.008;" style="text-align:center;height:100%; color:red; background:#a0ffa0; border:2px;" class="tile"       onmousedown="touchElementTile(this.innerHTML,this.title);">1<br>
+<a href="http://www.wikipedia.org/wiki/Hydrogen" title="Hydrogen">H</a></td>
+
+<td colspan="16" style="border:0px;"></td>
+<td title="Helium: noble gases; primordial; gas;4.0026;" style="text-align:center; color:red; background:#c0ffff; border:2px ;">2<br>
+<a href="http://www.wikipedia.org/wiki/Helium" title="Helium">He</a></td>
+</tr>
+<tr>
+<th><a href="http://www.wikipedia.org/wiki/Period_2_element" title="Period 2 element">2</a></th>
+
+
+<td title="Lithium: alkali metals; primordial; solid;6.94;" style="text-align:center;height:100%; color:black; background:#ff6666; border:2px;padding:0px;;" onmousedown="touchElementTile(this.innerHTML,this.title);"  class="tile">3<br>
+<a href="http://www.wikipedia.org/wiki/Lithium" title="Lithium">Li</a>
+</td>
+<td title="Beryllium: alkaline earth metals; primordial; solid;9.0122;" style="text-align:center;height:100%; color:black; background:#ffdead; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">4<br>
+<a href="http://www.wikipedia.org/wiki/Beryllium" title="Beryllium">Be</a></td>
+
+
+<td colspan="10" style="border:0px;"></td>
+<td title="Boron: metalloids; primordial; solid; 10.81;" style="text-align:center;height:100%; color:black; background:#cccc99; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">5<br>
+<a href="http://www.wikipedia.org/wiki/Boron" title="Boron">B</a></td>
+<td title="Carbon: other nonmetals; primordial; solid;12.011;" style="text-align:center;height:100%; color:black; background:#a0ffa0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">6<br>
+<a href="http://www.wikipedia.org/wiki/Carbon" title="Carbon">C</a></td>
+<td title="Nitrogen: other nonmetals; primordial; gas;14.007;" style="text-align:center;height:100%; color:red; background:#a0ffa0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">7<br>
+<a href="http://www.wikipedia.org/wiki/Nitrogen" title="Nitrogen">N</a></td>
+<td title="Oxygen: other nonmetals; primordial; gas;15.999;" style="text-align:center;height:100%; color:red; background:#a0ffa0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">8<br>
+<a href="http://www.wikipedia.org/wiki/Oxygen" title="Oxygen">O</a></td>
+<td title="Fluorine: halogens; primordial; gas;18.998;" style="text-align:center;height:100%; color:red; background:#ffff99; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">9<br>
+<a href="http://www.wikipedia.org/wiki/Fluorine" title="Fluorine">F</a></td>
+<td title="Neon: noble gases; primordial; gas;20.180;" style="text-align:center;height:100%; color:red; background:#c0ffff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">10<br>
+<a href="http://www.wikipedia.org/wiki/Neon" title="Neon">Ne</a></td>
+</tr>
+<tr>
+<th><a href="http://www.wikipedia.org/wiki/Period_3_element" title="Period 3 element">3</a></th>
+<td title="Sodium: alkali metals; primordial; solid;22.990;" style="text-align:center;height:100%; color:black; background:#ff6666; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">11<br>
+<a href="http://www.wikipedia.org/wiki/Sodium" title="Sodium">Na</a></td>
+<td title="Magnesium: alkaline earth metals; primordial; solid;24.305;" style="text-align:center;height:100%; color:black; background:#ffdead; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">12<br>
+<a href="http://www.wikipedia.org/wiki/Magnesium" title="Magnesium">Mg</a></td>
+<td colspan="10" style="border:0px;"></td>
+<td title="Aluminium: post-transition metals; primordial; solid;26.982;" style="text-align:center;height:100%; color:black; background:#cccccc; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">13<br>
+<a href="http://www.wikipedia.org/wiki/Aluminium" title="Aluminium">Al</a></td>
+<td title="Silicon: metalloids; primordial; solid;28.085;" style="text-align:center;height:100%; color:black; background:#cccc99; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">14<br>
+<a href="http://www.wikipedia.org/wiki/Silicon" title="Silicon">Si</a></td>
+<td title="Phosphorus: other nonmetals; primordial; solid;30.974;" style="text-align:center;height:100%; color:black; background:#a0ffa0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">15<br>
+<a href="http://www.wikipedia.org/wiki/Phosphorus" title="Phosphorus">P</a></td>
+<td title="Sulfur: other nonmetals; primordial; solid;32.06;" style="text-align:center;height:100%; color:black; background:#a0ffa0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">16<br>
+<a href="http://www.wikipedia.org/wiki/Sulfur" title="Sulfur">S</a></td>
+<td title="Chlorine: halogens; primordial; gas;35.45;" style="text-align:center;height:100%; color:red; background:#ffff99; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">17<br>
+<a href="http://www.wikipedia.org/wiki/Chlorine" title="Chlorine">Cl</a></td>
+<td title="Argon: noble gases; primordial; gas;39.948;" style="text-align:center;height:100%; color:red; background:#c0ffff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">18<br>
+<a href="http://www.wikipedia.org/wiki/Argon" title="Argon">Ar</a></td>
+</tr>
+<tr>
+<th><a href="http://www.wikipedia.org/wiki/Period_4_element" title="Period 4 element">4</a></th>
+<td title="Potassium: alkali metals; primordial; solid;39.098;" style="text-align:center;height:100%; color:black; background:#ff6666; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">19<br>
+<a href="http://www.wikipedia.org/wiki/Potassium" title="Potassium">K</a></td>
+<td title="Calcium: alkaline earth metals; primordial; solid;40.078;" style="text-align:center;height:100%; color:black; background:#ffdead; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">20<br>
+<a href="http://www.wikipedia.org/wiki/Calcium" title="Calcium">Ca</a></td>
+<td title="Scandium: transition metals; primordial; solid;44.956;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">21<br>
+<a href="http://www.wikipedia.org/wiki/Scandium" title="Scandium">Sc</a></td>
+<td title="Titanium: transition metals; primordial; solid;47.867;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">22<br>
+<a href="http://www.wikipedia.org/wiki/Titanium" title="Titanium">Ti</a></td>
+<td title="Vanadium: transition metals; primordial; solid;50.942;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">23<br>
+<a href="http://www.wikipedia.org/wiki/Vanadium" title="Vanadium">V</a></td>
+<td title="Chromium: transition metals; primordial; solid;51.996;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">24<br>
+<a href="http://www.wikipedia.org/wiki/Chromium" title="Chromium">Cr</a></td>
+<td title="Manganese: transition metals; primordial; solid;54.938;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">25<br>
+<a href="http://www.wikipedia.org/wiki/Manganese" title="Manganese">Mn</a></td>
+<td title="Iron: transition metals; primordial; solid;55.845;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">26<br>
+<a href="http://www.wikipedia.org/wiki/Iron" title="Iron">Fe</a></td>
+<td title="Cobalt: transition metals; primordial; solid;58.933;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">27<br>
+<a href="http://www.wikipedia.org/wiki/Cobalt" title="Cobalt">Co</a></td>
+<td title="Nickel: transition metals; primordial; solid;58.693;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">28<br>
+<a href="http://www.wikipedia.org/wiki/Nickel" title="Nickel">Ni</a></td>
+<td title="Copper: transition metals; primordial; solid;63.546;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">29<br>
+<a href="http://www.wikipedia.org/wiki/Copper" title="Copper">Cu</a></td>
+<td title="Zinc: transition metals; primordial; solid;65.38;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">30<br>
+<a href="http://www.wikipedia.org/wiki/Zinc" title="Zinc">Zn</a></td>
+<td title="Gallium: post-transition metals; primordial; solid;69.723;" style="text-align:center;height:100%; color:black; background:#cccccc; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">31<br>
+<a href="http://www.wikipedia.org/wiki/Gallium" title="Gallium">Ga</a></td>
+<td title="Germanium: metalloids; primordial; solid;72.63;" style="text-align:center;height:100%; color:black; background:#cccc99; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">32<br>
+<a href="http://www.wikipedia.org/wiki/Germanium" title="Germanium">Ge</a></td>
+<td title="Arsenic: metalloids; primordial; solid;74.922;" style="text-align:center;height:100%; color:black; background:#cccc99; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">33<br>
+<a href="http://www.wikipedia.org/wiki/Arsenic" title="Arsenic">As</a></td>
+<td title="Selenium: other nonmetals; primordial; solid;78.96;" style="text-align:center;height:100%; color:black; background:#a0ffa0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">34<br>
+<a href="http://www.wikipedia.org/wiki/Selenium" title="Selenium">Se</a></td>
+<td title="Bromine: halogens; primordial; liquid;79.904;" style="text-align:center;height:100%; color:green; background:#ffff99; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">35<br>
+<a href="http://www.wikipedia.org/wiki/Bromine" title="Bromine">Br</a></td>
+<td title="Krypton: noble gases; primordial; gas;83.798;" style="text-align:center;height:100%; color:red; background:#c0ffff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">36<br>
+<a href="http://www.wikipedia.org/wiki/Krypton" title="Krypton">Kr</a></td>
+</tr>
+<tr>
+<th><a href="http://www.wikipedia.org/wiki/Period_5_element" title="Period 5 element">5</a></th>
+<td title="Rubidium: alkali metals; primordial; solid;85.468;" style="text-align:center;height:100%; color:black; background:#ff6666; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">37<br>
+<a href="http://www.wikipedia.org/wiki/Rubidium" title="Rubidium">Rb</a></td>
+<td title="Strontium: alkaline earth metals; primordial; solid;87.62;" style="text-align:center;height:100%; color:black; background:#ffdead; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">38<br>
+<a href="http://www.wikipedia.org/wiki/Strontium" title="Strontium">Sr</a></td>
+<td title="Yttrium: transition metals; primordial; solid;88.906;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">39<br>
+<a href="http://www.wikipedia.org/wiki/Yttrium" title="Yttrium">Y</a></td>
+<td title="Zirconium: transition metals; primordial; solid;91.224;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">40<br>
+<a href="http://www.wikipedia.org/wiki/Zirconium" title="Zirconium">Zr</a></td>
+<td title="Niobium: transition metals; primordial; solid;92.906;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">41<br>
+<a href="http://www.wikipedia.org/wiki/Niobium" title="Niobium">Nb</a></td>
+<td title="Molybdenum: transition metals; primordial; solid;95.96;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">42<br>
+<a href="http://www.wikipedia.org/wiki/Molybdenum" title="Molybdenum">Mo</a></td>
+<td title="Technetium: transition metals; natural radio; solid;[97.91];" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px dashed #773300;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">43<br>
+<a href="http://www.wikipedia.org/wiki/Technetium" title="Technetium">Tc</a></td>
+<td title="Ruthenium: transition metals; primordial; solid;101.07;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">44<br>
+<a href="http://www.wikipedia.org/wiki/Ruthenium" title="Ruthenium">Ru</a></td>
+<td title="Rhodium: transition metals; primordial; solid;102.91;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">45<br>
+<a href="http://www.wikipedia.org/wiki/Rhodium" title="Rhodium">Rh</a></td>
+<td title="Palladium: transition metals; primordial; solid;106.42;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">46<br>
+<a href="http://www.wikipedia.org/wiki/Palladium" title="Palladium">Pd</a></td>
+<td title="Silver: transition metals; primordial; solid;107.87;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">47<br>
+<a href="http://www.wikipedia.org/wiki/Silver" title="Silver">Ag</a></td>
+<td title="Cadmium: transition metals; primordial; solid;112.41;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">48<br>
+<a href="http://www.wikipedia.org/wiki/Cadmium" title="Cadmium">Cd</a></td>
+<td title="Indium: post-transition metals; primordial; solid;114.82;" style="text-align:center;height:100%; color:black; background:#cccccc; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">49<br>
+<a href="http://www.wikipedia.org/wiki/Indium" title="Indium">In</a></td>
+<td title="Tin: post-transition metals; primordial; solid;118.71;" style="text-align:center;height:100%; color:black; background:#cccccc; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">50<br>
+<a href="http://www.wikipedia.org/wiki/Tin" title="Tin">Sn</a></td>
+<td title="Antimony: metalloids; primordial; solid;121.76;" style="text-align:center;height:100%; color:black; background:#cccc99; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">51<br>
+<a href="http://www.wikipedia.org/wiki/Antimony" title="Antimony">Sb</a></td>
+<td title="Tellurium: metalloids; primordial; solid;127.60;" style="text-align:center;height:100%; color:black; background:#cccc99; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">52<br>
+<a href="http://www.wikipedia.org/wiki/Tellurium" title="Tellurium">Te</a></td>
+<td title="Iodine: halogens; primordial; solid;126.90;" style="text-align:center;height:100%; color:black; background:#ffff99; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">53<br>
+<a href="http://www.wikipedia.org/wiki/Iodine" title="Iodine">I</a></td>
+<td title="Xenon: noble gases; primordial; gas;131.29;" style="text-align:center;height:100%; color:red; background:#c0ffff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">54<br>
+<a href="http://www.wikipedia.org/wiki/Xenon" title="Xenon">Xe</a></td>
+</tr>
+<tr>
+<th><a href="http://www.wikipedia.org/wiki/Period_6_element" title="Period 6 element">6</a></th>
+<td title="Caesium: alkali metals; primordial; solid;132.91;" style="text-align:center;height:100%; color:black; background:#ff6666; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">55<br>
+<a href="http://www.wikipedia.org/wiki/Caesium" title="Caesium">Cs</a></td>
+<td title="Barium: alkaline earth metals; primordial; solid;137.33;" style="text-align:center;height:100%; color:black; background:#ffdead; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">56<br>
+<a href="http://www.wikipedia.org/wiki/Barium" title="Barium">Ba</a></td>
+<td title="" style="text-align:center; color:black; background:#ffffff;; border:0px;">*<br></td>
+<td title="Hafnium: transition metals; primordial; solid;178.49;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">72<br>
+<a href="http://www.wikipedia.org/wiki/Hafnium" title="Hafnium">Hf</a></td>
+<td title="Tantalum: transition metals; primordial; solid;180.95;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">73<br>
+<a href="http://www.wikipedia.org/wiki/Tantalum" title="Tantalum">Ta</a></td>
+<td title="Tungsten: transition metals; primordial; solid;183.84;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">74<br>
+<a href="http://www.wikipedia.org/wiki/Tungsten" title="Tungsten">W</a></td>
+<td title="Rhenium: transition metals; primordial; solid;186.21;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">75<br>
+<a href="http://www.wikipedia.org/wiki/Rhenium" title="Rhenium">Re</a></td>
+<td title="Osmium: transition metals; primordial; solid;190.23;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">76<br>
+<a href="http://www.wikipedia.org/wiki/Osmium" title="Osmium">Os</a></td>
+<td title="Iridium: transition metals; primordial; solid;192.22;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">77<br>
+<a href="http://www.wikipedia.org/wiki/Iridium" title="Iridium">Ir</a></td>
+<td title="Platinum: transition metals; primordial; solid;195.08;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">78<br>
+<a href="http://www.wikipedia.org/wiki/Platinum" title="Platinum">Pt</a></td>
+<td title="Gold: transition metals; primordial; solid;196.97;" style="text-align:center;height:100%; color:black; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">79<br>
+<a href="http://www.wikipedia.org/wiki/Gold" title="Gold">Au</a></td>
+<td title="Mercury: transition metals; primordial; liquid;200.59;" style="text-align:center;height:100%; color:green; background:#ffc0c0; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">80<br>
+<a href="http://www.wikipedia.org/wiki/Mercury_(element)" title="Mercury (element)">Hg</a></td>
+<td title="Thallium: post-transition metals; primordial; solid;&gt;204.38;" style="text-align:center;height:100%; color:black; background:#cccccc; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">81<br>
+<a href="http://www.wikipedia.org/wiki/Thallium" title="Thallium">Tl</a></td>
+<td title="Lead: post-transition metals; primordial; solid;207.2;" style="text-align:center;height:100%; color:black; background:#cccccc; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">82<br>
+<a href="http://www.wikipedia.org/wiki/Lead" title="Lead">Pb</a></td>
+<td title="Bismuth: post-transition metals; primordial; solid;208.9;" style="text-align:center;height:100%; color:black; background:#cccccc; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">83<br>
+<a href="http://www.wikipedia.org/wiki/Bismuth" title="Bismuth">Bi</a></td>
+<td title="Polonium: post-transition metals; natural radio; solid;[208.98];" style="text-align:center;height:100%; color:black; background:#cccccc; border:2px dashed #773300;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">84<br>
+<a href="http://www.wikipedia.org/wiki/Polonium" title="Polonium">Po</a></td>
+<td title="Astatine: halogens; natural radio; solid;[209.99];" style="text-align:center;height:100%; color:black; background:#ffff99; border:2px dashed #773300;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">85<br>
+<a href="http://www.wikipedia.org/wiki/Astatine" title="Astatine">At</a></td>
+<td title="Radon: noble gases; natural radio; gas;[222.02];" style="text-align:center;height:100%; color:red; background:#c0ffff; border:2px dashed #773300;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">86<br>
+<a href="http://www.wikipedia.org/wiki/Radon" title="Radon">Rn</a></td>
+</tr>
+<tr>
+<th><a href="http://www.wikipedia.org/wiki/Period_7_element" title="Period 7 element">7</a></th>
+<td title="Francium: alkali metals; natural radio; solid;[223.02];" style="text-align:center;height:100%; color:black; background:#ff6666; border:2px dashed #773300;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">87<br>
+<a href="http://www.wikipedia.org/wiki/Francium" title="Francium">Fr</a></td>
+<td title="Radium: alkaline earth metals; natural radio; solid;[226.03];" style="text-align:center;height:100%; color:black; background:#ffdead; border:2px dashed #773300;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">88<br>
+<a href="http://www.wikipedia.org/wiki/Radium" title="Radium">Ra</a></td>
+<td title="" style="text-align:center; color:black; background:#ffffff;; border:0px;">**<br></td>
+<td title="Rutherfordium: transition metals; synthetic; unknown phase;[265.12];" style="text-align:center;height:100%; color:DimGrey; background:#ffc0c0; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">104<br>
+<a href="http://www.wikipedia.org/wiki/Rutherfordium" title="Rutherfordium">Rf</a></td>
+<td title="Dubnium: transition metals; synthetic; unknown phase;[268.13];" style="text-align:center;height:100%; color:DimGrey; background:#ffc0c0; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">105<br>
+<a href="http://www.wikipedia.org/wiki/Dubnium" title="Dubnium">Db</a></td>
+<td title="Seaborgium: transition metals; synthetic; unknown phase;[271.13];" style="text-align:center;height:100%; color:DimGrey; background:#ffc0c0; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">106<br>
+<a href="http://www.wikipedia.org/wiki/Seaborgium" title="Seaborgium">Sg</a></td>
+<td title="Bohrium: transition metals; synthetic; unknown phase;[270];" style="text-align:center;height:100%; color:DimGrey; background:#ffc0c0; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">107<br>
+<a href="http://www.wikipedia.org/wiki/Bohrium" title="Bohrium">Bh</a></td>
+<td title="Hassium: transition metals; synthetic; unknown phase;[277.15];" style="text-align:center;height:100%; color:DimGrey; background:#ffc0c0; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">108<br>
+<a href="http://www.wikipedia.org/wiki/Hassium" title="Hassium">Hs</a></td>
+<td title="Meitnerium: unknown chemical properties; synthetic; unknown phase;[276.15];" style="text-align:center;height:100%; color:DimGrey; background:#e8e8e8; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">109<br>
+<a href="http://www.wikipedia.org/wiki/Meitnerium" title="Meitnerium">Mt</a></td>
+<td title="Darmstadtium: unknown chemical properties; synthetic; unknown phase;[281.16];" style="text-align:center;height:100%; color:DimGrey; background:#e8e8e8; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">110<br>
+<a href="http://www.wikipedia.org/wiki/Darmstadtium" title="Darmstadtium">Ds</a></td>
+<td title="Roentgenium: unknown chemical properties; synthetic; unknown phase;[280.16];" style="text-align:center;height:100%; color:DimGrey; background:#e8e8e8; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">111<br>
+<a href="http://www.wikipedia.org/wiki/Roentgenium" title="Roentgenium">Rg</a></td>
+<td title="Copernicium: transition metals; synthetic; unknown phase;[285.17];" style="text-align:center;height:100%; color:DimGrey; background:#ffc0c0; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">112<br>
+<a href="http://www.wikipedia.org/wiki/Copernicium" title="Copernicium">Cn</a></td>
+<td title="Ununtrium: unknown chemical properties; synthetic; unknown phase;[284.18];" style="text-align:center;height:100%; color:DimGrey; background:#e8e8e8; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">113<br>
+<a href="http://www.wikipedia.org/wiki/Ununtrium" title="Ununtrium">Uut</a></td>
+<td title="Flerovium: unknown chemical properties; synthetic; unknown phase;[289.19];" style="text-align:center;height:100%; color:DimGrey; background:#e8e8e8; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">114<br>
+<a href="http://www.wikipedia.org/wiki/Flerovium" title="Flerovium">Fl</a></td>
+<td title="Ununpentium: unknown chemical properties; synthetic; unknown phase;[288.19];" style="text-align:center;height:100%; color:DimGrey; background:#e8e8e8; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">115<br>
+<a href="http://www.wikipedia.org/wiki/Ununpentium" title="Ununpentium">Uup</a></td>
+<td title="Livermorium: unknown chemical properties; synthetic; unknown phase;[293];" style="text-align:center;height:100%; color:DimGrey; background:#e8e8e8; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">116<br>
+<a href="http://www.wikipedia.org/wiki/Livermorium" title="Livermorium">Lv</a></td>
+<td title="Ununseptium: unknown chemical properties; synthetic; unknown phase;[294];" style="text-align:center;height:100%; color:DimGrey; background:#e8e8e8; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">117<br>
+<a href="http://www.wikipedia.org/wiki/Ununseptium" title="Ununseptium">Uus</a></td>
+<td title="Ununoctium: unknown chemical properties; synthetic; unknown phase;[294];" style="text-align:center;height:100%; color:DimGrey; background:#e8e8e8; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">118<br>
+<a href="http://www.wikipedia.org/wiki/Ununoctium" title="Ununoctium">Uuo</a></td>
+</tr>
+<tr>
+<td colspan="19" style="border:0px;"><br></td>
+</tr>
+<tr>
+<th colspan="3" style="text-align:right; padding-right:1em;">*&nbsp;<a href="http://www.wikipedia.org/wiki/Lanthanide" title="Lanthanide">Lanthanides</a></th>
+<td title="Lanthanum: lanthanoids; primordial; solid;138.91;" style="text-align:center;height:100%; color:black; background:#ffbfff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">57<br>
+<a href="http://www.wikipedia.org/wiki/Lanthanum" title="Lanthanum">La</a></td>
+<td title="Cerium: lanthanoids; primordial; solid;140.12;" style="text-align:center;height:100%; color:black; background:#ffbfff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">58<br>
+<a href="http://www.wikipedia.org/wiki/Cerium" title="Cerium">Ce</a></td>
+<td title="Praseodymium: lanthanoids; primordial; solid;140.91;" style="text-align:center;height:100%; color:black; background:#ffbfff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">59<br>
+<a href="http://www.wikipedia.org/wiki/Praseodymium" title="Praseodymium">Pr</a></td>
+<td title="Neodymium: lanthanoids; primordial; solid;144.24;" style="text-align:center;height:100%; color:black; background:#ffbfff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">60<br>
+<a href="http://www.wikipedia.org/wiki/Neodymium" title="Neodymium">Nd</a></td>
+<td title="Promethium: lanthanoids; natural radio; solid;[144.91];" style="text-align:center;height:100%; color:black; background:#ffbfff; border:2px dashed #773300;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">61<br>
+<a href="http://www.wikipedia.org/wiki/Promethium" title="Promethium">Pm</a></td>
+<td title="Samarium: lanthanoids; primordial; solid;150.36;" style="text-align:center;height:100%; color:black; background:#ffbfff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">62<br>
+<a href="http://www.wikipedia.org/wiki/Samarium" title="Samarium">Sm</a></td>
+<td title="Europium: lanthanoids; primordial; solid;151.96;" style="text-align:center;height:100%; color:black; background:#ffbfff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">63<br>
+<a href="http://www.wikipedia.org/wiki/Europium" title="Europium">Eu</a></td>
+<td title="Gadolinium: lanthanoids; primordial; solid;157.25;" style="text-align:center;height:100%; color:black; background:#ffbfff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">64<br>
+<a href="http://www.wikipedia.org/wiki/Gadolinium" title="Gadolinium">Gd</a></td>
+<td title="Terbium: lanthanoids; primordial; solid;158.93;" style="text-align:center;height:100%; color:black; background:#ffbfff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">65<br>
+<a href="http://www.wikipedia.org/wiki/Terbium" title="Terbium">Tb</a></td>
+<td title="Dysprosium: lanthanoids; primordial; solid;162.50;" style="text-align:center;height:100%; color:black; background:#ffbfff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">66<br>
+<a href="http://www.wikipedia.org/wiki/Dysprosium" title="Dysprosium">Dy</a></td>
+<td title="Holmium: lanthanoids; primordial; solid;164.93;" style="text-align:center;height:100%; color:black; background:#ffbfff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">67<br>
+<a href="http://www.wikipedia.org/wiki/Holmium" title="Holmium">Ho</a></td>
+<td title="Erbium: lanthanoids; primordial; solid;167.26;" style="text-align:center;height:100%; color:black; background:#ffbfff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">68<br>
+<a href="http://www.wikipedia.org/wiki/Erbium" title="Erbium">Er</a></td>
+<td title="Thulium: lanthanoids; primordial; solid;168.93;" style="text-align:center;height:100%; color:black; background:#ffbfff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">69<br>
+<a href="http://www.wikipedia.org/wiki/Thulium" title="Thulium">Tm</a></td>
+<td title="Ytterbium: lanthanoids; primordial; solid;173.05;" style="text-align:center;height:100%; color:black; background:#ffbfff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">70<br>
+<a href="http://www.wikipedia.org/wiki/Ytterbium" title="Ytterbium">Yb</a></td>
+<td title="Lutetium: lanthanoids; primordial; solid;174.9668;" style="text-align:center;height:100%; color:black; background:#ffbfff; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">71<br>
+<a href="http://www.wikipedia.org/wiki/Lutetium" title="Lutetium">Lu</a></td>
+<td></td>
+</tr>
+<tr>
+<th colspan="3" style="text-align:right; padding-right:1em;">**&nbsp;<a href="http://www.wikipedia.org/wiki/Actinide" title="Actinide">Actinides</a></th>
+<td title="Actinium: actinoids; natural radio; solid;[227.03];" style="text-align:center;height:100%; color:black; background:#ff99cc; border:2px dashed #773300;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">89<br>
+<a href="http://www.wikipedia.org/wiki/Actinium" title="Actinium">Ac</a></td>
+<td title="Thorium: actinoids; primordial; solid;232.04;" style="text-align:center;height:100%; color:black; background:#ff99cc; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">90<br>
+<a href="http://www.wikipedia.org/wiki/Thorium" title="Thorium">Th</a></td>
+<td title="Protactinium: actinoids; natural radio; solid;231.04;" style="text-align:center;height:100%; color:black; background:#ff99cc; border:2px dashed #773300;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">91<br>
+<a href="http://www.wikipedia.org/wiki/Protactinium" title="Protactinium">Pa</a></td>
+<td title="Uranium: actinoids; primordial; solid;238.03;" style="text-align:center;height:100%; color:black; background:#ff99cc; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">92<br>
+<a href="http://www.wikipedia.org/wiki/Uranium" title="Uranium">U</a></td>
+<td title="Neptunium: actinoids; natural radio; solid;[237.05];" style="text-align:center;height:100%; color:black; background:#ff99cc; border:2px dashed #773300;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">93<br>
+<a href="http://www.wikipedia.org/wiki/Neptunium" title="Neptunium">Np</a></td>
+<td title="Plutonium: actinoids; primordial; solid;[244.06];" style="text-align:center;height:100%; color:black; background:#ff99cc; border:2px ;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">94<br>
+<a href="http://www.wikipedia.org/wiki/Plutonium" title="Plutonium">Pu</a></td>
+<td title="Americium: actinoids; natural radio; solid;[243.06];" style="text-align:center;height:100%; color:black; background:#ff99cc; border:2px dashed #773300;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">95<br>
+<a href="http://www.wikipedia.org/wiki/Americium" title="Americium">Am</a></td>
+<td title="Curium: actinoids; natural radio; solid;[247.07];" style="text-align:center;height:100%; color:black; background:#ff99cc; border:2px dashed #773300;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">96<br>
+<a href="http://www.wikipedia.org/wiki/Curium" title="Curium">Cm</a></td>
+<td title="Berkelium: actinoids; natural radio; solid;[247.07];" style="text-align:center;height:100%; color:black; background:#ff99cc; border:2px dashed #773300;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">97<br>
+<a href="http://www.wikipedia.org/wiki/Berkelium" title="Berkelium">Bk</a></td>
+<td title="Californium: actinoids; natural radio; solid;[251.08];" style="text-align:center;height:100%; color:black; background:#ff99cc; border:2px dashed #773300;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">98<br>
+<a href="http://www.wikipedia.org/wiki/Californium" title="Californium">Cf</a></td>
+<td title="Einsteinium: actinoids; synthetic; solid;[252.08];" style="text-align:center;height:100%; color:black; background:#ff99cc; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">99<br>
+<a href="http://www.wikipedia.org/wiki/Einsteinium" title="Einsteinium">Es</a></td>
+<td title="Fermium: actinoids; synthetic; solid;[257.10];" style="text-align:center;height:100%; color:black; background:#ff99cc; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">100<br>
+<a href="http://www.wikipedia.org/wiki/Fermium" title="Fermium">Fm</a></td>
+<td title="Mendelevium: actinoids; synthetic; solid;[258.10];" style="text-align:center;height:100%; color:black; background:#ff99cc; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">101<br>
+<a href="http://www.wikipedia.org/wiki/Mendelevium" title="Mendelevium">Md</a></td>
+<td title="Nobelium: actinoids; synthetic; solid;[259.10];" style="text-align:center;height:100%; color:black; background:#ff99cc; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">102<br>
+<a href="http://www.wikipedia.org/wiki/Nobelium" title="Nobelium">No</a></td>
+<td title="Lawrencium: actinoids; synthetic; solid;262;" style="text-align:center;height:100%; color:black; background:#ff99cc; border:2px dotted #4499ff;" class="tile" onmousedown="touchElementTile(this.innerHTML,this.title);">103<br>
+<a href="http://www.wikipedia.org/wiki/Lawrencium" title="Lawrencium">Lr</a></td>
+</tr>
+
+<tr>
+<td colspan="19" style="border:0px;">
+<table cellspacing="0" cellpadding="0" border="1" class="wikitable" style="width:100%; font-size:85%; line-height:100%; text-align:center; margin:0;">
+<tbody><tr>
+<td colspan="2" style="border:0px;">
+<div style="margin:0; text-align:center; width:100%;">
+<p><b>Categories and subcategories in the metal–nonmetal range</b></p>
+<table cellpadding="3" border="2" style="background:#f8f8f8; border:1px solid #a9a9a9; border-collapse:collapse; margin:auto; width:100%;">
+<tbody><tr>
+<td colspan="6" style="background:#f0f0f0;"><a href="http://www.wikipedia.org/wiki/Metal" title="Metal">Metal</a></td>
+<td rowspan="3" style="background:#cccc99;"><a href="http://www.wikipedia.org/wiki/Metalloid" title="Metalloid">Metalloid</a></td>
+<td colspan="3" style="background:#f0f0f0;"><a href="http://www.wikipedia.org/wiki/Nonmetal" title="Nonmetal">Nonmetal</a></td>
+<td rowspan="3" style="background:#e8e8e8;">Unknown<br>
+chemical<br>
+properties</td>
+</tr>
+<tr>
+<td rowspan="2" style="background:#ff6666;"><a href="http://www.wikipedia.org/wiki/Alkali_metal" title="Alkali metal">Alkali<br>
+metal</a></td>
+<td rowspan="2" style="background:#ffdead;"><a href="http://www.wikipedia.org/wiki/Alkaline_earth_metal" title="Alkaline earth metal">Alkaline<br>
+earth metal</a></td>
+<td colspan="2" style="background:#f0f0f0;"><span class="nowrap"><a href="http://www.wikipedia.org/wiki/Inner_transition_metal" title="Inner transition metal" class="mw-redirect">Inner transition metal</a></span></td>
+<td rowspan="2" style="background:#ffc0c0;"><a href="http://www.wikipedia.org/wiki/Transition_metal" title="Transition metal">Transition<br>
+metal</a></td>
+<td rowspan="2" style="background:#cccccc;"><a href="http://www.wikipedia.org/wiki/Post-transition_metal" title="Post-transition metal">Post-transition<br>
+metal</a></td>
+<td rowspan="2" style="background:#a0ffa0;">Other<br>
+<a href="http://www.wikipedia.org/wiki/Nonmetal" title="Nonmetal">nonmetal</a></td>
+<td rowspan="2" style="background:#ffff99;"><a href="http://www.wikipedia.org/wiki/Halogen" title="Halogen">Halogen</a></td>
+<td rowspan="2" style="background:#c0ffff;"><a href="http://www.wikipedia.org/wiki/Noble_gas" title="Noble gas">Noble<br>
+gas</a></td>
+</tr>
+<tr>
+<td style="background:#ffbfff;"><a href="http://www.wikipedia.org/wiki/Lanthanide" title="Lanthanide">Lanthanide</a></td>
+<td style="background:#ff99cc;"><a href="http://www.wikipedia.org/wiki/Actinide" title="Actinide">Actinide</a></td>
+</tr>
+</tbody></table>
+</div>
+</td>
+</tr>
+<tr>
+<td width="50%">
+<table width="100%" cellspacing="5">
+<caption><b>Color of the atomic number</b> shows <b><a href="http://www.wikipedia.org/wiki/State_of_matter" title="State of matter">state of matter</a></b></caption>
+<tbody><tr>
+<td colspan="4" style="text-align:center;">(at <a href="http://www.wikipedia.org/wiki/Standard_conditions_for_temperature_and_pressure" title="Standard conditions for temperature and pressure">standard conditions</a>: 0&nbsp;°C and 1&nbsp;atm):</td>
+</tr>
+<tr>
+<th width="20%" style="color:black; background:#eee;">black=<a href="http://www.wikipedia.org/wiki/Solid" title="Solid"><span style="color:black">Solid</span></a></th>
+<th width="20%" style="color:green; background:#eee;">green=<a href="http://www.wikipedia.org/wiki/Liquid" title="Liquid"><span style="color:green">Liquid</span></a></th>
+<th width="20%" style="color:red; background:#eee;">red=<a href="http://www.wikipedia.org/wiki/Gas" title="Gas"><span style="color:red">Gas</span></a></th>
+<th width="20%" style="color:DimGrey; background:#eee;">grey=Unknown</th>
+</tr>
+</tbody></table>
+</td>
+<td width="50%">
+<table width="100%" cellspacing="5">
+<caption><b>Border</b> shows <b>natural occurrence</b>:</caption>
+<tbody><tr>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th width="20%" style="border:2px ; background:#eee;"><a href="http://www.wikipedia.org/wiki/Primordial_element" title="Primordial element" class="mw-redirect">Primordial</a></th>
+<th width="20%" style="border:2px dashed #773300; background:#eee;"><a href="http://www.wikipedia.org/wiki/Trace_radioisotope" title="Trace radioisotope">From decay</a></th>
+<th width="20%" style="border:2px dotted #4499ff; background:#eee;"><a href="http://www.wikipedia.org/wiki/Synthetic_element" title="Synthetic element">Synthetic</a></th>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+	
+					
+			</div>
+		</div>
+	</div>
+	
+				
+						<!-- Dialog -->
+						<!--
+	<div id="#dialog" title="basic dialog" style="background-color:#76C0E7;height:30%;width:60%;left:30%;top:-60%;position:relative;">
+		<p style="">
+		This is a dialog;
+
+		</p>
+	</div>
+	-->
+	<div class="tile" id="element_wiki" style="top:-80%;left:20%;width:80%;height:40%;background-color:#76C0E7;visibility:hidden;">
+		<div class="tile-content" style="width:100%;height:100%;">
+		
+			<iframe id="wiki_frame" style="width:90%;height:100%;">
+			</iframe>
+			
+			<button class="default" style="position:relative;left:90%;top:-100%;height:100%;background-color:#38A47B;" onmousedown="hideWiki();">
+				return
+			</button> 
+		</div>
+	</div>
+	
+	
+	
+		
+	<div style="top:-125%;left:26%;height:16%;width:24%;background-color:#2D89EF;position:relative;" class="tile">
+		<div id:"element-tile"="" class="tile-content">
+			<h2>Element:</h2>
+			<h1 style="margin-top:16%;margin-left:0%;font-size:450%" id="element-name-abbreviation"> C </h1>
+        
+            <div style="left:30%;top:-40%" class="tile-content">
+            	<h3 id="atomic-number">1</h3>
+            	<h4 style="margin-top:2%;" id="atomic-weight">12.011</h4>
+            </div>               
+            
+            <!-- Einsteinium: actinoids; synthetic; solid;[252.08]; -->
+            <!-- Carbon: other nonmetals; primordial; solid;12.011; -->
+            <div class="tile-content" style="top:-165%;left:60%;width:50%;">
+	            <h4 id="element-full-name" style="margin-left:-20%;position:relative;">Carbon</h4>
+	            <h5 id="element-type">Other Nonmetals</h5>
+	            <h5 id="element-found">primordial</h5>
+	            <h5 id="element-state">solid</h5>	            
+            </div>
+            <button style="background-color:#FF3D57;margin-top:-115%;position:relative;" onmousedown="touchWikiButton();">
+            wiki
+            </button>
+		</div>
+	</div>
+	
+	<div style="top:-125%;left:25%;width:28%;height:16%;background-color:#1570A6;position:relative;" id="chemical-equation-balancer" class="tile">
+		<div class="tile-content">
+		<form>
+		<table class="noborder">
+			<tbody><tr>
+				<td style="width: 400%; height: 70%;">
+					<input value="H2+O2=H2O" id="inputFormula" style="width:80%;top:-1%;font-size:150%;color:black;">
+					<input type="button" value="Balance" style="left:3%;top:0%;background-color:#FF3D57;color:white;" id="balance_button" onclick="balance(document.getElementById('inputFormula').value)">
+				</td>
+			</tr>
+			
+			<tr style="width: 100%; height: 40%;">
+				<td>
+				<h2 style="position:relative;font-family:serif;" id="balanced"></h2>
+				<h2 style="height: -10%; width: 120%;font-size:60%" id="message"></h2>
+				</td>
+			</tr>
+			<tr>
+				<td><h2 style="border:0px;font-size:100%;" id="codeOutput">&nbsp;</h2></td>
+			</tr>
+	</tbody></table>
+</form>
+		
+		</div>
+	
+	</div>
+	
+		
+	
+	
+	
+	
+	<!--
+	<iframe id="tryIFrame" src="./element/H.htm">Here</iframe>
+	-->
+ 
+
+</div>
+
+</body></html>
