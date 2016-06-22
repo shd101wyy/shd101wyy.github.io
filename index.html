@@ -72,7 +72,7 @@
 .markdown-preview-enhanced h1, .markdown-preview-enhanced h2, .markdown-preview-enhanced h3, .markdown-preview-enhanced h4, .markdown-preview-enhanced h5, .markdown-preview-enhanced h6 { line-height: 1.2; margin-top: 1em; margin-bottom: 16px; color: rgb(255, 255, 255); }
 .markdown-preview-enhanced[data-use-github-style="true"] h1, .markdown-preview-enhanced[data-use-github-style="true"] h2, .markdown-preview-enhanced[data-use-github-style="true"] h3, .markdown-preview-enhanced[data-use-github-style="true"] h4, .markdown-preview-enhanced[data-use-github-style="true"] h5, .markdown-preview-enhanced[data-use-github-style="true"] h6 { color: rgb(85, 85, 85); }
 .markdown-preview-enhanced h1 { font-size: 2.4em; font-weight: 300; padding-bottom: 0.3em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(75, 83, 98); }
-.markdown-preview-enhanced h2 { font-size: 1.8em; font-weight: 400; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(75, 83, 98); }
+.markdown-preview-enhanced h2 { font-size: 1.8em; font-weight: 400; padding-bottom: 0.3em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(75, 83, 98); }
 .markdown-preview-enhanced h3 { font-size: 1.5em; font-weight: 500; }
 .markdown-preview-enhanced h4 { font-size: 1.2em; font-weight: 600; }
 .markdown-preview-enhanced h5 { font-size: 1.1em; font-weight: 600; }
@@ -112,9 +112,8 @@
 .markdown-preview-enhanced pre > code { padding: 0px; margin: 0px; word-break: normal; white-space: pre; border: 0px; font-size: 0.85em !important; background: transparent; }
 .markdown-preview-enhanced .highlight { margin-bottom: 16px; }
 .markdown-preview-enhanced .highlight pre, .markdown-preview-enhanced pre { font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; padding: 16px; overflow: auto; line-height: 1.45; color: rgb(171, 178, 191); border: rgb(75, 83, 98); border-radius: 3px; font-size: 0.85em !important; background-color: rgb(49, 54, 63); }
-.markdown-preview-enhanced[data-use-github-style="true"] .highlight pre, .markdown-preview-enhanced[data-use-github-style="true"] pre, .markdown-preview-enhanced[data-use-github-style="true"] pre.editor-colors { color: rgb(85, 85, 85); background-color: rgb(247, 247, 247); }
 .markdown-preview-enhanced .highlight pre { margin-bottom: 0px; word-break: normal; }
-.markdown-preview-enhanced pre { word-wrap: normal; }
+.markdown-preview-enhanced pre { word-wrap: break-word; }
 .markdown-preview-enhanced pre .section { opacity: 1; }
 .markdown-preview-enhanced pre code, .markdown-preview-enhanced pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
 .markdown-preview-enhanced pre code::before, .markdown-preview-enhanced pre tt::before, .markdown-preview-enhanced pre code::after, .markdown-preview-enhanced pre tt::after { content: normal; }
@@ -168,7 +167,7 @@
 .markdown-preview-enhanced .github-syntax-theme pre.editor-colors.is-focused .cursor, .markdown-preview-enhanced .github-syntax-theme .host(.is-focused) .cursor { border-color: rgb(0, 0, 0); }
 .markdown-preview-enhanced .github-syntax-theme pre.editor-colors.is-focused .selection .region, .markdown-preview-enhanced .github-syntax-theme .host(.is-focused) .selection .region { background-color: rgba(178, 215, 255, 0.4); }
 .markdown-preview-enhanced .github-syntax-theme pre.editor-colors.is-focused .line-number.cursor-line-no-selection, .markdown-preview-enhanced .github-syntax-theme pre.editor-colors.is-focused .line.cursor-line, .markdown-preview-enhanced .github-syntax-theme .host(.is-focused) .line-number.cursor-line-no-selection, .markdown-preview-enhanced .github-syntax-theme .host(.is-focused) .line.cursor-line { background-color: rgba(240, 240, 240, 0.498039); }
-.markdown-preview-enhanced .github-syntax-theme .comment { color: rgb(176, 176, 176); }
+.markdown-preview-enhanced .github-syntax-theme .comment, .markdown-preview-enhanced .github-syntax-theme .punctuation.comment { color: rgb(176, 176, 176); }
 .markdown-preview-enhanced .github-syntax-theme .string, .markdown-preview-enhanced .github-syntax-theme .string .constant.character.escape { color: rgb(34, 115, 195); }
 .markdown-preview-enhanced .github-syntax-theme .constant.numeric { color: rgb(0, 153, 204); }
 .markdown-preview-enhanced .github-syntax-theme .constant.language { color: rgb(0, 153, 204); }
@@ -238,7 +237,7 @@
 .markdown-preview-enhanced[data-use-github-syntax-theme="true"] pre.editor-colors.is-focused .cursor, .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .host(.is-focused) .cursor { border-color: rgb(0, 0, 0) !important; }
 .markdown-preview-enhanced[data-use-github-syntax-theme="true"] pre.editor-colors.is-focused .selection .region, .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .host(.is-focused) .selection .region { background-color: rgba(178, 215, 255, 0.4) !important; }
 .markdown-preview-enhanced[data-use-github-syntax-theme="true"] pre.editor-colors.is-focused .line-number.cursor-line-no-selection, .markdown-preview-enhanced[data-use-github-syntax-theme="true"] pre.editor-colors.is-focused .line.cursor-line, .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .host(.is-focused) .line-number.cursor-line-no-selection, .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .host(.is-focused) .line.cursor-line { background-color: rgba(240, 240, 240, 0.498039) !important; }
-.markdown-preview-enhanced[data-use-github-syntax-theme="true"] .comment { color: rgb(176, 176, 176) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme="true"] .comment, .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .punctuation.comment { color: rgb(176, 176, 176) !important; }
 .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .string, .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .string .constant.character.escape { color: rgb(34, 115, 195) !important; }
 .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .constant.numeric { color: rgb(0, 153, 204) !important; }
 .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .constant.language { color: rgb(0, 153, 204) !important; }
@@ -295,6 +294,13 @@
 .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .meta.tag.template.angular { color: rgb(34, 115, 195) !important; }
 .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .meta.tag.template.angular .punctuation.definition.block.begin.angular, .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .meta.tag.template.angular .punctuation.definition.block.end.angular, .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .meta.tag.template.angular .meta.brace.curly.js { color: rgb(173, 28, 93) !important; }
 .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .entity.other.attribute-name.html.angular, .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .meta.attribute.html.angular { color: rgb(133, 103, 181) !important; }
+.markdown-themeable-pdf-page-break {
+  border-top: 2px dotted #0098ff;
+}
+.markdown-themeable-pdf-page-break span {
+  opacity: .35;
+}
+
 .bracket-matcher .region {
   border-bottom: 1px dotted lime;
   position: absolute;
@@ -678,4 +684,8 @@ pre.editor-colors .fold-marker:after,
 <li><p class="line" data-line="9"><a href="https://github.com/shd101wyy">github</a></p></li>
 </ul>
 <p class="line" data-line="11">This website is built for nothing</p>
+<blockquote>
+<p class="line" data-line="14"><a href="2016-6-22">2016-6-22</a></p>
+</blockquote>
+<p class="line" data-line="16">&#x4ECA;&#x5929;&#x6211;&#x53D1;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x53EB;&#x505A; <a href="http://blog.sina.com.cn/s/blog_891c91150102vwh1.html">era&#x7CFB;&#x5217;</a> &#x7684;&#x6E38;&#x620F;&#x7C7B;&#x578B;&#xFF0C;&#x8C8C;&#x4F3C;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x6709;&#x610F;&#x601D;&#x7684; <strong>mud</strong> &#x7C7B;&#x578B;&#x6E38;&#x620F;&#x3002;</p>
  </body> </html>
