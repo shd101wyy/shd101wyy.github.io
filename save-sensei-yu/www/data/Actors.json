@@ -1,0 +1,5 @@
+[
+null,
+{"id":1,"battlerName":"yiyi","characterIndex":0,"characterName":"yiyi","classId":1,"equips":[1,1,2,3,0],"faceIndex":0,"faceName":"yiyi","traits":[],"initialLevel":1,"maxLevel":99,"name":"Yiyi Wang","nickname":"一祎","note":"","profile":""},
+{"id":2,"battlerName":"Actor3_5","characterIndex":4,"characterName":"Actor3","classId":2,"equips":[2,1,2,3,0],"faceIndex":4,"faceName":"Actor3","traits":[],"initialLevel":1,"maxLevel":99,"name":"Aaron Lin","nickname":"Aaron","note":"","profile":""}
+]
