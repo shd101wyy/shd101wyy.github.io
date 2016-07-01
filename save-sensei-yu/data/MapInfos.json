@@ -1,6 +1,10 @@
 [
 null,
-{"id":1,"expanded":true,"name":"MAP001","order":1,"parentId":0,"scrollX":819,"scrollY":503.5},
-{"id":2,"expanded":true,"name":"房间内","order":2,"parentId":1,"scrollX":819,"scrollY":479},
-{"id":3,"expanded":false,"name":"House 2","order":3,"parentId":2,"scrollX":819,"scrollY":503.5}
+{"id":1,"expanded":true,"name":"MAP001","order":1,"parentId":0,"scrollX":1404,"scrollY":863.1428571428571},
+{"id":2,"expanded":true,"name":"房间内","order":2,"parentId":1,"scrollX":1404,"scrollY":863.1428571428571},
+{"id":3,"expanded":false,"name":"forest","order":3,"parentId":1,"scrollX":1404,"scrollY":863.1428571428571},
+{"id":4,"expanded":false,"name":"fall","order":5,"parentId":1,"scrollX":816,"scrollY":800},
+{"id":5,"expanded":false,"name":"unknow room","order":4,"parentId":1,"scrollX":832,"scrollY":640},
+{"id":6,"expanded":false,"name":"dungeon","order":6,"parentId":1,"scrollX":1404,"scrollY":863.1428571428571},
+{"id":7,"expanded":true,"name":"房间内-战斗以后","order":7,"parentId":1,"scrollX":1404,"scrollY":863.1428571428571}
 ]
