@@ -1,20 +1,23 @@
-<!DOCTYPE html> <html> <head> <title>index.md</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <style> .markdown-preview-enhanced pre, .markdown-preview-enhanced .host { color: rgb(171, 178, 191); background-color: rgb(40, 44, 52); }
-.markdown-preview-enhanced pre .line.cursor-line, .markdown-preview-enhanced .host .line.cursor-line { background-color: rgba(153, 187, 255, 0.0392157); }
-.markdown-preview-enhanced pre .invisible, .markdown-preview-enhanced .host .invisible { color: rgb(171, 178, 191); }
-.markdown-preview-enhanced pre .cursor, .markdown-preview-enhanced .host .cursor { border-left-width: 2px; border-left-style: solid; border-left-color: rgb(82, 139, 255); }
-.markdown-preview-enhanced pre .selection .region, .markdown-preview-enhanced .host .selection .region { background-color: rgb(62, 68, 81); }
-.markdown-preview-enhanced pre .bracket-matcher .region, .markdown-preview-enhanced .host .bracket-matcher .region { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(82, 139, 255); box-sizing: border-box; }
-.markdown-preview-enhanced pre .invisible-character, .markdown-preview-enhanced .host .invisible-character { color: rgba(171, 178, 191, 0.14902); }
-.markdown-preview-enhanced pre .indent-guide, .markdown-preview-enhanced .host .indent-guide { color: rgba(171, 178, 191, 0.14902); }
-.markdown-preview-enhanced pre .wrap-guide, .markdown-preview-enhanced .host .wrap-guide { background-color: rgba(171, 178, 191, 0.14902); }
-.markdown-preview-enhanced pre .gutter .line-number, .markdown-preview-enhanced .host .gutter .line-number { color: rgb(99, 109, 131); -webkit-font-smoothing: antialiased; }
-.markdown-preview-enhanced pre .gutter .line-number.cursor-line, .markdown-preview-enhanced .host .gutter .line-number.cursor-line { color: rgb(171, 178, 191); background-color: rgb(44, 49, 58); }
-.markdown-preview-enhanced pre .gutter .line-number.cursor-line-no-selection, .markdown-preview-enhanced .host .gutter .line-number.cursor-line-no-selection { background-color: transparent; }
-.markdown-preview-enhanced pre .gutter .line-number .icon-right, .markdown-preview-enhanced .host .gutter .line-number .icon-right { color: rgb(171, 178, 191); }
-.markdown-preview-enhanced pre .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before, .markdown-preview-enhanced .host .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before { bottom: -3px; }
-.markdown-preview-enhanced pre .gutter:not(.git-diff-icon) .line-number.git-line-removed::after, .markdown-preview-enhanced .host .gutter:not(.git-diff-icon) .line-number.git-line-removed::after { content: ""; position: absolute; left: 0px; bottom: 0px; width: 25px; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: rgba(224, 82, 82, 0.498039); pointer-events: none; }
-.markdown-preview-enhanced pre .gutter .line-number.folded, .markdown-preview-enhanced .host .gutter .line-number.folded, .markdown-preview-enhanced pre .gutter .line-number::after, .markdown-preview-enhanced .host .gutter .line-number::after, .markdown-preview-enhanced pre .fold-marker::after, .markdown-preview-enhanced .host .fold-marker::after { color: rgb(171, 178, 191); }
-.markdown-preview-enhanced { font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; font-size: 16px; line-height: 1.6; color: rgb(171, 178, 191); overflow: auto; margin: 10px 13px; padding: 2em; background-color: rgb(40, 44, 52); }
+<!DOCTYPE html> <html> <head> <title>index</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <style> .markdown-preview-enhanced pre, .markdown-preview-enhanced .host { color: rgb(248, 248, 242); background-color: rgb(40, 40, 40); }
+.markdown-preview-enhanced pre .invisible-character, .markdown-preview-enhanced .host .invisible-character { color: rgba(197, 200, 198, 0.2); }
+.markdown-preview-enhanced pre .indent-guide, .markdown-preview-enhanced .host .indent-guide { color: rgba(255, 255, 255, 0.14902); }
+.markdown-preview-enhanced pre .wrap-guide, .markdown-preview-enhanced .host .wrap-guide { background-color: rgba(255, 255, 255, 0.0980392); }
+.markdown-preview-enhanced pre .gutter, .markdown-preview-enhanced .host .gutter { background-color: rgb(48, 48, 48); }
+.markdown-preview-enhanced pre .line-number.cursor-line-no-selection, .markdown-preview-enhanced .host .line-number.cursor-line-no-selection { background-color: rgb(73, 72, 62); }
+.markdown-preview-enhanced pre .invisible, .markdown-preview-enhanced .host .invisible { color: rgb(248, 248, 242); }
+.markdown-preview-enhanced pre .cursor, .markdown-preview-enhanced .host .cursor { border-color: rgb(248, 248, 240); }
+.markdown-preview-enhanced pre .selection .region, .markdown-preview-enhanced .host .selection .region { background-color: rgb(73, 72, 62); }
+.markdown-preview-enhanced pre .search-results .marker .region, .markdown-preview-enhanced .host .search-results .marker .region { border: 1px solid rgb(136, 136, 136); background-color: transparent; }
+.markdown-preview-enhanced pre .search-results .marker.current-result .region, .markdown-preview-enhanced .host .search-results .marker.current-result .region { border: 1px solid rgb(255, 255, 255); }
+.markdown-preview-enhanced pre .gfm .markup.heading, .markdown-preview-enhanced .host .gfm .markup.heading { color: rgb(166, 226, 46); font-weight: bold; }
+.markdown-preview-enhanced pre .gfm .markup.underline, .markdown-preview-enhanced .host .gfm .markup.underline { color: rgb(230, 219, 116); text-decoration: underline; }
+.markdown-preview-enhanced pre .gfm .bold, .markdown-preview-enhanced .host .gfm .bold { font-weight: bold; }
+.markdown-preview-enhanced pre .gfm .italic, .markdown-preview-enhanced .host .gfm .italic { font-style: italic; }
+.markdown-preview-enhanced pre .gfm .raw, .markdown-preview-enhanced .host .gfm .raw { color: rgb(102, 217, 239); }
+.markdown-preview-enhanced pre .gfm .variable.list, .markdown-preview-enhanced .host .gfm .variable.list { color: rgb(249, 38, 114); font-weight: bold; }
+.markdown-preview-enhanced pre .gfm .link, .markdown-preview-enhanced .host .gfm .link { color: rgb(204, 204, 204); }
+.markdown-preview-enhanced pre .gfm .link .entity, .markdown-preview-enhanced .host .gfm .link .entity { color: rgb(174, 129, 255); }
+.markdown-preview-enhanced { font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; font-size: 16px; line-height: 1.6; color: rgb(248, 248, 242); overflow: auto; margin: 10px 13px; padding: 2em; background-color: rgb(40, 40, 40); }
 .markdown-preview-enhanced .mermaid .label { color: rgb(51, 51, 51); }
 .markdown-preview-enhanced .node rect, .markdown-preview-enhanced .node circle, .markdown-preview-enhanced .node ellipse, .markdown-preview-enhanced .node polygon { fill: rgb(236, 236, 255); stroke: rgb(204, 204, 255); stroke-width: 1px; }
 .markdown-preview-enhanced .edgePath .path { stroke: rgb(51, 51, 51); }
@@ -69,10 +72,11 @@
 .markdown-preview-enhanced div.mermaidTooltip { position: absolute; text-align: center; max-width: 200px; padding: 2px; font-family: 'trebuchet ms', verdana, arial; font-size: 12px; border: 1px solid rgb(170, 170, 51); border-radius: 2px; pointer-events: none; z-index: 100; background: rgb(255, 255, 222); }
 .markdown-preview-enhanced[data-use-github-style="true"] { color: rgb(85, 85, 85); background-color: rgb(255, 255, 255); }
 .markdown-preview-enhanced > :first-child { margin-top: 0px; }
+.markdown-preview-enhanced[is="space-pen-div"] { width: 100%; margin: 0px; z-index: 999; overflow: scroll; font-size: 16px; display: block; box-sizing: border-box; position: absolute; }
 .markdown-preview-enhanced h1, .markdown-preview-enhanced h2, .markdown-preview-enhanced h3, .markdown-preview-enhanced h4, .markdown-preview-enhanced h5, .markdown-preview-enhanced h6 { line-height: 1.2; margin-top: 1em; margin-bottom: 16px; color: rgb(255, 255, 255); }
 .markdown-preview-enhanced[data-use-github-style="true"] h1, .markdown-preview-enhanced[data-use-github-style="true"] h2, .markdown-preview-enhanced[data-use-github-style="true"] h3, .markdown-preview-enhanced[data-use-github-style="true"] h4, .markdown-preview-enhanced[data-use-github-style="true"] h5, .markdown-preview-enhanced[data-use-github-style="true"] h6 { color: rgb(85, 85, 85); }
-.markdown-preview-enhanced h1 { font-size: 2.4em; font-weight: 300; padding-bottom: 0.3em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(75, 83, 98); }
-.markdown-preview-enhanced h2 { font-size: 1.8em; font-weight: 400; padding-bottom: 0.3em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(75, 83, 98); }
+.markdown-preview-enhanced h1 { font-size: 2.4em; font-weight: 300; padding-bottom: 0.3em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(81, 81, 81); }
+.markdown-preview-enhanced h2 { font-size: 1.8em; font-weight: 400; padding-bottom: 0.3em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(81, 81, 81); }
 .markdown-preview-enhanced h3 { font-size: 1.5em; font-weight: 500; }
 .markdown-preview-enhanced h4 { font-size: 1.2em; font-weight: 600; }
 .markdown-preview-enhanced h5 { font-size: 1.1em; font-weight: 600; }
@@ -80,7 +84,7 @@
 .markdown-preview-enhanced[data-use-github-style="true"] h1, .markdown-preview-enhanced[data-use-github-style="true"] h2 { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(231, 231, 231); }
 .markdown-preview-enhanced strong { color: rgb(255, 255, 255); }
 .markdown-preview-enhanced[data-use-github-style="true"] strong { color: rgb(85, 85, 85); }
-.markdown-preview-enhanced del { color: rgb(124, 135, 156); }
+.markdown-preview-enhanced del { color: rgb(219, 219, 189); }
 .markdown-preview-enhanced a:not([href]) { color: inherit; text-decoration: none; }
 .markdown-preview-enhanced a { color: rgb(0, 136, 204); text-decoration: none; }
 .markdown-preview-enhanced a:hover { color: rgb(0, 80, 163); text-decoration: none; }
@@ -95,35 +99,35 @@
 .markdown-preview-enhanced li > p { margin-top: 0px; margin-bottom: 0px; }
 .markdown-preview-enhanced .task-list-item-checkbox { margin: 0px 0.2em 0.25em -1.6em; vertical-align: middle; }
 .markdown-preview-enhanced .task-list-item-checkbox:hover { cursor: pointer; }
-.markdown-preview-enhanced blockquote { margin: 16px 0px; font-size: inherit; padding: 0px 15px; color: rgb(124, 135, 156); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(75, 83, 98); }
+.markdown-preview-enhanced blockquote { margin: 16px 0px; font-size: inherit; padding: 0px 15px; color: rgb(219, 219, 189); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(81, 81, 81); }
 .markdown-preview-enhanced blockquote > :first-child { margin-top: 0px; }
 .markdown-preview-enhanced blockquote > :last-child { margin-bottom: 0px; }
 .markdown-preview-enhanced[data-use-github-style="true"] blockquote { color: rgb(119, 119, 119); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(221, 221, 221); }
-.markdown-preview-enhanced hr { height: 4px; margin: 32px 0px; border: 0px none; background-color: rgb(75, 83, 98); }
+.markdown-preview-enhanced hr { height: 4px; margin: 32px 0px; border: 0px none; background-color: rgb(81, 81, 81); }
 .markdown-preview-enhanced[data-use-github-style="true"] hr { background-color: rgb(231, 231, 231); }
 .markdown-preview-enhanced table { margin: 10px 0px 15px; border-collapse: collapse; }
 .markdown-preview-enhanced table th { font-weight: bold; color: rgb(255, 255, 255); }
-.markdown-preview-enhanced table td, .markdown-preview-enhanced table th { border: 1px solid rgb(75, 83, 98); padding: 5px 10px; }
+.markdown-preview-enhanced table td, .markdown-preview-enhanced table th { border: 1px solid rgb(81, 81, 81); padding: 5px 10px; }
 .markdown-preview-enhanced table th { padding: 5px 10px; }
 .markdown-preview-enhanced[data-use-github-style="true"] th { color: rgb(85, 85, 85); }
 .markdown-preview-enhanced[data-use-github-style="true"] td, .markdown-preview-enhanced[data-use-github-style="true"] th { border: 1px solid rgb(221, 221, 221); }
-.markdown-preview-enhanced code { font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; color: rgb(255, 255, 255); font-size: 0.85em !important; background-color: rgb(58, 63, 75); }
+.markdown-preview-enhanced code { font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; color: rgb(255, 255, 255); font-size: 0.85em !important; background-color: rgb(60, 60, 60); }
 .markdown-preview-enhanced[data-use-github-style="true"] code { color: inherit; background-color: rgba(0, 0, 0, 0.0392157); }
 .markdown-preview-enhanced pre > code { padding: 0px; margin: 0px; word-break: normal; white-space: pre; border: 0px; font-size: 0.85em !important; background: transparent; }
 .markdown-preview-enhanced .highlight { margin-bottom: 16px; }
-.markdown-preview-enhanced .highlight pre, .markdown-preview-enhanced pre { font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; padding: 16px; overflow: auto; line-height: 1.45; color: rgb(171, 178, 191); border: rgb(75, 83, 98); border-radius: 3px; font-size: 0.85em !important; background-color: rgb(49, 54, 63); }
+.markdown-preview-enhanced .highlight pre, .markdown-preview-enhanced pre { font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; padding: 16px; overflow: auto; line-height: 1.45; color: rgb(248, 248, 242); border: rgb(81, 81, 81); border-radius: 3px; font-size: 0.85em !important; background-color: rgb(50, 50, 50); }
 .markdown-preview-enhanced .highlight pre { margin-bottom: 0px; word-break: normal; }
 .markdown-preview-enhanced pre { word-wrap: break-word; }
 .markdown-preview-enhanced pre .section { opacity: 1; }
 .markdown-preview-enhanced pre code, .markdown-preview-enhanced pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
 .markdown-preview-enhanced pre code::before, .markdown-preview-enhanced pre tt::before, .markdown-preview-enhanced pre code::after, .markdown-preview-enhanced pre tt::after { content: normal; }
 .markdown-preview-enhanced p, .markdown-preview-enhanced blockquote, .markdown-preview-enhanced ul, .markdown-preview-enhanced ol, .markdown-preview-enhanced dl, .markdown-preview-enhanced pre { margin-top: 0px; margin-bottom: 16px; }
-.markdown-preview-enhanced pre.editor-colors { margin: 16px 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(49, 54, 63); }
-.markdown-preview-enhanced kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(75, 83, 98) rgb(75, 83, 98) rgb(62, 68, 81); background-color: rgb(58, 63, 75); }
+.markdown-preview-enhanced pre.editor-colors { margin: 16px 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(50, 50, 50); }
+.markdown-preview-enhanced kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(81, 81, 81) rgb(81, 81, 81) rgb(66, 66, 66); background-color: rgb(60, 60, 60); }
 .markdown-preview-enhanced[data-use-github-style="true"] kbd { color: rgb(85, 85, 85); border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
 .markdown-preview-enhanced .pagebreak, .markdown-preview-enhanced .newpage { page-break-before: always; }
 @media screen and (min-width: 914px) { 
-  .markdown-preview-enhanced { width: 854px; margin: 10px auto; overflow-y: scroll; background: rgb(40, 44, 52); }
+  .markdown-preview-enhanced { width: 854px; margin: 10px auto; overflow-y: scroll; background: rgb(40, 40, 40); }
 }
 @media screen and (max-width: 400px) { 
   .markdown-preview-enhanced { font-size: 14px; }
@@ -132,9 +136,9 @@
   .markdown-preview-enhanced[data-use-github-style="true"] { background: rgb(255, 255, 255); }
 }
 @media print { 
-  .markdown-preview-enhanced { background-color: rgb(40, 44, 52); }
+  .markdown-preview-enhanced { background-color: rgb(40, 40, 40); }
   .markdown-preview-enhanced h1, .markdown-preview-enhanced h2, .markdown-preview-enhanced h3, .markdown-preview-enhanced h4, .markdown-preview-enhanced h5, .markdown-preview-enhanced h6 { color: rgb(255, 255, 255); }
-  .markdown-preview-enhanced blockquote { color: rgb(124, 135, 156); }
+  .markdown-preview-enhanced blockquote { color: rgb(219, 219, 189); }
   .markdown-preview-enhanced table, .markdown-preview-enhanced pre { page-break-inside: avoid; }
   .markdown-preview-enhanced img { display: block; max-width: 100%; max-height: 100%; }
   .markdown-preview-enhanced pre, .markdown-preview-enhanced code { word-wrap: break-word; }
@@ -312,367 +316,163 @@
 
 pre.editor-colors,
 .host {
-  background-color: #282c34;
-  color: #abb2bf;
-}
-pre.editor-colors .line.cursor-line,
-.host .line.cursor-line {
-  background-color: rgba(153, 187, 255, 0.04);
-}
-pre.editor-colors .invisible,
-.host .invisible {
-  color: #abb2bf;
-}
-pre.editor-colors .cursor,
-.host .cursor {
-  border-left: 2px solid #528bff;
-}
-pre.editor-colors .selection .region,
-.host .selection .region {
-  background-color: #3e4451;
-}
-pre.editor-colors .bracket-matcher .region,
-.host .bracket-matcher .region {
-  border-bottom: 1px solid #528bff;
-  box-sizing: border-box;
+  background-color: #282828;
+  color: #f8f8f2;
 }
 pre.editor-colors .invisible-character,
 .host .invisible-character {
-  color: rgba(171, 178, 191, 0.15);
+  color: rgba(197, 200, 198, 0.2);
 }
 pre.editor-colors .indent-guide,
 .host .indent-guide {
-  color: rgba(171, 178, 191, 0.15);
+  color: rgba(255, 255, 255, 0.15);
 }
 pre.editor-colors .wrap-guide,
 .host .wrap-guide {
-  background-color: rgba(171, 178, 191, 0.15);
+  background-color: rgba(255, 255, 255, 0.1);
 }
-pre.editor-colors .gutter .line-number,
-.host .gutter .line-number {
-  color: #636d83;
-  -webkit-font-smoothing: antialiased;
+pre.editor-colors .gutter,
+.host .gutter {
+  background-color: #303030;
 }
-pre.editor-colors .gutter .line-number.cursor-line,
-.host .gutter .line-number.cursor-line {
-  color: #abb2bf;
-  background-color: #2c313a;
+pre.editor-colors .line-number.cursor-line-no-selection,
+.host .line-number.cursor-line-no-selection {
+  background-color: #49483e;
 }
-pre.editor-colors .gutter .line-number.cursor-line-no-selection,
-.host .gutter .line-number.cursor-line-no-selection {
+pre.editor-colors .invisible,
+.host .invisible {
+  color: #f8f8f2;
+}
+pre.editor-colors .cursor,
+.host .cursor {
+  border-color: #f8f8f0;
+}
+pre.editor-colors .selection .region,
+.host .selection .region {
+  background-color: #49483e;
+}
+pre.editor-colors .search-results .marker .region,
+.host .search-results .marker .region {
   background-color: transparent;
+  border: 1px solid #888888;
 }
-pre.editor-colors .gutter .line-number .icon-right,
-.host .gutter .line-number .icon-right {
-  color: #abb2bf;
+pre.editor-colors .search-results .marker.current-result .region,
+.host .search-results .marker.current-result .region {
+  border: 1px solid #ffffff;
 }
-pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before,
-.host .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
-  bottom: -3px;
-}
-pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after,
-.host .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
-  content: "";
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-  width: 25px;
-  border-bottom: 1px dotted rgba(224, 82, 82, 0.5);
-  pointer-events: none;
-}
-pre.editor-colors .gutter .line-number.folded,
-.host .gutter .line-number.folded,
-pre.editor-colors .gutter .line-number:after,
-.host .gutter .line-number:after,
-pre.editor-colors .fold-marker:after,
-.host .fold-marker:after {
-  color: #abb2bf;
-}
-.comment {
-  color: #5c6370;
-  font-style: italic;
-}
-.comment .markup.link {
-  color: #5c6370;
-}
-.entity.name.type {
-  color: #e5c07b;
-}
-.entity.other.inherited-class {
-  color: #98c379;
-}
-.keyword {
-  color: #c678dd;
-}
-.keyword.control {
-  color: #c678dd;
-}
-.keyword.operator {
-  color: #abb2bf;
-}
-.keyword.other.special-method {
-  color: #61afef;
-}
-.keyword.other.unit {
-  color: #d19a66;
-}
-.storage {
-  color: #c678dd;
-}
-.storage.type.annotation,
-.storage.type.primitive {
-  color: #c678dd;
-}
-.storage.modifier.package,
-.storage.modifier.import {
-  color: #abb2bf;
-}
-.constant {
-  color: #d19a66;
-}
-.constant.variable {
-  color: #d19a66;
-}
-.constant.character.escape {
-  color: #56b6c2;
-}
-.constant.numeric {
-  color: #d19a66;
-}
-.constant.other.color {
-  color: #56b6c2;
-}
-.constant.other.symbol {
-  color: #56b6c2;
-}
-.variable {
-  color: #e06c75;
-}
-.variable.interpolation {
-  color: #be5046;
-}
-.variable.parameter {
-  color: #abb2bf;
-}
-.string {
-  color: #98c379;
-}
-.string.regexp {
-  color: #56b6c2;
-}
-.string.regexp .source.ruby.embedded {
-  color: #e5c07b;
-}
-.string.other.link {
-  color: #e06c75;
-}
-.punctuation.definition.comment {
-  color: #5c6370;
-}
-.punctuation.definition.method-parameters,
-.punctuation.definition.function-parameters,
-.punctuation.definition.parameters,
-.punctuation.definition.separator,
-.punctuation.definition.seperator,
-.punctuation.definition.array {
-  color: #abb2bf;
-}
-.punctuation.definition.heading,
-.punctuation.definition.identity {
-  color: #61afef;
-}
-.punctuation.definition.bold {
-  color: #e5c07b;
+pre.editor-colors .gfm .markup.heading,
+.host .gfm .markup.heading {
+  color: #a6e22e;
   font-weight: bold;
 }
-.punctuation.definition.italic {
-  color: #c678dd;
-  font-style: italic;
-}
-.punctuation.section.embedded {
-  color: #be5046;
-}
-.punctuation.section.method,
-.punctuation.section.class,
-.punctuation.section.inner-class {
-  color: #abb2bf;
-}
-.support.class {
-  color: #e5c07b;
-}
-.support.type {
-  color: #56b6c2;
-}
-.support.function {
-  color: #56b6c2;
-}
-.support.function.any-method {
-  color: #61afef;
-}
-.entity.name.function {
-  color: #61afef;
-}
-.entity.name.class,
-.entity.name.type.class {
-  color: #e5c07b;
-}
-.entity.name.section {
-  color: #61afef;
-}
-.entity.name.tag {
-  color: #e06c75;
-}
-.entity.other.attribute-name {
-  color: #d19a66;
-}
-.entity.other.attribute-name.id {
-  color: #61afef;
-}
-.meta.class {
-  color: #e5c07b;
-}
-.meta.class.body {
-  color: #abb2bf;
-}
-.meta.method-call,
-.meta.method {
-  color: #abb2bf;
-}
-.meta.definition.variable {
-  color: #e06c75;
-}
-.meta.link {
-  color: #d19a66;
-}
-.meta.require {
-  color: #61afef;
-}
-.meta.selector {
-  color: #c678dd;
-}
-.meta.separator {
-  background-color: #373b41;
-  color: #abb2bf;
-}
-.meta.tag {
-  color: #abb2bf;
-}
-.underline {
+pre.editor-colors .gfm .markup.underline,
+.host .gfm .markup.underline {
+  color: #e6db74;
   text-decoration: underline;
 }
-.none {
-  color: #abb2bf;
-}
-.invalid.deprecated {
-  color: #523d14 !important;
-  background-color: #e0c285 !important;
-}
-.invalid.illegal {
-  color: #ffffff !important;
-  background-color: #e05252 !important;
-}
-.markup.bold {
-  color: #d19a66;
+pre.editor-colors .gfm .bold,
+.host .gfm .bold {
   font-weight: bold;
 }
-.markup.changed {
-  color: #c678dd;
-}
-.markup.deleted {
-  color: #e06c75;
-}
-.markup.italic {
-  color: #c678dd;
+pre.editor-colors .gfm .italic,
+.host .gfm .italic {
   font-style: italic;
 }
-.markup.heading {
-  color: #e06c75;
+pre.editor-colors .gfm .raw,
+.host .gfm .raw {
+  color: #66d9ef;
 }
-.markup.heading .punctuation.definition.heading {
-  color: #61afef;
+pre.editor-colors .gfm .variable.list,
+.host .gfm .variable.list {
+  color: #f92672;
+  font-weight: bold;
 }
-.markup.link {
-  color: #c678dd;
+pre.editor-colors .gfm .link,
+.host .gfm .link {
+  color: #cccccc;
 }
-.markup.inserted {
-  color: #98c379;
+pre.editor-colors .gfm .link .entity,
+.host .gfm .link .entity {
+  color: #ae81ff;
 }
-.markup.quote {
-  color: #d19a66;
+.comment {
+  color: #75715e;
 }
-.markup.raw {
-  color: #98c379;
+.constant.character,
+.constant.language,
+.constant.numeric,
+.constant.other {
+  color: #ae81ff;
 }
-.source.cs .keyword.operator {
-  color: #c678dd;
+.entity.name.class {
+  text-decoration: none;
+  color: #a6e22e;
 }
-.source.css .property-name,
-.source.css .property-value {
-  color: #828997;
+.entity.name.function {
+  color: #a6e22e;
 }
-.source.css .property-name.support,
-.source.css .property-value.support {
-  color: #abb2bf;
+.entity.name.instance {
+  color: #66d9ef;
 }
-.source.gfm .markup {
-  -webkit-font-smoothing: auto;
+.entity.name.tag {
+  color: #f92672;
 }
-.source.gfm .link .entity {
-  color: #61afef;
+.entity.other.attribute-name {
+  color: #a6e22e;
 }
-.source.ini .keyword.other.definition.ini {
-  color: #e06c75;
+.entity.other.inherited-class {
+  font-style: italic;
+  text-decoration: none;
+  color: #a6e22e;
 }
-.source.java .storage.modifier.import {
-  color: #e5c07b;
+.invalid {
+  color: #f8f8f0;
+  background-color: #f92672;
 }
-.source.java .storage.type {
-  color: #e5c07b;
+.invalid.deprecated {
+  background-color: #ae81ff;
 }
-.source.java-properties .meta.key-pair {
-  color: #e06c75;
+.keyword {
+  color: #f92672 !important;
 }
-.source.java-properties .meta.key-pair > .punctuation {
-  color: #abb2bf;
+.meta.tag {
+  color: #f8f8f2;
 }
-.source.js .keyword.operator {
-  color: #56b6c2;
+.storage {
+  color: #f92672;
 }
-.source.js .keyword.operator.delete,
-.source.js .keyword.operator.in,
-.source.js .keyword.operator.of,
-.source.js .keyword.operator.instanceof,
-.source.js .keyword.operator.new,
-.source.js .keyword.operator.typeof,
-.source.js .keyword.operator.void {
-  color: #c678dd;
+.storage.type {
+  font-style: italic;
+  color: #66d9ef;
 }
-.source.json .meta.structure.dictionary.json > .string.quoted.json {
-  color: #e06c75;
+.string {
+  color: #e6db74;
 }
-.source.json .meta.structure.dictionary.json > .string.quoted.json > .punctuation.string {
-  color: #e06c75;
+.support.constant,
+.support.function {
+  color: #66d9ef;
 }
-.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json,
-.source.json .meta.structure.array.json > .value.json > .string.quoted.json,
-.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json > .punctuation,
-.source.json .meta.structure.array.json > .value.json > .string.quoted.json > .punctuation {
-  color: #98c379;
+.support.class,
+.support.type {
+  font-style: italic;
+  color: #66d9ef;
 }
-.source.json .meta.structure.dictionary.json > .constant.language.json,
-.source.json .meta.structure.array.json > .constant.language.json {
-  color: #56b6c2;
+.variable.parameter {
+  font-style: italic;
+  color: #fd971f;
 }
-.source.ruby .constant.other.symbol > .punctuation {
-  color: inherit;
+.variable.language.python,
+.variable.language.js {
+  color: #f92672;
 }
-.source.python .keyword.operator.logical.python {
-  color: #c678dd;
+.class.jade {
+  color: #ae81ff;
 }
-.source.python .variable.parameter {
-  color: #d19a66;
+.leading-whitespace,
+.trailing-whitespace {
+  display: inline-block;
 }
- </style> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/0.5.8/mermaid.min.css"> <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/0.5.8/mermaid.min.js"></script> </head> <body class="markdown-preview-enhanced" data-use-github-style="true" data-use-github-syntax-theme="true"> <style>
+ </style> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ messageStyle: 'none', tex2jax: {inlineMath: [["$", "$"]], displayMath: [["$$", "$$"]], processEscapes: true} }); </script> <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/0.5.8/mermaid.min.css"> </head> <body class="markdown-preview-enhanced" data-use-github-style="true" data-use-github-syntax-theme="true"> <style>
   @font-face {
     font-family: Zpix;
     src: url('./font/Zpix.ttf');
@@ -685,9 +485,14 @@ pre.editor-colors .fold-marker:after,
 </ul>
 <p class="line" data-line="11">This website is built for nothing</p>
 <blockquote>
-<p class="line" data-line="14"><a href="#2016-6-22">2016-6-22</a></p>
+<p class="line" data-line="13"><a href="#2016-7-1">2016-7-1</a></p>
 </blockquote>
-<p class="line" data-line="16">&#x4ECA;&#x5929;&#x6211;&#x53D1;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x53EB;&#x505A; <a href="http://blog.sina.com.cn/s/blog_891c91150102vwh1.html">era&#x7CFB;&#x5217;</a> &#x7684;&#x6E38;&#x620F;&#x7C7B;&#x578B;&#xFF0C;&#x8C8C;&#x4F3C;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x6709;&#x610F;&#x601D;&#x7684; <strong>mud</strong> &#x7C7B;&#x578B;&#x6E38;&#x620F;&#x3002;<br>
+<p class="line" data-line="15">&#x82B1;&#x4E86;&#x4E00;&#x5929;&#x7684;&#x65F6;&#x95F4;&#x7814;&#x7A76; RPGMaker MV&#x3002;<br>
+<a href="shd101wyy.github.io/save-sensei-yu">&#x8FD9;&#x91CC;</a> &#x662F;&#x6211;&#x73B0;&#x5B66;&#x73B0;&#x5356;&#x505A;&#x7684;&#x4E00;&#x4E2A;&#x5C0F;&#x7684;&#x6E38;&#x620F;&#x3002;</p>
+<blockquote>
+<p class="line" data-line="18"><a href="#2016-6-22">2016-6-22</a></p>
+</blockquote>
+<p class="line" data-line="20">&#x4ECA;&#x5929;&#x6211;&#x53D1;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x53EB;&#x505A; <a href="http://blog.sina.com.cn/s/blog_891c91150102vwh1.html">era&#x7CFB;&#x5217;</a> &#x7684;&#x6E38;&#x620F;&#x7C7B;&#x578B;&#xFF0C;&#x8C8C;&#x4F3C;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x6709;&#x610F;&#x601D;&#x7684; <strong>mud</strong> &#x7C7B;&#x578B;&#x6E38;&#x620F;&#x3002;<br>
 &#x6700;&#x8FD1;&#x5728;&#x505A;&#x6E38;&#x620F;&#xFF0C;&#x4E3B;&#x8981;&#x7814;&#x7A76;&#x4E86;&#x4E0B; <strong>TRPG</strong> (eg: <em>DnD, CoC</em>) &#x7C7B;&#x578B;&#x7684;&#x6E38;&#x620F;&#x3002;&#x6574;&#x4E2A;&#x6E38;&#x620F;&#x7684;&#x7CFB;&#x7EDF;&#x90FD;&#x5F88;&#x79D1;&#x5B66;&#x8036;&#x5F88;&#x6709;&#x610F;&#x601D;&#x3002;<br>
 &#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x4E2A; <a href="www.sjgames.com/gurps/lite/">GURPS</a> &#x7CFB;&#x7EDF;&#xFF0C;&#x5168;&#x79F0;&#x4E3A; <strong>General universal role playing system</strong>&#x3002;</p>
  </body> </html>
