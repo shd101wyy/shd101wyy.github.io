@@ -1,4 +1,24 @@
-<!DOCTYPE html> <html> <head> <title>index</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <style> .markdown-preview-enhanced pre, .markdown-preview-enhanced .host { color: rgb(248, 248, 242); background-color: rgb(40, 40, 40); }
+<!DOCTYPE html> <html> <head> <title>index</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <style> .markdown-preview-enhanced pre::shadow .asciidoc .markup.bold, .markdown-preview-enhanced .host .asciidoc .markup.bold { font-weight: bold; }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.italic, .markdown-preview-enhanced .host .asciidoc .markup.italic { font-style: italic; }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.mark, .markdown-preview-enhanced .host .asciidoc .markup.mark { color: rgb(194, 78, 156); }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.highlight, .markdown-preview-enhanced .host .asciidoc .markup.highlight { color: black; background-color: rgb(191, 191, 12); }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.character-reference, .markdown-preview-enhanced .host .asciidoc .markup.character-reference { font-style: italic; color: rgb(249, 198, 194); }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.biblioref, .markdown-preview-enhanced .host .asciidoc .markup.biblioref, .markdown-preview-enhanced pre::shadow .asciidoc .markup.blockid, .markdown-preview-enhanced .host .asciidoc .markup.blockid { font-weight: bold; color: rgb(198, 224, 194); }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.xref, .markdown-preview-enhanced .host .asciidoc .markup.xref { font-style: italic; }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.admonition, .markdown-preview-enhanced .host .asciidoc .markup.admonition, .markdown-preview-enhanced pre::shadow .asciidoc .markup.heading, .markdown-preview-enhanced .host .asciidoc .markup.heading, .markdown-preview-enhanced pre::shadow .asciidoc .markup.heading-0, .markdown-preview-enhanced .host .asciidoc .markup.heading-0, .markdown-preview-enhanced pre::shadow .asciidoc .markup.heading-1, .markdown-preview-enhanced .host .asciidoc .markup.heading-1, .markdown-preview-enhanced pre::shadow .asciidoc .markup.heading-2, .markdown-preview-enhanced .host .asciidoc .markup.heading-2, .markdown-preview-enhanced pre::shadow .asciidoc .markup.heading-3, .markdown-preview-enhanced .host .asciidoc .markup.heading-3, .markdown-preview-enhanced pre::shadow .asciidoc .markup.heading-4, .markdown-preview-enhanced .host .asciidoc .markup.heading-4, .markdown-preview-enhanced pre::shadow .asciidoc .markup.heading-5, .markdown-preview-enhanced .host .asciidoc .markup.heading-5 { font-weight: bold; color: rgb(255, 255, 255); }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.meta.attribute-list, .markdown-preview-enhanced .host .asciidoc .markup.meta.attribute-list, .markdown-preview-enhanced pre::shadow .asciidoc .markup.substitution, .markdown-preview-enhanced .host .asciidoc .markup.substitution { color: rgba(248, 248, 242, 0.498039); }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.heading.blocktitle, .markdown-preview-enhanced .host .asciidoc .markup.heading.blocktitle { color: rgb(255, 255, 255); }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.todo.box, .markdown-preview-enhanced .host .asciidoc .markup.todo.box, .markdown-preview-enhanced pre::shadow .asciidoc .markup.list.bullet, .markdown-preview-enhanced .host .asciidoc .markup.list.bullet { color: rgb(251, 149, 145); }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.macro.block, .markdown-preview-enhanced .host .asciidoc .markup.macro.block { font-weight: bold; }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.super, .markdown-preview-enhanced .host .asciidoc .markup.super { color: rgb(124, 188, 121); }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.sub, .markdown-preview-enhanced .host .asciidoc .markup.sub { color: rgb(124, 188, 121); }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.table.cell.delimiter, .markdown-preview-enhanced .host .asciidoc .markup.table.cell.delimiter, .markdown-preview-enhanced pre::shadow .asciidoc .markup.table.delimiter, .markdown-preview-enhanced .host .asciidoc .markup.table.delimiter { color: rgb(97, 174, 239); }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.table.content, .markdown-preview-enhanced .host .asciidoc .markup.table.content { color: rgb(239, 239, 225); }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.block.sidebar, .markdown-preview-enhanced .host .asciidoc .markup.block.sidebar, .markdown-preview-enhanced pre::shadow .asciidoc .markup.block.passthrough, .markdown-preview-enhanced .host .asciidoc .markup.block.passthrough, .markdown-preview-enhanced pre::shadow .asciidoc .markup.block.front-matter, .markdown-preview-enhanced .host .asciidoc .markup.block.front-matter, .markdown-preview-enhanced pre::shadow .asciidoc .markup.block.example, .markdown-preview-enhanced .host .asciidoc .markup.block.example { color: rgba(248, 248, 242, 0.701961); }
+.markdown-preview-enhanced pre::shadow .asciidoc .markup.block.listing, .markdown-preview-enhanced .host .asciidoc .markup.block.listing, .markdown-preview-enhanced pre::shadow .asciidoc .markup.block.literal, .markdown-preview-enhanced .host .asciidoc .markup.block.literal { color: rgb(151, 195, 120); }
+.markdown-preview-enhanced pre::shadow .asciidoc .super, .markdown-preview-enhanced .host .asciidoc .super { vertical-align: text-top; font-size: 9.1px; }
+.markdown-preview-enhanced pre::shadow .asciidoc .sub, .markdown-preview-enhanced .host .asciidoc .sub { vertical-align: text-bottom; font-size: 9.1px; }
+.markdown-preview-enhanced pre, .markdown-preview-enhanced .host { color: rgb(248, 248, 242); background-color: rgb(40, 40, 40); }
 .markdown-preview-enhanced pre .invisible-character, .markdown-preview-enhanced .host .invisible-character { color: rgba(197, 200, 198, 0.2); }
 .markdown-preview-enhanced pre .indent-guide, .markdown-preview-enhanced .host .indent-guide { color: rgba(255, 255, 255, 0.14902); }
 .markdown-preview-enhanced pre .wrap-guide, .markdown-preview-enhanced .host .wrap-guide { background-color: rgba(255, 255, 255, 0.0980392); }
@@ -89,7 +109,7 @@
 .markdown-preview-enhanced a { color: rgb(0, 136, 204); text-decoration: none; }
 .markdown-preview-enhanced a:hover { color: rgb(0, 80, 163); text-decoration: none; }
 .markdown-preview-enhanced img { max-width: 100%; }
-.markdown-preview-enhanced > p { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview-enhanced > p { margin-top: 0px; margin-bottom: 16px; word-wrap: break-word; }
 .markdown-preview-enhanced > ul, .markdown-preview-enhanced > ol { margin-bottom: 16px; }
 .markdown-preview-enhanced ul, .markdown-preview-enhanced ol { padding-left: 2em; }
 .markdown-preview-enhanced ul.no-list, .markdown-preview-enhanced ol.no-list { padding: 0px; list-style-type: none; }
@@ -298,6 +318,123 @@
 .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .meta.tag.template.angular { color: rgb(34, 115, 195) !important; }
 .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .meta.tag.template.angular .punctuation.definition.block.begin.angular, .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .meta.tag.template.angular .punctuation.definition.block.end.angular, .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .meta.tag.template.angular .meta.brace.curly.js { color: rgb(173, 28, 93) !important; }
 .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .entity.other.attribute-name.html.angular, .markdown-preview-enhanced[data-use-github-syntax-theme="true"] .meta.attribute.html.angular { color: rgb(133, 103, 181) !important; }
+pre.editor-colors::shadow .asciidoc .markup.bold,
+.host .asciidoc .markup.bold {
+  font-weight: bold;
+}
+pre.editor-colors::shadow .asciidoc .markup.italic,
+.host .asciidoc .markup.italic {
+  font-style: italic;
+}
+pre.editor-colors::shadow .asciidoc .markup.mark,
+.host .asciidoc .markup.mark {
+  color: #c24e9c;
+}
+pre.editor-colors::shadow .asciidoc .markup.highlight,
+.host .asciidoc .markup.highlight {
+  color: black;
+  background-color: #bfbf0c;
+}
+pre.editor-colors::shadow .asciidoc .markup.character-reference,
+.host .asciidoc .markup.character-reference {
+  font-style: italic;
+  color: #f9c6c2;
+}
+pre.editor-colors::shadow .asciidoc .markup.biblioref,
+.host .asciidoc .markup.biblioref,
+pre.editor-colors::shadow .asciidoc .markup.blockid,
+.host .asciidoc .markup.blockid {
+  font-weight: bold;
+  color: #c6e0c2;
+}
+pre.editor-colors::shadow .asciidoc .markup.xref,
+.host .asciidoc .markup.xref {
+  font-style: italic;
+}
+pre.editor-colors::shadow .asciidoc .markup.admonition,
+.host .asciidoc .markup.admonition,
+pre.editor-colors::shadow .asciidoc .markup.heading,
+.host .asciidoc .markup.heading,
+pre.editor-colors::shadow .asciidoc .markup.heading-0,
+.host .asciidoc .markup.heading-0,
+pre.editor-colors::shadow .asciidoc .markup.heading-1,
+.host .asciidoc .markup.heading-1,
+pre.editor-colors::shadow .asciidoc .markup.heading-2,
+.host .asciidoc .markup.heading-2,
+pre.editor-colors::shadow .asciidoc .markup.heading-3,
+.host .asciidoc .markup.heading-3,
+pre.editor-colors::shadow .asciidoc .markup.heading-4,
+.host .asciidoc .markup.heading-4,
+pre.editor-colors::shadow .asciidoc .markup.heading-5,
+.host .asciidoc .markup.heading-5 {
+  font-weight: bold;
+  color: #ffffff;
+}
+pre.editor-colors::shadow .asciidoc .markup.meta.attribute-list,
+.host .asciidoc .markup.meta.attribute-list,
+pre.editor-colors::shadow .asciidoc .markup.substitution,
+.host .asciidoc .markup.substitution {
+  color: rgba(248, 248, 242, 0.5);
+}
+pre.editor-colors::shadow .asciidoc .markup.heading.blocktitle,
+.host .asciidoc .markup.heading.blocktitle {
+  color: #ffffff;
+}
+pre.editor-colors::shadow .asciidoc .markup.todo.box,
+.host .asciidoc .markup.todo.box,
+pre.editor-colors::shadow .asciidoc .markup.list.bullet,
+.host .asciidoc .markup.list.bullet {
+  color: #fb9591;
+}
+pre.editor-colors::shadow .asciidoc .markup.macro.block,
+.host .asciidoc .markup.macro.block {
+  font-weight: bold;
+}
+pre.editor-colors::shadow .asciidoc .markup.super,
+.host .asciidoc .markup.super {
+  color: #7cbc79;
+}
+pre.editor-colors::shadow .asciidoc .markup.sub,
+.host .asciidoc .markup.sub {
+  color: #7cbc79;
+}
+pre.editor-colors::shadow .asciidoc .markup.table.cell.delimiter,
+.host .asciidoc .markup.table.cell.delimiter,
+pre.editor-colors::shadow .asciidoc .markup.table.delimiter,
+.host .asciidoc .markup.table.delimiter {
+  color: #61aeef;
+}
+pre.editor-colors::shadow .asciidoc .markup.table.content,
+.host .asciidoc .markup.table.content {
+  color: #efefe1;
+}
+pre.editor-colors::shadow .asciidoc .markup.block.sidebar,
+.host .asciidoc .markup.block.sidebar,
+pre.editor-colors::shadow .asciidoc .markup.block.passthrough,
+.host .asciidoc .markup.block.passthrough,
+pre.editor-colors::shadow .asciidoc .markup.block.front-matter,
+.host .asciidoc .markup.block.front-matter,
+pre.editor-colors::shadow .asciidoc .markup.block.example,
+.host .asciidoc .markup.block.example {
+  color: rgba(248, 248, 242, 0.7);
+}
+pre.editor-colors::shadow .asciidoc .markup.block.listing,
+.host .asciidoc .markup.block.listing,
+pre.editor-colors::shadow .asciidoc .markup.block.literal,
+.host .asciidoc .markup.block.literal {
+  color: #97c378;
+}
+pre.editor-colors::shadow .asciidoc .super,
+.host .asciidoc .super {
+  vertical-align: text-top;
+  font-size: 9.1px;
+}
+pre.editor-colors::shadow .asciidoc .sub,
+.host .asciidoc .sub {
+  vertical-align: text-bottom;
+  font-size: 9.1px;
+}
+
 .markdown-themeable-pdf-page-break {
   border-top: 2px dotted #0098ff;
 }
@@ -472,27 +609,50 @@ pre.editor-colors .gfm .link .entity,
 .trailing-whitespace {
   display: inline-block;
 }
- </style> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ messageStyle: 'none', tex2jax: {inlineMath: [["$", "$"]], displayMath: [["$$", "$$"]], processEscapes: true} }); </script> <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/0.5.8/mermaid.min.css"> </head> <body class="markdown-preview-enhanced" data-use-github-style="true" data-use-github-syntax-theme="true"> <style>
+ </style> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css"> </head> <body class="markdown-preview-enhanced" data-use-github-style="true" data-use-github-syntax-theme="true"> <style>
   @font-face {
     font-family: Zpix;
     src: url('./font/Zpix.ttf');
   }
+  .menu {
+    text-align: center;
+  }
+  .menu span {
+    padding: 0 24px 0 12px;
+    border-left: 4px solid #85d5b3;
+  }
 </style>
-<center> <h1> Yiyi&apos;s Blog </h1> </center>    
-<ul>
-<li><p class="line" data-line="8"><a href="http://shd101wyy.github.io/">home</a></p></li>
-<li><p class="line" data-line="9"><a href="https://github.com/shd101wyy">github</a></p></li>
-</ul>
-<p class="line" data-line="11">This website is built for nothing</p>
+<center> <h1> Yiyi's Blog </h1> </center>    
+<div class="menu">
+  <span> <a href="http://shd101wyy.github.io/"> Home </a> </span>
+  <span> <a href="https://github.com/shd101wyy"> Github </a> </span>
+</div>  <br>
+<p class="line" data-line="19">This website is built for nothing</p>
 <blockquote>
-<p class="line" data-line="13"><a href="#2016-7-1">2016-7-1</a></p>
+<p class="line" data-line="20"><a href="#2016-7-15">2016-7-15</a></p>
 </blockquote>
-<p class="line" data-line="15">&#x82B1;&#x4E86;&#x4E00;&#x5929;&#x7684;&#x65F6;&#x95F4;&#x7814;&#x7A76; RPGMaker MV&#x3002;<br>
-<a href="shd101wyy.github.io/save-sensei-yu">&#x8FD9;&#x91CC;</a> &#x662F;&#x6211;&#x73B0;&#x5B66;&#x73B0;&#x5356;&#x505A;&#x7684;&#x4E00;&#x4E2A;&#x5C0F;&#x7684;&#x6E38;&#x620F;&#x3002;</p>
+<p class="line" data-line="22">花了一整天编写 AWA。这个项目目前来说还很不成熟，所以我把它设为了 Private Repository。<br>
+整体的游戏引擎（伪）设计参考了 RPGMaker MV。<br>
+感觉要写的东西还很多。<br>
+算了我想了下还是简单的在这里介绍一下我 AWA 项目吧。<br>
+AWA 是 <em>Another World Adventure</em> 的缩写。中文译名是 异世界冒险奇谭。<br>
+这个项目是一个游戏项目。游戏的目标类型是 Roguelike + TRPG ＋ RTS(伪)。<br>
+目前为止这个项目主要参考了 <strong>Elona</strong>，<strong>骑马与砍杀</strong>，<strong>兰斯系列</strong>(噗)。<br>
+项目目标是:</p>
+<ol>
+<li><p class="line" data-line="30">自由度极高的沙盒类游戏。(当然就目前来说画质很惨)。</p></li>
+<li><p class="line" data-line="31">极易的扩展性。即可以非常容易的打 Mod 或者创建自定义剧情。</p></li>
+</ol>
+<p class="line" data-line="33">就目前来说，我还在完善设定和 API 中。</p>
 <blockquote>
-<p class="line" data-line="18"><a href="#2016-6-22">2016-6-22</a></p>
+<p class="line" data-line="35"><a href="#2016-7-1">2016-7-1</a></p>
 </blockquote>
-<p class="line" data-line="20">&#x4ECA;&#x5929;&#x6211;&#x53D1;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x53EB;&#x505A; <a href="http://blog.sina.com.cn/s/blog_891c91150102vwh1.html">era&#x7CFB;&#x5217;</a> &#x7684;&#x6E38;&#x620F;&#x7C7B;&#x578B;&#xFF0C;&#x8C8C;&#x4F3C;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x6709;&#x610F;&#x601D;&#x7684; <strong>mud</strong> &#x7C7B;&#x578B;&#x6E38;&#x620F;&#x3002;<br>
-&#x6700;&#x8FD1;&#x5728;&#x505A;&#x6E38;&#x620F;&#xFF0C;&#x4E3B;&#x8981;&#x7814;&#x7A76;&#x4E86;&#x4E0B; <strong>TRPG</strong> (eg: <em>DnD, CoC</em>) &#x7C7B;&#x578B;&#x7684;&#x6E38;&#x620F;&#x3002;&#x6574;&#x4E2A;&#x6E38;&#x620F;&#x7684;&#x7CFB;&#x7EDF;&#x90FD;&#x5F88;&#x79D1;&#x5B66;&#x8036;&#x5F88;&#x6709;&#x610F;&#x601D;&#x3002;<br>
-&#x8BB0;&#x5F55;&#x4E00;&#x4E0B;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x4E2A; <a href="www.sjgames.com/gurps/lite/">GURPS</a> &#x7CFB;&#x7EDF;&#xFF0C;&#x5168;&#x79F0;&#x4E3A; <strong>General universal role playing system</strong>&#x3002;</p>
+<p class="line" data-line="37">花了一天的时间研究 RPGMaker MV。<br>
+<a href="shd101wyy.github.io/save-sensei-yu">这里</a> 是我现学现卖做的一个小的游戏。</p>
+<blockquote>
+<p class="line" data-line="40"><a href="#2016-6-22">2016-6-22</a></p>
+</blockquote>
+<p class="line" data-line="42">今天我发现了一个叫做 <a href="http://blog.sina.com.cn/s/blog_891c91150102vwh1.html">era系列</a> 的游戏类型，貌似是一个很有意思的 <strong>mud</strong> 类型游戏。<br>
+最近在做游戏，主要研究了下 <strong>TRPG</strong> (eg: <em>DnD, CoC</em>) 类型的游戏。整个游戏的系统都很科学耶很有意思。<br>
+记录一下其中的一个 <a href="www.sjgames.com/gurps/lite/">GURPS</a> 系统，全称为 <strong>General universal role playing system</strong>。</p>
  </body> </html>

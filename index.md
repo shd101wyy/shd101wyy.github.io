@@ -3,13 +3,35 @@
     font-family: Zpix;
     src: url('./font/Zpix.ttf');
   }
+  .menu {
+    text-align: center;
+  }
+  .menu span {
+    padding: 0 24px 0 12px;
+    border-left: 4px solid #85d5b3;
+  }
 </style>
 <center> <h1> Yiyi's Blog </h1> </center>    
-
-* [home](http://shd101wyy.github.io/)
-* [github](https://github.com/shd101wyy)    
+<div class="menu">
+  <span> <a href="http://shd101wyy.github.io/"> Home </a> </span>
+  <span> <a href="https://github.com/shd101wyy"> Github </a> </span>
+</div>  <br>
 
 This website is built for nothing    
+> [2016-7-15](#2016-7-15)  
+
+花了一整天编写 AWA。这个项目目前来说还很不成熟，所以我把它设为了 Private Repository。    
+整体的游戏引擎（伪）设计参考了 RPGMaker MV。  
+感觉要写的东西还很多。  
+算了我想了下还是简单的在这里介绍一下我 AWA 项目吧。  
+AWA 是 *Another World Adventure* 的缩写。中文译名是 异世界冒险奇谭。  
+这个项目是一个游戏项目。游戏的目标类型是 Roguelike + TRPG ＋ RTS(伪)。  
+目前为止这个项目主要参考了 **Elona**，**骑马与砍杀**，**兰斯系列**(噗)。    
+项目目标是:
+  1. 自由度极高的沙盒类游戏。(当然就目前来说画质很惨)。
+  2. 极易的扩展性。即可以非常容易的打 Mod 或者创建自定义剧情。  
+
+就目前来说，我还在完善设定和 API 中。
 
 > [2016-7-1](#2016-7-1)      
 
