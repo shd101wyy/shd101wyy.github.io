@@ -18,6 +18,11 @@
 </div>  <br>
 
 This website is built for nothing    
+> [2016-7-15](#2016-7-26)    
+
+添加了 Light 的支持。  
+![Screen Shot 2016-07-26 at 1.08.21 PM](http://ooo.0o0.ooo/2016/07/26/5796f05e40aad.png)
+
 > [2016-7-15](#2016-7-15)  
 
 花了一整天编写 AWA。这个项目目前来说还很不成熟，所以我把它设为了 Private Repository。    
@@ -32,7 +37,7 @@ AWA 是 *Another World Adventure* 的缩写。中文译名是 异世界冒险奇
   2. 极易的扩展性。即可以非常容易的打 Mod 或者创建自定义剧情。  
 
 就目前来说，我还在完善设定和 API 中。  
-  
+
 ![Screen Shot 2016-07-15 at 5.47.07 PM](http://ooo.0o0.ooo/2016/07/15/5788b2996d4e9.png)
 
 > [2016-7-1](#2016-7-1)      
