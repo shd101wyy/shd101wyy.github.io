@@ -18,6 +18,11 @@
 </div>  <br>
 
 This website is built for nothing    
+> [2016-8-3](#2016-8-23)   
+
+添加了 **0xGG** 到 [Github](https://github.com/0xGG)。  
+撰写了基本的 [Roadmap](/0xGG/roadmap.html)。       
+
 > [2016-8-3](#2016-8-3)      
 
 今天真是闲的蛋疼，一个人参观了北京动物园，被热成狗了，差点中暑。我也是够无聊的。  
