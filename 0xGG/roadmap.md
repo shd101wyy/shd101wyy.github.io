@@ -7,7 +7,7 @@
 暂列为以下几个游戏开发阶段。    
 
 <!-- slide -->
-| 项目代号 | 项目说明 | 预计开发周期  |
+| 项目代号 | 项目说明 | 预计开发周期（年）  |
 |---|---|---|
 | **AWA_1** | Ascii Roguelite ARPG SandBox  | 1 |
 | **AWA 1.1** | 2D Tile, based on **AWA_1** | 1 |  
@@ -21,5 +21,3 @@
 * 转写游戏故事 <span style="color: #f0b00d; font-weight: bold;">2016-12 ~ 2017-1/15</span>    
 * 编写主程序 <span style="color: #f0b00d; font-weight: bold;">2016-1 ~ 2017-5</span>   
 * 联系 publisher <span style="color: #f0b00d; font-weight: bold;">2017-5 +</span>    
-
-   
