@@ -18,6 +18,13 @@
 </div>  <br>
 
 This website is built for nothing    
+> [2016-8-28](#2016-8-28)  
+
+开学一周了，可也选的差不多了。这学期一定得把 CS426 compiler construction 给学好，教授是 LLVM 的创始人之一，他的其中一个徒弟是苹果的CTO。。。然后这个徒弟编写了 SWIFT 语言。   
+
+关于 AWA 项目，我现在尝试加入图像，但是突然间发现加入图像的话工作量陡增。  
+现在的一个小 demo 可以在 [这里](/AWA/index.html) 看到。  
+
 > [2016-8-23](#2016-8-23)   
 
 添加了 **0xGG** 到 [Github](https://github.com/0xGG)。  
