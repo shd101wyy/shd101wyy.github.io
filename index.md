@@ -17,7 +17,11 @@
   <span> <a href="https://github.com/shd101wyy"> Github </a> </span>
 </div>  <br>
 
-This website is built for nothing    
+This website is built for nothing   
+> [2016-9-18](#2016-9-18)  
+
+Just feel that **atom** doesn't have a simple enough `terminal` package that meets my needs, therefore I might implement one myself using [xterm](https://github.com/sourcelair/xterm.js).    
+
 > [2016-8-28](#2016-8-28)  
 
 开学一周了，可也选的差不多了。这学期一定得把 CS426 compiler construction 给学好，教授是 LLVM 的创始人之一，他的其中一个徒弟是苹果的CTO。。。然后这个徒弟编写了 SWIFT 语言。   
