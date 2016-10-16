@@ -1,0 +1,13 @@
+{
+  "title": "Yiyi's blog",
+  "link": "http://shd101wyy.github.io/dis.json",
+  "description": "This is Yiyi's blog",
+  "pubDate": "Sat Oct 15 2016 19:25:24 GMT-0500 (CDT)",
+  "items": [
+    {
+      "title": "design DIS",
+      "author": "shd101wyy",
+      "text": "Today I designed DIS (Dynamic Information Syndication)."
+    }
+  ]
+}
