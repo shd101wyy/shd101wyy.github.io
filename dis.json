@@ -3,7 +3,7 @@
   "link": "http://shd101wyy.github.io/dis.json",
   "description": "This is Yiyi's blog",
   "updated": "Sat Oct 19 2016 22:00:49 GMT-0500 (CDT)",
-  "items": [
+  "feeds": [
     {
       "title": "design DIS",
       "id": "h123hasad",
