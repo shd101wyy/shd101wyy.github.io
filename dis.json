@@ -2,12 +2,23 @@
   "title": "Yiyi's blog",
   "link": "http://shd101wyy.github.io/dis.json",
   "description": "This is Yiyi's blog",
-  "pubDate": "Sat Oct 15 2016 19:25:24 GMT-0500 (CDT)",
+  "updated": "Sat Oct 19 2016 22:00:49 GMT-0500 (CDT)",
   "items": [
     {
       "title": "design DIS",
+      "id": "h123hasad",
+      "updated": "Sat Oct 16 2016 22:00:49 GMT-0500 (CDT)",
+      "image": "https://avatars2.githubusercontent.com/u/1908863?v=3&s=40",
       "author": "shd101wyy",
       "text": "Today I designed DIS (Dynamic Information Syndication)."
+    },
+    {
+      "title": "UIUC 2017 Spring CS411",
+      "id": "h123hj23",
+      "updated": "Sat Oct 19 2016 22:00:49 GMT-0500 (CDT)",
+      "image": "https://avatars2.githubusercontent.com/u/1908863?v=3&s=40",
+      "author": "shd101wyy",
+      "text": "CS411 course opened https://courses.illinois.edu/schedule/2016/fall/CS/411 \nRegister the class now!"
     }
   ]
 }
