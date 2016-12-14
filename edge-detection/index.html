@@ -1,0 +1,207 @@
+<html>
+<head>
+  <title> CS519 Final Project </title>
+  <meta charset="utf-8">
+</head>
+<style>
+  html, body {
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .clearfix {
+    overflow: auto;
+    zoom: 1;
+  }
+
+  #app {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+  }
+
+  #panel {
+    float: left;
+    width: 400px;
+  }
+  #image-canvas {
+    float: left;
+    max-width: calc(100% - 460px);
+    left: 430px;
+    position: absolute;
+    top: 60px;
+  }
+
+  .btn {
+    background-color: #e7e7e7;
+    color: black;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    margin: 16px 0 !important;
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  .btn:hover {
+    background-color: #d5d0d0;
+  }
+
+  .blue {
+    background-color: #008CBA;
+    color: #fff;
+  }
+
+  .blue:hover {
+    background-color: #067093;
+  }
+
+  .light-green {
+    background-color: #8db95a;
+    color: #fff;
+  }
+
+  .light-green:hover {
+    background-color: #7ea650;
+  }
+
+  .detect-edge {
+    background-color: #555555;
+    color: #fff;
+  }
+
+  .detect-edge::before {
+    content: "Detect edges";
+  }
+
+  .detect-edge.running::before {
+    content: "Running";
+  }
+
+  .detect-edge:hover {
+    background-color: #636363;
+  }
+
+  .section {
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .btn:hover {
+    cursor: pointer;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .header {
+    margin: 0;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .section-header {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .small-header {
+    margin-top: 8px;
+    color: #03A9F4;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .input-div {
+    margin-bottom: 4px;
+  }
+
+  .input-div input[type="text"] {
+    left: 200px;
+    position: absolute;
+  }
+
+  .radio-div {
+    float: left;
+    margin-left: 8px;
+  }
+
+</style>
+<body>
+  <div id="app" class="clearfix">
+    <div id="panel">
+    <input type="file" id="image-loader" name="imageLoader" style="display:none;" />
+    <a id="download-link" style="display:none;"></a>
+    <br>
+
+    <div class="top-group">
+      <p class="header"> CS519 Final Project: Edge Detection</p>
+      <button class="btn blue" id="upload-image"> Upload image </button>
+      <button class="btn light-green" id="reset"> Reset </button>
+      <button class="btn" id="save-image">Save image</button>
+    </div>
+
+    <div class="basic-filters section">
+      <p class="section-header"> Basic Filters </p>
+      <button class="btn" id="greyscale"> Greyscale </button>
+      <button class="btn" id="sharpen">Sharpen</button>
+      <button class="btn" id="invert"> Invert </button>
+    </div>
+
+    <div class="edge-detection section">
+      <p class="section-header"> Edge Detection </p>
+
+      <p class="small-header"> Gaussian Blur</p>
+      <div class="input-div">
+        Sigma (> 0.0)
+        <input id="sigma" type="text" placeholder="1.4" />
+      </div>
+      <div class="input-div">
+        Kernal Size
+        <input id="kernel-size" type="text" placeholder="5" />
+      </div>
+    </div>
+
+    <p class="small-header"> Operators </p>
+    <div class="operators section clearfix">
+      <div class="radio-div"><input id="sobel" type="radio" name="operator" checked> Sobel </div>
+      <div class="radio-div"><input id="roberts" type="radio" name="operator"> Roberts </div>
+      <div class="radio-div"><input id="prewitt" type="radio" name="operator"> Prewitt </div>
+      <div class="radio-div"><input id="scharr" type="radio" name="operator"> Scharr</div>
+    </div>
+    <button class="btn" id="calculate-gradiant"> Apply operator </button>
+
+    <p class="small-header" style="margin-top: 32px;"> Non-maximum Suppression & Hysteresis </p>
+    <div class="input-div">
+      Low threshold (0 ~ 255)
+      <input id="low-threshold" type="text" placeholder="50" />
+    </div>
+    <div class="input-div">
+      High threshold (0 ~ 255)
+      <input id="high-threshold" type="text" placeholder="100" />
+    </div>
+
+    <button class="btn detect-edge" id="detect-edge"> </button>
+    </div>
+    <canvas id="image-canvas"></canvas>
+  </div>
+</body>
+<script src="js/edge_detection.js"></script>
+<script src="js/app.js"></script>
+</html>
