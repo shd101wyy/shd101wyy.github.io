@@ -18,6 +18,11 @@
 </div>  <br>
 
 This website is built for nothing   
+
+> [2016-12-13](#2016-12-13)  
+
+Implemented simple edge detection. Demo can be found [here](http://shd101wyy.github.io/edge-detection/).  
+
 > [2016-9-18](#2016-9-18)  
 
 Just feel that **atom** doesn't have a simple enough `terminal` package that meets my needs, therefore I might implement one myself using [xterm](https://github.com/sourcelair/xterm.js).    

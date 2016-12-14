@@ -37,7 +37,7 @@
 .markdown-preview-enhanced pre .gfm .variable.list, .markdown-preview-enhanced .host .gfm .variable.list { color: rgb(249, 38, 114); font-weight: bold; }
 .markdown-preview-enhanced pre .gfm .link, .markdown-preview-enhanced .host .gfm .link { color: rgb(204, 204, 204); }
 .markdown-preview-enhanced pre .gfm .link .entity, .markdown-preview-enhanced .host .gfm .link .entity { color: rgb(174, 129, 255); }
-.markdown-preview-enhanced { font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; font-size: 16px; line-height: 1.6; color: rgb(248, 248, 242); overflow: initial; margin: 10px 13px; padding: 2em; box-sizing: border-box; word-wrap: break-word; background-color: rgb(40, 40, 40); }
+.markdown-preview-enhanced { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; font-size: 16px; line-height: 1.6; color: rgb(248, 248, 242); overflow: initial; margin: 10px 13px; padding: 2em; box-sizing: border-box; word-wrap: break-word; background-color: rgb(40, 40, 40); }
 .markdown-preview-enhanced[data-use-github-style] { color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); }
 .markdown-preview-enhanced > :first-child { margin-top: 0px; }
 .markdown-preview-enhanced[is="space-pen-div"] { width: 100%; margin: 0px; z-index: 999; overflow: scroll; font-size: 16px; display: block; position: absolute; }
@@ -45,14 +45,16 @@
 .markdown-preview-enhanced[is="space-pen-div"][data-use-github-style] ::-webkit-scrollbar-track { box-shadow: rgba(218, 218, 218, 0.6) 0px 0px 3px inset; background-color: rgb(244, 244, 244); }
 .markdown-preview-enhanced[is="space-pen-div"][data-use-github-style] ::-webkit-scrollbar-thumb { border-radius: 10px; border-color: transparent; background-color: rgb(204, 204, 204); }
 .markdown-preview-enhanced h1, .markdown-preview-enhanced h2, .markdown-preview-enhanced h3, .markdown-preview-enhanced h4, .markdown-preview-enhanced h5, .markdown-preview-enhanced h6 { line-height: 1.2; margin-top: 1em; margin-bottom: 16px; color: rgb(255, 255, 255); }
-.markdown-preview-enhanced[data-use-github-style] h1, .markdown-preview-enhanced[data-use-github-style] h2, .markdown-preview-enhanced[data-use-github-style] h3, .markdown-preview-enhanced[data-use-github-style] h4, .markdown-preview-enhanced[data-use-github-style] h5, .markdown-preview-enhanced[data-use-github-style] h6 { color: rgb(51, 51, 51); }
-.markdown-preview-enhanced h1 { font-size: 2.4em; font-weight: 300; padding-bottom: 0.3em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(81, 81, 81); }
-.markdown-preview-enhanced h2 { font-size: 1.8em; font-weight: 400; padding-bottom: 0.3em; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(81, 81, 81); }
+.markdown-preview-enhanced[data-use-github-style] h1, .markdown-preview-enhanced[data-use-github-style] h2, .markdown-preview-enhanced[data-use-github-style] h3, .markdown-preview-enhanced[data-use-github-style] h4, .markdown-preview-enhanced[data-use-github-style] h5 { color: rgb(51, 51, 51); font-weight: 600; }
+.markdown-preview-enhanced[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview-enhanced[data-use-github-style] h6 { color: rgb(119, 119, 119); }
+.markdown-preview-enhanced h1 { font-size: 2.25em; font-weight: 300; padding-bottom: 0.3em; border-bottom: 1px solid rgb(81, 81, 81); }
+.markdown-preview-enhanced h2 { font-size: 1.75em; font-weight: 400; padding-bottom: 0.3em; border-bottom: 1px solid rgb(81, 81, 81); }
 .markdown-preview-enhanced h3 { font-size: 1.5em; font-weight: 500; }
-.markdown-preview-enhanced h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview-enhanced h4 { font-size: 1.25em; font-weight: 600; }
 .markdown-preview-enhanced h5 { font-size: 1.1em; font-weight: 600; }
 .markdown-preview-enhanced h6 { font-size: 1em; font-weight: 600; }
-.markdown-preview-enhanced[data-use-github-style] h1, .markdown-preview-enhanced[data-use-github-style] h2 { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(231, 231, 231); }
+.markdown-preview-enhanced[data-use-github-style] h1, .markdown-preview-enhanced[data-use-github-style] h2 { border-bottom: 1px solid rgb(231, 231, 231); }
 .markdown-preview-enhanced strong { color: rgb(255, 255, 255); }
 .markdown-preview-enhanced[data-use-github-style] strong { color: rgb(51, 51, 51); }
 .markdown-preview-enhanced del { color: rgb(219, 219, 189); }
@@ -70,10 +72,10 @@
 .markdown-preview-enhanced li > p { margin-top: 0px; margin-bottom: 0px; }
 .markdown-preview-enhanced .task-list-item-checkbox { margin: 0px 0.2em 0.25em -1.6em; vertical-align: middle; }
 .markdown-preview-enhanced .task-list-item-checkbox:hover { cursor: pointer; }
-.markdown-preview-enhanced blockquote { margin: 16px 0px; font-size: inherit; padding: 0px 15px; color: rgb(219, 219, 189); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(81, 81, 81); }
+.markdown-preview-enhanced blockquote { margin: 16px 0px; font-size: inherit; padding: 0px 15px; color: rgb(219, 219, 189); border-left: 4px solid rgb(81, 81, 81); }
 .markdown-preview-enhanced blockquote > :first-child { margin-top: 0px; }
 .markdown-preview-enhanced blockquote > :last-child { margin-bottom: 0px; }
-.markdown-preview-enhanced[data-use-github-style] blockquote { color: rgb(119, 119, 119); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(221, 221, 221); }
+.markdown-preview-enhanced[data-use-github-style] blockquote { color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
 .markdown-preview-enhanced hr { height: 4px; margin: 32px 0px; border: 0px none; background-color: rgb(81, 81, 81); }
 .markdown-preview-enhanced[data-use-github-style] hr { background-color: rgb(231, 231, 231); }
 .markdown-preview-enhanced table { margin: 10px 0px 15px; border-collapse: collapse; border-spacing: 0px; display: block; width: 100%; overflow: auto; word-break: keep-all; }
@@ -84,11 +86,12 @@
 .markdown-preview-enhanced dl { padding: 0px; }
 .markdown-preview-enhanced dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
 .markdown-preview-enhanced dl dd { padding: 0px 16px; margin-bottom: 16px; }
-.markdown-preview-enhanced code { font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; color: rgb(255, 255, 255); font-size: 0.85em !important; background-color: rgb(60, 60, 60); }
-.markdown-preview-enhanced[data-use-github-style] code { color: inherit; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview-enhanced code { font-family: Menlo, Monaco, Consolas, "Courier New", monospace; color: rgb(255, 255, 255); border-radius: 3px; padding: 0.2em 0px; font-size: 0.85em !important; background-color: rgb(60, 60, 60); }
+.markdown-preview-enhanced code::before, .markdown-preview-enhanced code::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview-enhanced[data-use-github-style] code { color: inherit; background-color: rgba(0, 0, 0, 0.0392157) !important; }
 .markdown-preview-enhanced pre > code { padding: 0px; margin: 0px; word-break: normal; white-space: pre; border: 0px; font-size: 0.85em !important; background: transparent; }
 .markdown-preview-enhanced .highlight { margin-bottom: 16px; }
-.markdown-preview-enhanced .highlight pre, .markdown-preview-enhanced pre { font-family: Menlo, Monaco, Consolas, 'Courier New', monospace; padding: 16px; overflow: auto; line-height: 1.45; color: rgb(248, 248, 242); border: rgb(81, 81, 81); border-radius: 3px; font-size: 0.85em !important; background-color: rgb(50, 50, 50); }
+.markdown-preview-enhanced .highlight pre, .markdown-preview-enhanced pre { font-family: Menlo, Monaco, Consolas, "Courier New", monospace; padding: 16px; overflow: auto; line-height: 1.45; color: rgb(248, 248, 242); border: rgb(81, 81, 81); border-radius: 3px; font-size: 0.85em !important; background-color: rgb(50, 50, 50); }
 .markdown-preview-enhanced .highlight pre { margin-bottom: 0px; word-break: normal; }
 .markdown-preview-enhanced pre { word-wrap: break-word; white-space: normal; word-break: break-all; }
 .markdown-preview-enhanced pre .section { opacity: 1; }
@@ -96,9 +99,9 @@
 .markdown-preview-enhanced pre code::before, .markdown-preview-enhanced pre tt::before, .markdown-preview-enhanced pre code::after, .markdown-preview-enhanced pre tt::after { content: normal; }
 .markdown-preview-enhanced p, .markdown-preview-enhanced blockquote, .markdown-preview-enhanced ul, .markdown-preview-enhanced ol, .markdown-preview-enhanced dl, .markdown-preview-enhanced pre { margin-top: 0px; margin-bottom: 16px; }
 .markdown-preview-enhanced pre.editor-colors { margin: 16px 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(50, 50, 50); }
-.markdown-preview-enhanced kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(81, 81, 81) rgb(81, 81, 81) rgb(66, 66, 66); background-color: rgb(60, 60, 60); }
-.markdown-preview-enhanced[data-use-github-style] kbd { color: rgb(51, 51, 51); border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
-.markdown-preview-enhanced .pagebreak, .markdown-preview-enhanced .newpage { page-break-before: always; }
+.markdown-preview-enhanced kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(81, 81, 81) rgb(81, 81, 81) rgb(66, 66, 66); padding: 2px 4px; background-color: rgb(60, 60, 60); }
+.markdown-preview-enhanced[data-use-github-style] kbd { color: rgb(51, 51, 51); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview-enhanced .pagebreak, .markdown-preview-enhanced .newpage { break-before: page; }
 @media screen and (min-width: 914px) { 
   .markdown-preview-enhanced { width: 854px; margin: 10px auto; background: rgb(40, 40, 40); }
 }
@@ -110,9 +113,9 @@
 }
 @media print { 
   .markdown-preview-enhanced { background-color: rgb(40, 40, 40); }
-  .markdown-preview-enhanced h1, .markdown-preview-enhanced h2, .markdown-preview-enhanced h3, .markdown-preview-enhanced h4, .markdown-preview-enhanced h5, .markdown-preview-enhanced h6 { color: rgb(255, 255, 255); page-break-after: avoid; }
+  .markdown-preview-enhanced h1, .markdown-preview-enhanced h2, .markdown-preview-enhanced h3, .markdown-preview-enhanced h4, .markdown-preview-enhanced h5, .markdown-preview-enhanced h6 { color: rgb(255, 255, 255); break-after: avoid; }
   .markdown-preview-enhanced blockquote { color: rgb(219, 219, 189); }
-  .markdown-preview-enhanced table, .markdown-preview-enhanced pre { page-break-inside: avoid; }
+  .markdown-preview-enhanced table, .markdown-preview-enhanced pre { break-inside: avoid; }
   .markdown-preview-enhanced table { display: table; }
   .markdown-preview-enhanced img { display: block; max-width: 100%; max-height: 100%; }
   .markdown-preview-enhanced pre, .markdown-preview-enhanced code { word-wrap: break-word; white-space: normal; }
@@ -132,6 +135,18 @@
 .markdown-preview-enhanced[data-use-github-style] .mermaid marker path { fill: rgb(51, 51, 51) !important; opacity: 1 !important; }
 .markdown-preview-enhanced[data-use-github-style] line, .markdown-preview-enhanced[data-use-github-style] marker { stroke: rgb(51, 51, 51) !important; opacity: 1 !important; }
 .markdown-preview-enhanced[data-use-github-style] .messageText { fill: rgb(51, 51, 51); }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk { position: relative; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .output-div { overflow-x: auto; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk pre { cursor: text; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .btn-group { position: absolute; right: 0px; top: 0px; display: none; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .btn-group .run-btn, .markdown-preview-enhanced[is="space-pen-div"] .code-chunk .btn-group .run-all-btn { float: right; margin-left: 4px; border-radius: 3px; font-size: 0.8em; color: rgb(238, 238, 238); border: none; background-image: none; background-color: rgb(82, 139, 255); }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .btn-group .run-btn:hover, .markdown-preview-enhanced[is="space-pen-div"] .code-chunk .btn-group .run-all-btn:hover { cursor: pointer; background-color: rgb(75, 127, 232); }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk:hover .btn-group { display: block; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk .status { position: absolute; right: 0px; top: 0px; font-size: 0.85em; color: inherit; padding: 2px 6px; display: none; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk.running .btn-group { display: none; }
+.markdown-preview-enhanced[is="space-pen-div"] .code-chunk.running .status { display: block; }
+.markdown-preview-enhanced:not([is="space-pen-div"]) .code-chunk .btn-group { display: none; }
+.markdown-preview-enhanced:not([is="space-pen-div"]) .code-chunk .status { display: none; }
 .markdown-preview-enhanced .github-syntax-theme pre.editor-colors, .markdown-preview-enhanced .github-syntax-theme .host { color: rgb(51, 51, 51); background-color: rgb(247, 247, 247); }
 .markdown-preview-enhanced .github-syntax-theme pre { color: rgb(51, 51, 51); background-color: rgb(247, 247, 247); }
 .markdown-preview-enhanced .github-syntax-theme pre.editor-colors .gutter, .markdown-preview-enhanced .github-syntax-theme .host .gutter { color: rgb(179, 179, 179); background-color: rgb(255, 255, 255); }
@@ -198,7 +213,7 @@
 .markdown-preview-enhanced .github-syntax-theme .text.html.markdown .markup.bold .markup.italic { font-weight: bold; font-style: italic; }
 .markdown-preview-enhanced .github-syntax-theme .text.html.markdown .markup.italic .markup.bold { font-weight: bold; font-style: italic; }
 .markdown-preview-enhanced .github-syntax-theme .string.quoted.double.html .invalid.illegal.bad-ampersand.html { color: rgb(34, 115, 195); background-color: rgb(255, 255, 255); }
-.markdown-preview-enhanced .github-syntax-theme .bracket-matcher .region { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(240, 192, 0, 0.8); z-index: 100; background-color: rgba(255, 214, 51, 0.0980392); }
+.markdown-preview-enhanced .github-syntax-theme .bracket-matcher .region { border-bottom: 1px solid rgba(240, 192, 0, 0.8); z-index: 100; background-color: rgba(255, 214, 51, 0.0980392); }
 .markdown-preview-enhanced .github-syntax-theme .meta.tag.template.angular { color: rgb(34, 115, 195); }
 .markdown-preview-enhanced .github-syntax-theme .meta.tag.template.angular .punctuation.definition.block.begin.angular, .markdown-preview-enhanced .github-syntax-theme .meta.tag.template.angular .punctuation.definition.block.end.angular, .markdown-preview-enhanced .github-syntax-theme .meta.tag.template.angular .meta.brace.curly.js { color: rgb(173, 28, 93); }
 .markdown-preview-enhanced .github-syntax-theme .entity.other.attribute-name.html.angular, .markdown-preview-enhanced .github-syntax-theme .meta.attribute.html.angular { color: rgb(133, 103, 181) !important; }
@@ -268,7 +283,7 @@
 .markdown-preview-enhanced[data-use-github-syntax-theme] .text.html.markdown .markup.bold .markup.italic { font-weight: bold !important; font-style: italic !important; }
 .markdown-preview-enhanced[data-use-github-syntax-theme] .text.html.markdown .markup.italic .markup.bold { font-weight: bold !important; font-style: italic !important; }
 .markdown-preview-enhanced[data-use-github-syntax-theme] .string.quoted.double.html .invalid.illegal.bad-ampersand.html { color: rgb(34, 115, 195) !important; background-color: rgb(255, 255, 255) !important; }
-.markdown-preview-enhanced[data-use-github-syntax-theme] .bracket-matcher .region { border-bottom-width: 1px !important; border-bottom-style: solid !important; border-bottom-color: rgba(240, 192, 0, 0.8) !important; z-index: 100 !important; background-color: rgba(255, 214, 51, 0.0980392) !important; }
+.markdown-preview-enhanced[data-use-github-syntax-theme] .bracket-matcher .region { border-bottom: 1px solid rgba(240, 192, 0, 0.8) !important; z-index: 100 !important; background-color: rgba(255, 214, 51, 0.0980392) !important; }
 .markdown-preview-enhanced[data-use-github-syntax-theme] .meta.tag.template.angular { color: rgb(34, 115, 195) !important; }
 .markdown-preview-enhanced[data-use-github-syntax-theme] .meta.tag.template.angular .punctuation.definition.block.begin.angular, .markdown-preview-enhanced[data-use-github-syntax-theme] .meta.tag.template.angular .punctuation.definition.block.end.angular, .markdown-preview-enhanced[data-use-github-syntax-theme] .meta.tag.template.angular .meta.brace.curly.js { color: rgb(173, 28, 93) !important; }
 .markdown-preview-enhanced[data-use-github-syntax-theme] .entity.other.attribute-name.html.angular, .markdown-preview-enhanced[data-use-github-syntax-theme] .meta.attribute.html.angular { color: rgb(133, 103, 181) !important; }
@@ -277,9 +292,13 @@
 .markdown-preview-enhanced[data-presentation-mode] strong { font-weight: bold; }
 .markdown-preview-enhanced[data-presentation-mode]::-webkit-scrollbar { display: none; }
 .markdown-preview-enhanced .slides { text-align: left !important; }
+.markdown-preview-enhanced-custom { }
+.markdown-preview-enhanced-custom .mermaid .today { stroke: red !important; }
 .markdown-preview-enhanced-custom.phantomjs-image { width: 512px; zoom: 2; }
 .markdown-preview-enhanced-custom.phantomjs-pdf { zoom: 0.8; }
 .markdown-preview-enhanced-custom .preview-slides .slide, .markdown-preview-enhanced-custom[data-presentation-mode] { }
+.markdown-preview-enhanced { }
+.markdown-preview-enhanced .mermaid .today { }
 .markdown-preview-enhanced.phantomjs-image { width: 512px !important; zoom: 2 !important; }
 .markdown-preview-enhanced.phantomjs-pdf { zoom: 0.8 !important; }
 .markdown-preview-enhanced .preview-slides .slide, .markdown-preview-enhanced[data-presentation-mode] { }
@@ -400,13 +419,6 @@ pre.editor-colors::shadow .asciidoc .sub,
   font-size: 9.1px;
 }
 
-.markdown-themeable-pdf-page-break {
-  border-top: 2px dotted #0098ff;
-}
-.markdown-themeable-pdf-page-break span {
-  opacity: .35;
-}
-
 .bracket-matcher .region {
   border-bottom: 1px dotted lime;
   position: absolute;
@@ -414,6 +426,9 @@ pre.editor-colors::shadow .asciidoc .sub,
 
 .spell-check-misspelling .region {
   border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
 }
 
 pre.editor-colors,
@@ -847,7 +862,7 @@ div.mermaidTooltip {
   pointer-events: none;
   z-index: 100;
 }
- </style> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">  </head> <body class="markdown-preview-enhanced " data-use-github-style data-use-github-syntax-theme > <style>
+ </style> <script type="text/x-mathjax-config"> MathJax.Hub.Config({ messageStyle: 'none', tex2jax: {inlineMath: [["$", "$"]], displayMath: [["$$", "$$"]], processEscapes: true} }); </script> <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>  </head> <body class="markdown-preview-enhanced " data-use-github-style data-use-github-syntax-theme > <style>
   @font-face {
     font-family: Zpix;
     src: url('./font/Zpix.ttf');
@@ -865,57 +880,61 @@ div.mermaidTooltip {
   <span> <a href="http://shd101wyy.github.io/"> Home </a> </span>
   <span> <a href="https://github.com/shd101wyy"> Github </a> </span>
 </div>  <br>
-<p class="line" data-line="19">This website is built for nothing</p>
+<p class="sync-line" data-line="19">This website is built for nothing</p>
 <blockquote>
-<p class="line" data-line="20"><a href="#2016-9-18">2016-9-18</a></p>
+<p class="sync-line" data-line="21"><a href="#2016-12-13">2016-12-13</a></p>
 </blockquote>
-<p class="line" data-line="22">Just feel that <strong>atom</strong> doesn't have a simple enough <code>terminal</code> package that meets my needs, therefore I might implement one myself using <a href="https://github.com/sourcelair/xterm.js">xterm</a>.</p>
+<p class="sync-line" data-line="23">Implemented simple edge detection. Demo can be found <a href="http://shd101wyy.github.io/edge-detection/">here</a>.</p>
 <blockquote>
-<p class="line" data-line="24"><a href="#2016-8-28">2016-8-28</a></p>
+<p class="sync-line" data-line="25"><a href="#2016-9-18">2016-9-18</a></p>
 </blockquote>
-<p class="line" data-line="26">开学一周了，可也选的差不多了。这学期一定得把 CS426 compiler construction 给学好，教授是 LLVM 的创始人之一，他的其中一个徒弟是苹果的CTO。。。然后这个徒弟编写了 SWIFT 语言。</p>
-<p class="line" data-line="28">关于 AWA 项目，我现在尝试加入图像，但是突然间发现加入图像的话工作量陡增。<br>
+<p class="sync-line" data-line="27">Just feel that <strong>atom</strong> doesn't have a simple enough <code>terminal</code> package that meets my needs, therefore I might implement one myself using <a href="https://github.com/sourcelair/xterm.js">xterm</a>.</p>
+<blockquote>
+<p class="sync-line" data-line="29"><a href="#2016-8-28">2016-8-28</a></p>
+</blockquote>
+<p class="sync-line" data-line="31">开学一周了，可也选的差不多了。这学期一定得把 CS426 compiler construction 给学好，教授是 LLVM 的创始人之一，他的其中一个徒弟是苹果的CTO。。。然后这个徒弟编写了 SWIFT 语言。</p>
+<p class="sync-line" data-line="33">关于 AWA 项目，我现在尝试加入图像，但是突然间发现加入图像的话工作量陡增。<br>
 现在的一个小 demo 可以在 <a href="AWA/index.html">这里</a> 看到。</p>
 <blockquote>
-<p class="line" data-line="31"><a href="#2016-8-23">2016-8-23</a></p>
+<p class="sync-line" data-line="36"><a href="#2016-8-23">2016-8-23</a></p>
 </blockquote>
-<p class="line" data-line="33">添加了 <strong>0xGG</strong> 到 <a href="https://github.com/0xGG">Github</a>。<br>
+<p class="sync-line" data-line="38">添加了 <strong>0xGG</strong> 到 <a href="https://github.com/0xGG">Github</a>。<br>
 撰写了基本的 <a href="0xGG/roadmap.html">Roadmap</a>。</p>
 <blockquote>
-<p class="line" data-line="36"><a href="#2016-8-3">2016-8-3</a></p>
+<p class="sync-line" data-line="41"><a href="#2016-8-3">2016-8-3</a></p>
 </blockquote>
-<p class="line" data-line="38">今天真是闲的蛋疼，一个人参观了北京动物园，被热成狗了，差点中暑。我也是够无聊的。<br>
+<p class="sync-line" data-line="43">今天真是闲的蛋疼，一个人参观了北京动物园，被热成狗了，差点中暑。我也是够无聊的。<br>
 关于 AWA，今天我添加了 bush 类型的 tileset。
 和 LOL 相似，只有进入到 bush 里面，才可以看见里面的内容。<br>
 没了 -.-</p>
 <blockquote>
-<p class="line" data-line="43"><a href="#2016-8-2">2016-8-2</a></p>
+<p class="sync-line" data-line="48"><a href="#2016-8-2">2016-8-2</a></p>
 </blockquote>
-<p class="line" data-line="45">今天又编写了很多东西。完善了 UI，添加了 FOV 支持。<br>
-<img src="http://ooo.0o0.ooo/2016/08/02/57a09f59a50e7.png" alt="Screen Shot 2016-08-02 at 9.17.25 PM"><br>
+<p class="sync-line" data-line="50">今天又编写了很多东西。完善了 UI，添加了 FOV 支持。<br>
+<img src="http://ooo.0o0.ooo/2016/08/02/57a09f59a50e7.png" alt="Screen Shot 2016-08-02 at 9.17.25 PM">   <br>
 如图所示，现在看上去想是个游戏了 2333。<br>
 明天去北京动物园玩🐒</p>
 <blockquote>
-<p class="line" data-line="50"><a href="#2016-8-1">2016-8-1</a></p>
+<p class="sync-line" data-line="55"><a href="#2016-8-1">2016-8-1</a></p>
 </blockquote>
-<p class="line" data-line="52">今天才发现原来机票是 8月17日，看来留给我的时间不多了。<br>
+<p class="sync-line" data-line="57">今天才发现原来机票是 8月17日，看来留给我的时间不多了。<br>
 今天关于 AWA 项目，我主要是重新修改了一下游戏设定，取消了<strong>等级</strong>这个属性。<br>
 为游戏添加了鼠标支持。是的，鼠标将会作为主要的操作方式，而不是键盘。我的目标是做一个只用鼠标也可以玩的 <strong>roguelike</strong>。<br>
 重新设计了 UI，参考了 <a href="https://sites.google.com/site/broguegame/">Brogue</a> 的游戏界面。<br>
-<img src="http://ooo.0o0.ooo/2016/08/01/579f67e63dc7e.png" width="600"><br>
+<img src="http://ooo.0o0.ooo/2016/08/01/579f67e63dc7e.png" width="600">  <br>
 从而使得界面看上去更简洁。游戏地图画面更大。<br>
 仔细思考了一下 Yuta 说的从 Dojin Game 入手，我发现很有道理。所以我可能先做一个同人游戏。</p>
 <blockquote>
-<p class="line" data-line="60"><a href="#2016-7-26">2016-7-26</a></p>
+<p class="sync-line" data-line="65"><a href="#2016-7-26">2016-7-26</a></p>
 </blockquote>
-<p class="line" data-line="62">添加了 Light 的支持。<br>
+<p class="sync-line" data-line="67">添加了 Light 的支持。<br>
 <img src="http://ooo.0o0.ooo/2016/07/26/5796f05e40aad.png" alt="Screen Shot 2016-07-26 at 1.08.21 PM"></p>
-<p class="line" data-line="65">基本完成了 UI 的设定。<br>
+<p class="sync-line" data-line="70">基本完成了 UI 的设定。<br>
 <img src="http://ooo.0o0.ooo/2016/07/26/57975e48bd819.png" width="400"></p>
 <blockquote>
-<p class="line" data-line="67"><a href="#2016-7-15">2016-7-15</a></p>
+<p class="sync-line" data-line="72"><a href="#2016-7-15">2016-7-15</a></p>
 </blockquote>
-<p class="line" data-line="69">花了一整天编写 AWA。这个项目目前来说还很不成熟，所以我把它设为了 Private Repository。<br>
+<p class="sync-line" data-line="74">花了一整天编写 AWA。这个项目目前来说还很不成熟，所以我把它设为了 Private Repository。<br>
 整体的游戏引擎（伪）设计参考了 RPGMaker MV。<br>
 感觉要写的东西还很多。<br>
 算了我想了下还是简单的在这里介绍一下我 AWA 项目吧。<br>
@@ -924,20 +943,20 @@ AWA 是 <em>Another World Adventure</em> 的缩写。中文译名是 异世界�
 目前为止这个项目主要参考了 <strong>Elona</strong>，<strong>骑马与砍杀</strong>，<strong>兰斯系列</strong>(噗)。<br>
 项目目标是:</p>
 <ol>
-<li><p class="line" data-line="77">自由度极高的沙盒类游戏。(当然就目前来说画质很惨)。</p></li>
-<li><p class="line" data-line="78">极易的扩展性。即可以非常容易的打 Mod 或者创建自定义剧情。</p></li>
+<li><p class="sync-line" data-line="82">自由度极高的沙盒类游戏。(当然就目前来说画质很惨)。</p></li>
+<li><p class="sync-line" data-line="83">极易的扩展性。即可以非常容易的打 Mod 或者创建自定义剧情。</p></li>
 </ol>
-<p class="line" data-line="80">就目前来说，我还在完善设定和 API 中。</p>
-<p class="line" data-line="82"><img src="http://ooo.0o0.ooo/2016/07/15/5788b2996d4e9.png" alt="Screen Shot 2016-07-15 at 5.47.07 PM"></p>
+<p class="sync-line" data-line="85">就目前来说，我还在完善设定和 API 中。</p>
+<p class="sync-line" data-line="87"><img src="http://ooo.0o0.ooo/2016/07/15/5788b2996d4e9.png" alt="Screen Shot 2016-07-15 at 5.47.07 PM"></p>
 <blockquote>
-<p class="line" data-line="84"><a href="#2016-7-1">2016-7-1</a></p>
+<p class="sync-line" data-line="89"><a href="#2016-7-1">2016-7-1</a></p>
 </blockquote>
-<p class="line" data-line="86">花了一天的时间研究 RPGMaker MV。<br>
+<p class="sync-line" data-line="91">花了一天的时间研究 RPGMaker MV。<br>
 <a href="shd101wyy.github.io/save-sensei-yu">这里</a> 是我现学现卖做的一个小的游戏。</p>
 <blockquote>
-<p class="line" data-line="89"><a href="#2016-6-22">2016-6-22</a></p>
+<p class="sync-line" data-line="94"><a href="#2016-6-22">2016-6-22</a></p>
 </blockquote>
-<p class="line" data-line="91">今天我发现了一个叫做 <a href="http://blog.sina.com.cn/s/blog_891c91150102vwh1.html">era系列</a> 的游戏类型，貌似是一个很有意思的 <strong>mud</strong> 类型游戏。<br>
+<p class="sync-line" data-line="96">今天我发现了一个叫做 <a href="http://blog.sina.com.cn/s/blog_891c91150102vwh1.html">era系列</a> 的游戏类型，貌似是一个很有意思的 <strong>mud</strong> 类型游戏。<br>
 最近在做游戏，主要研究了下 <strong>TRPG</strong> (eg: <em>DnD, CoC</em>) 类型的游戏。整个游戏的系统都很科学耶很有意思。<br>
 记录一下其中的一个 <a href="www.sjgames.com/gurps/lite/">GURPS</a> 系统，全称为 <strong>General universal role playing system</strong>。</p>
  </body>  </html>
