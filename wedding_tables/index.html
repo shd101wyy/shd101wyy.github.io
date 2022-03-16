@@ -95,6 +95,9 @@
         cursor: pointer;
         padding: 6px 16px;
       }
+      .highlighted {
+        color: #ffeb3b;
+      }
     </style>
   </head>
   <body>
@@ -269,7 +272,7 @@
           (attendee.name.indexOf(searchName) >= 0 ||
             (attendee.role || "").indexOf(searchName) >= 0)
         ) {
-          li.innerHTML = `<strong>${attendee.name}</strong>`;
+          li.innerHTML = `<strong class="highlighted">${attendee.name}</strong>`;
           expand = true;
         } else {
           li.innerHTML = attendee.name;
