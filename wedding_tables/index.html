@@ -77,13 +77,22 @@
       ul.attendees {
         margin: 0;
         padding-left: 24px;
-        background-color: rgb(255 96 46);
+        background-color: rgba(255, 96, 46, 0.95);
       }
       #total {
-        padding: 16px;
+        padding: 8px;
         background-color: #2196f3;
         width: 128px;
         text-align: center;
+      }
+      #search-box-wrapper {
+        margin-top: 4px;
+      }
+      #search-box {
+        padding: 8px;
+      }
+      #search-btn {
+        cursor: pointer;
       }
     </style>
   </head>
@@ -99,6 +108,10 @@
       <div id="table-k" class="table"></div>
       <div id="table-b" class="table"></div>
       <div id="total"></div>
+      <div id="search-box-wrapper">
+        <input id="search-box" placeholder="输入人名或关键字" />
+        <button id="search-btn">搜索</button>
+      </div>
     </div>
   </body>
   <script>
@@ -238,23 +251,35 @@
      * @param {Table} table
      * @param {string} tableName
      * @param {selector} string
+     * @param {searchName} string
      */
-    function addTable(table, tableName, selector) {
+    function addTable(table, tableName, selector, searchName) {
       const tableElem = document.querySelector(selector);
       const wrapper = document.createElement("div");
       wrapper.classList.add("table-wrapper");
       const ul = document.createElement("ul");
       ul.classList.add("attendees");
+      let expand = false;
       for (let i = 0; i < table.length; i++) {
         const attendee = table[i];
         const li = document.createElement("li");
-        li.innerHTML = attendee.name;
+        if (
+          searchName &&
+          (attendee.name.indexOf(searchName) >= 0 ||
+            (attendee.role || "").indexOf(searchName) >= 0)
+        ) {
+          li.innerHTML = `<strong>${attendee.name}</strong>`;
+          expand = true;
+        } else {
+          li.innerHTML = attendee.name;
+        }
         li.title = attendee.role || "";
 
         ul.appendChild(li);
       }
-      ul.style.display = "none";
-
+      if (!expand) {
+        ul.style.display = "none";
+      }
       tableElem.innerHTML = "";
 
       const btn = document.createElement("div");
@@ -273,33 +298,46 @@
       tableElem.appendChild(wrapper);
     }
 
-    addTable(
-      [
-        ...table1,
-        { name: "-------------" },
-        ...table2,
-        { name: "-------------" },
-        ...table7,
-      ],
-      `(1),(2),(3):<br/>${table1.length + table2.length + table3.length} 人`,
-      "#table-b"
-    );
-    addTable(table4, `(4):<br/>${table4.length} 人`, "#table-d");
-    addTable(table5, `(5):<br/>${table5.length} 人`, "#table-e");
-    addTable(table6, `(6):<br/>${table6.length} 人`, "#table-f");
-    addTable(table3, `(7):<br/>${table3.length} 人`, "#table-g");
-    addTable(
-      [...table11, { name: "-------------" }, ...table12],
-      `(8),(9):<br/>${table8.length + table9.length} 人`,
-      "#table-l"
-    );
-    addTable(table13, `(10):<br/>${table13.length} 人`, "#table-k");
-    addTable(table9, `(11):<br/>${table9.length} 人`, "#table-j");
-    addTable(
-      [...table8, { name: "-------------" }, ...table10],
-      `(12),(13):<br/>${table8.length + table10.length} 人`,
-      "#table-h"
-    );
+    /**
+     * @param {string} searchName
+     */
+    function renderTables(searchName) {
+      addTable(
+        [
+          ...table1,
+          { name: "-------------" },
+          ...table2,
+          { name: "-------------" },
+          ...table7,
+        ],
+        `(1),(2),(3):<br/>${table1.length + table2.length + table3.length} 人`,
+        "#table-b",
+        searchName
+      );
+      addTable(table4, `(4):<br/>${table4.length} 人`, "#table-d", searchName);
+      addTable(table5, `(5):<br/>${table5.length} 人`, "#table-e", searchName);
+      addTable(table6, `(6):<br/>${table6.length} 人`, "#table-f", searchName);
+      addTable(table3, `(7):<br/>${table3.length} 人`, "#table-g", searchName);
+      addTable(
+        [...table11, { name: "-------------" }, ...table12],
+        `(8),(9):<br/>${table8.length + table9.length} 人`,
+        "#table-l",
+        searchName
+      );
+      addTable(
+        table13,
+        `(10):<br/>${table13.length} 人`,
+        "#table-k",
+        searchName
+      );
+      addTable(table9, `(11):<br/>${table9.length} 人`, "#table-j", searchName);
+      addTable(
+        [...table8, { name: "-------------" }, ...table10],
+        `(12),(13):<br/>${table8.length + table10.length} 人`,
+        "#table-h",
+        searchName
+      );
+    }
 
     const total =
       table1.length +
@@ -317,5 +355,29 @@
       table13.length;
 
     document.getElementById("total").innerText = `共计 ${total} 人`;
+
+    const searchBox = document.getElementById("search-box");
+    const searchName = decodeURIComponent(window.location.hash).replace(
+      /^#/,
+      ""
+    );
+    searchBox.value = searchName || "";
+    function search() {
+      const searchName = (searchBox.value || "").trim();
+      window.location.hash = `#${searchName}`;
+      renderTables(searchName);
+    }
+
+    searchBox.addEventListener("keydown", (event) => {
+      if (event.which === 13) {
+        search();
+      }
+    });
+
+    document.getElementById("search-btn").addEventListener("click", () => {
+      search();
+    });
+
+    renderTables(searchName);
   </script>
 </html>
