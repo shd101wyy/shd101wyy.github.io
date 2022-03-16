@@ -87,6 +87,12 @@
         padding-left: 24px;
         background-color: rgb(255 96 46);
       }
+      #total {
+        padding: 16px;
+        background-color: #2196f3;
+        width: 128px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -102,7 +108,7 @@
       <div id="table-a" class="table"></div>
       <div id="table-b" class="table"></div>
       <div id="table-c" class="table"></div>
-
+      <div id="total"></div>
     </div>
   </body>
   <script>
@@ -155,10 +161,6 @@
       { name: "三姨", role: "新郎三姨" },
       { name: "三姨父", role: "新郎三姨父" },
       { name: "孩子", role: "三姨夫妇及孩子" },
-      { name: "郝文燕", role: "新郎二姐" },
-      { name: "温晓成", role: "新郎二姐夫" },
-      { name: "孩子", role: "新郎二姐夫妇孩子" },
-      { name: "郝文清", role: "新郎大姐" },
     ];
     const table4 = [
       { name: "卞立军岳母", role: "卞立军岳母" },
@@ -212,8 +214,6 @@
       { name: "李杰", role: "新郎妈妈同事" },
       { name: "李杰老公", role: "新郎妈妈同事老公" },
       { name: "李杰孩子", role: "新郎妈妈同事孩子" },
-      { name: "刘振献", role: "新郎爸爸同事" },
-      { name: "刘振献夫人", role: "新郎爸爸同事夫人" },
     ];
     const table10 = [
       { name: "于汛", role: "新郎大学同学" },
@@ -302,5 +302,22 @@
       "(h,i)",
       "#table-h"
     );
+
+    const total =
+      table1.length +
+      table2.length +
+      table3.length +
+      table4.length +
+      table5.length +
+      table6.length +
+      table7.length +
+      table8.length +
+      table9.length +
+      table10.length +
+      table11.length +
+      table12.length +
+      table13.length;
+
+    document.getElementById("total").innerText = `共计 ${total} 人`;
   </script>
 </html>
