@@ -26,17 +26,9 @@
         width: 128px;
         height: 40px;
       }
-      #table-a {
-        top: 88px;
-        right: 382px;
-      }
       #table-b {
         top: 94px;
         right: 250px;
-      }
-      #table-c {
-        top: 100px;
-        right: 118px;
       }
       #table-d {
         top: 228px;
@@ -105,9 +97,7 @@
       <div id="table-h" class="table"></div>
       <div id="table-j" class="table"></div>
       <div id="table-k" class="table"></div>
-      <div id="table-a" class="table"></div>
       <div id="table-b" class="table"></div>
-      <div id="table-c" class="table"></div>
       <div id="total"></div>
     </div>
   </body>
@@ -283,23 +273,31 @@
       tableElem.appendChild(wrapper);
     }
 
-    addTable(table1, "(1)", "#table-a");
-    addTable(table2, "(2)", "#table-b");
-    addTable(table7, "(3)", "#table-c");
+    addTable(
+      [
+        ...table1,
+        { name: "-------------" },
+        ...table2,
+        { name: "-------------" },
+        ...table7,
+      ],
+      "(1),(2),(3)",
+      "#table-b"
+    );
     addTable(table4, "(4)", "#table-d");
     addTable(table5, "(5)", "#table-e");
     addTable(table6, "(6)", "#table-f");
     addTable(table3, "(7)", "#table-g");
     addTable(
       [...table11, { name: "-------------" }, ...table12],
-      "(8,9)",
+      "(8),(9)",
       "#table-l"
     );
     addTable(table13, "(10)", "#table-k");
     addTable(table9, "(11)", "#table-j");
     addTable(
       [...table8, { name: "-------------" }, ...table10],
-      "(12,13)",
+      "(12),(13)",
       "#table-h"
     );
 
