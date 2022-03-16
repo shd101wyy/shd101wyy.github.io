@@ -281,23 +281,23 @@
         { name: "-------------" },
         ...table7,
       ],
-      "(1),(2),(3)",
+      `(1),(2),(3): ${table1.length + table2.length + table3.length} 人`,
       "#table-b"
     );
-    addTable(table4, "(4)", "#table-d");
-    addTable(table5, "(5)", "#table-e");
-    addTable(table6, "(6)", "#table-f");
-    addTable(table3, "(7)", "#table-g");
+    addTable(table4, `(4): ${table4.length} 人`, "#table-d");
+    addTable(table5, `(5): ${table5.length} 人`, "#table-e");
+    addTable(table6, `(6): ${table6.length} 人`, "#table-f");
+    addTable(table3, `(7): ${table3.length} 人`, "#table-g");
     addTable(
       [...table11, { name: "-------------" }, ...table12],
-      "(8),(9)",
+      `(8),(9): ${table8.length + table9.length} 人`,
       "#table-l"
     );
-    addTable(table13, "(10)", "#table-k");
-    addTable(table9, "(11)", "#table-j");
+    addTable(table13, `(10): ${table13.length} 人`, "#table-k");
+    addTable(table9, `(11): ${table9.length} 人`, "#table-j");
     addTable(
       [...table8, { name: "-------------" }, ...table10],
-      "(12),(13)",
+      `(12),(13): ${table8.length + table10.length} 人`,
       "#table-h"
     );
 
