@@ -1,0 +1,308 @@
+<html>
+  <head>
+    <title>3/19 爱江山婚礼桌位安排</title>
+    <meta charset="utf-8" />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+      }
+      img {
+        max-width: 100%;
+        width: 1024px;
+      }
+      .wrapper {
+        position: relative;
+        background-image: url(./tables.jpg);
+        width: 946px;
+        height: 1000px;
+        margin: 0 auto;
+      }
+      .table {
+        position: absolute;
+        width: 128px;
+        height: 40px;
+      }
+      #table-a {
+        top: 88px;
+        right: 382px;
+      }
+      #table-b {
+        top: 94px;
+        right: 250px;
+      }
+      #table-c {
+        top: 100px;
+        right: 118px;
+      }
+      #table-d {
+        top: 228px;
+        right: 560px;
+      }
+      #table-e {
+        top: 662px;
+        right: 238px;
+      }
+      #table-f {
+        top: 555px;
+        right: 237px;
+      }
+      #table-g {
+        top: 455px;
+        right: 235px;
+      }
+      #table-h {
+        left: 279px;
+        top: 85px;
+      }
+      #table-j {
+        top: 244px;
+        right: 212px;
+      }
+      #table-k {
+        top: 241px;
+        right: 341px;
+      }
+      #table-l {
+        top: 236px;
+        right: 84px;
+      }
+      .table-wrapper {
+        width: 100%;
+      }
+      .btn {
+        margin: 0;
+        padding: 12px;
+        text-align: center;
+        cursor: pointer;
+        background-color: rgba(206, 71, 29, 0.9);
+        font-size: 24px;
+        font-weight: 800;
+      }
+      ul.attendees {
+        margin: 0;
+        padding-left: 24px;
+        background-color: rgb(255 96 46);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="table-l" class="table"></div>
+      <div id="table-d" class="table"></div>
+      <div id="table-e" class="table"></div>
+      <div id="table-f" class="table"></div>
+      <div id="table-g" class="table"></div>
+      <div id="table-h" class="table"></div>
+      <div id="table-j" class="table"></div>
+      <div id="table-k" class="table"></div>
+      <div id="table-a" class="table"></div>
+      <div id="table-b" class="table"></div>
+      <div id="table-c" class="table"></div>
+
+    </div>
+  </body>
+  <script>
+    /**
+     * @typedef Attendee
+     * @type {Object}
+     * @property {string} name
+     * @property {string} role
+     * @property {string} from
+     */
+
+    /**
+     * @typedef Table
+     * @type {Attendee[]}
+     */
+
+    /**
+     * @type {Table}
+     */
+    const table1 = [
+      {
+        name: "王一祎",
+        role: "新郎",
+      },
+      {
+        name: "王秋宇",
+        role: "新娘",
+      },
+      { name: "王国宏", role: "新郎父亲" },
+      { name: "郝淑军", role: "新郎母亲" },
+      { name: "王江文", role: "新娘父亲" },
+      { name: "新娘母亲", role: "新娘母亲" },
+      { name: "新娘小姨", role: "新娘小姨" },
+      { name: "崔贵", role: "主婚人" },
+    ];
+
+    const table2 = [
+      { name: "宝宝", role: "新娘妹妹" },
+      { name: "贝贝", role: "新娘妹妹" },
+      { name: "邓涵月", role: "伴娘" },
+      { name: "田仕豪", role: "新娘研究生同学" },
+      { name: "李明喆", role: "新娘研究生同学" },
+      { name: "李明喆老公", role: "新娘研究生同学老公" },
+      { name: "王占海", role: "新郎大哥" },
+      { name: "王占海妻子", role: "新郎大嫂" },
+    ];
+
+    const table3 = [
+      { name: "新郎姥姥", role: "新郎姥姥" },
+      { name: "三姨", role: "新郎三姨" },
+      { name: "三姨父", role: "新郎三姨父" },
+      { name: "孩子", role: "三姨夫妇及孩子" },
+      { name: "郝文燕", role: "新郎二姐" },
+      { name: "温晓成", role: "新郎二姐夫" },
+      { name: "孩子", role: "新郎二姐夫妇孩子" },
+      { name: "郝文清", role: "新郎大姐" },
+    ];
+    const table4 = [
+      { name: "卞立军岳母", role: "卞立军岳母" },
+      { name: "王占海孩子", role: "王占海孩子" },
+      { name: "卞立军", role: "新郎大哥" },
+      { name: "卞立军妻子", role: "新郎大嫂" },
+      { name: "卞立军孩子1", role: "卞立军孩子1" },
+      { name: "卞立军孩子2", role: "卞立军孩子2" },
+      { name: "卞立军", role: "新郎二哥" },
+      { name: "卞立军妻子", role: "新郎二哥妻子" },
+    ];
+    const table5 = [
+      { name: "杨尚", role: "新郎高中同学" },
+      { name: "杨嘉齐", role: "新郎高中同学" },
+      { name: "刘宇宸", role: "新郎高中同学" },
+      { name: "刘宇宸妻子", role: "新郎高中同学妻子" },
+      { name: "葛斐然", role: "新郎高中同学" },
+      { name: "葛斐然妻子", role: "新郎高中同学妻子" },
+      { name: "张浩玮", role: "新郎高中同学" },
+      { name: "张浩玮妻子", role: "新郎高中同学妻子" },
+    ];
+    const table6 = [
+      { name: "王上明爸爸", role: "新郎发小父母" },
+      { name: "王上明妈妈", role: "新郎发小父母" },
+      { name: "王上明", role: "新郎发小" },
+      { name: "王上明妻子", role: "新郎发小妻子" },
+      { name: "夏荫杰爸爸", role: "新郎发小父母" },
+      { name: "夏荫杰妈妈", role: "新郎发小父母" },
+      { name: "夏荫杰", role: "新郎发小" },
+      { name: "李晨延", role: "新郎发小" },
+    ];
+    const table7 = [
+      { name: "林楠", role: "新娘大学同学" },
+      { name: "李昊轩", role: "新娘大学同学" },
+      { name: "张欣", role: "新娘大学同学" },
+      { name: "薛学明", role: "新娘大学同学" },
+      { name: "胡跃", role: "新娘大学同学" },
+      { name: "李嘉", role: "新娘大学同学" },
+      { name: "姚玥含", role: "新娘大学同学好友" },
+      { name: "", role: "" },
+    ];
+    const table8 = [
+      { name: "崔颖", role: "新郎大姐" },
+      { name: "崔颖老公及孩子", role: "新郎姐夫及孩子" },
+      { name: "王亚军", role: "" },
+      { name: "王亚军孩子", role: "" },
+      { name: "王亚丽", role: "" },
+      { name: "王亚丽孩子", role: "" },
+    ];
+    const table9 = [
+      { name: "杜兰芳", role: "新郎妈妈同事" },
+      { name: "李杰", role: "新郎妈妈同事" },
+      { name: "李杰老公", role: "新郎妈妈同事老公" },
+      { name: "李杰孩子", role: "新郎妈妈同事孩子" },
+      { name: "刘振献", role: "新郎爸爸同事" },
+      { name: "刘振献夫人", role: "新郎爸爸同事夫人" },
+    ];
+    const table10 = [
+      { name: "于汛", role: "新郎大学同学" },
+      { name: "魏鑫", role: "新郎大学同学" },
+      { name: "王作远", role: "新郎堂弟" },
+      { name: "王作远妻子", role: "新郎弟妹" },
+      { name: "席睿", role: "新郎表姐" },
+      { name: "", role: "" },
+    ];
+    const table11 = [
+      { name: "王星辰", role: "新娘高中同学" },
+      { name: "赵雪莹", role: "新娘高中同学" },
+      { name: "李子阳", role: "新娘高中同学" },
+      { name: "李畅", role: "新娘高中同学" },
+      { name: "万萌", role: "新娘高中同学" },
+      { name: "coco", role: "新娘高中同学妻子" },
+    ];
+    const table12 = [
+      { name: "琚亚楠", role: "新娘初中同学" },
+      { name: "邹仞天", role: "新娘朋友" },
+      { name: "邹仞天妻子", role: "新娘朋友妻子" },
+      { name: "陈安然", role: "新娘发小" },
+      { name: "陈安然老公", role: "新娘发小老公" },
+    ];
+    const table13 = [
+      { name: "薛梦涵", role: "新娘大学同学" },
+      { name: "张耀磊", role: "新娘大学同学" },
+      { name: "刘薇", role: "新娘大学同学" },
+      { name: "沈金博", role: "新娘大学同学" },
+    ];
+
+    /**
+     * @param {Table} table
+     * @param {string} tableName
+     * @param {selector} string
+     */
+    function addTable(table, tableName, selector) {
+      const tableElem = document.querySelector(selector);
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("table-wrapper");
+      const ul = document.createElement("ul");
+      ul.classList.add("attendees");
+      for (let i = 0; i < table.length; i++) {
+        const attendee = table[i];
+        const li = document.createElement("li");
+        li.innerHTML = attendee.name;
+        li.title = attendee.role || "";
+
+        ul.appendChild(li);
+      }
+      ul.style.display = "none";
+
+      tableElem.innerHTML = "";
+
+      const btn = document.createElement("div");
+      btn.classList.add("btn");
+      btn.innerText = tableName;
+      btn.addEventListener("click", () => {
+        if (ul.style.display === "none") {
+          ul.style.display = "block";
+        } else {
+          ul.style.display = "none";
+        }
+      });
+
+      wrapper.appendChild(btn);
+      wrapper.appendChild(ul);
+      tableElem.appendChild(wrapper);
+    }
+
+    addTable(table1, "(a)", "#table-a");
+    addTable(table2, "(b)", "#table-b");
+    addTable(table7, "(c)", "#table-c");
+    addTable(table4, "(d)", "#table-d");
+    addTable(table5, "(e)", "#table-e");
+    addTable(table6, "(f)", "#table-f");
+    addTable(table3, "(g)", "#table-g");
+    addTable(
+      [...table11, { name: "-------------" }, ...table12],
+      "(l,m)",
+      "#table-l"
+    );
+    addTable(table13, "(k)", "#table-k");
+    addTable(table9, "(j)", "#table-j");
+    addTable(
+      [...table8, { name: "-------------" }, ...table10],
+      "(h,i)",
+      "#table-h"
+    );
+  </script>
+</html>
